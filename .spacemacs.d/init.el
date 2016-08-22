@@ -46,7 +46,13 @@ values."
       syntax-checking-enable-tooltips t)
      version-control
      cb-groovy
+     java
+     python
+     ruby
+     clojure
      themes-megapack
+     react
+     csharp
      (rust
       :variables
       rust-enable-racer t)
@@ -298,23 +304,25 @@ you should place your code here."
   (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode))
 
-  (setq binary-process-input t) 
-  (setq w32-quote-process-args ?\") 
+  (setq binary-process-input t)
+  (setq w32-quote-process-args ?\")
   (setq shell-file-name "bash")
-  (setenv "SHELL" shell-file-name) 
-  (setq explicit-shell-file-name shell-file-name) 
+  (setenv "SHELL" shell-file-name)
+  (setq explicit-shell-file-name shell-file-name)
   (setq explicit-sh-args '("-login" "-i"))
 
   (setq-default js2-basic-offset 2
                 js-indent-level 2)
 
+  (setq typescript-indent-level 4)
+
   (defun cygwin-shell ()
     "Run cygwin bash in shell mode."
     (interactive)
-    (let ((explicit-shell-file-name "C:/cygwin/bin/bash"))
+    (let ((explicit-shell-file-name "C:/Program Files (x86)/Git/bin/bash"))
       (call-interactively 'shell)))
 
-  (c-add-style "my-style" 
+  (c-add-style "my-style"
                '("stroustrup"
                  (indent-tabs-mode . nil)
                  (c-basic-offset . 4)
@@ -323,10 +331,36 @@ you should place your code here."
                                      (statement-case-open . +)))))
   (defun my-c++-mode-hook ()
     (c-set-style "my-style")
-    (auto-fill-mode)         
+    (auto-fill-mode)
     (c-toggle-auto-hungry-state 1))
 
   (add-hook 'c++-mode-hook 'my-c++-mode-hook)
+
+  (defconst jl-java-style 
+    '((c-basic-offset . 4) 
+      ) 
+    "JL Java Programming Style")
+
+  (defun jl-java-mode-hook ()
+    (c-add-style "JL" jl-java-style t) 
+    (setq tab-width 4
+          indent-tabs-mode nil
+          c-indent-comments-syntactically-p t)
+    (c-toggle-auto-hungry-state 1)
+    )
+
+  (add-hook 'java-mode-hook 'jl-java-mode-hook)
+
+
+  (defun jl-groovy-mode-hook ()
+    (c-add-style "JL" jl-java-style t) 
+    (setq tab-width 4
+          indent-tabs-mode nil
+          c-indent-comments-syntactically-p t)
+    (c-toggle-auto-hungry-state 1)
+    )
+
+  (add-hook 'groovy-mode-hook 'jl-groovy-mode-hook)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
