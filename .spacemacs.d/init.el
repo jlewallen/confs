@@ -26,8 +26,13 @@ values."
      auto-completion
      better-defaults
      emacs-lisp
-     c-c++
-     git
+     (c-c++
+      :variables
+      c-c++-default-mode-for-headers 'c++-mode
+      c-c++-enable-clang-support t)
+     (git
+      :variables
+      git-magit-status-fullscreen t)
      javascript
      typescript
      markdown
@@ -35,10 +40,20 @@ values."
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     spell-checking
-     syntax-checking
+     ;; spell-checking
+     (syntax-checking
+      :variables
+      syntax-checking-enable-tooltips t)
      version-control
-     (shell :variables shell-default-shell 'ansi-term)
+     cb-groovy
+     themes-megapack
+     (rust
+      :variables
+      rust-enable-racer t)
+     (shell
+      :variables
+      shell-default-shell 'eshell
+      shell-protect-eshell-prompt nil)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -99,7 +114,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(deeper-blue
+                         spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
@@ -123,6 +139,16 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
+
+   ;; dotspacemacs-default-font (list (font-get (or (find-font (font-spec :name "Hasklig"))
+   ;;                                            (find-font (font-spec :name "Source Code Pro"))
+   ;;                                            (find-font (font-spec :name "Menlo")))
+   ;;                                        :name)
+   ;;                              :size 14
+   ;;                              :weight 'normal
+   ;;                              :width 'normal
+   ;;                              :powerline-scale 1.2)
+
    dotspacemacs-default-font '("Source Code Pro"
                                :size 13
                                :weight normal
@@ -257,9 +283,6 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-
-  (add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode))
-  (add-to-list 'auto-mode-alist '("\\.pde\\'" . c++-mode))
   )
 
 (defun dotspacemacs/user-config ()
@@ -269,6 +292,41 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  (add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode))
+  (add-to-list 'auto-mode-alist '("\\.pde\\'" . c++-mode))
+  (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+  (add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode))
+
+  (setq binary-process-input t) 
+  (setq w32-quote-process-args ?\") 
+  (setq shell-file-name "bash")
+  (setenv "SHELL" shell-file-name) 
+  (setq explicit-shell-file-name shell-file-name) 
+  (setq explicit-sh-args '("-login" "-i"))
+
+  (setq-default js2-basic-offset 2
+                js-indent-level 2)
+
+  (defun cygwin-shell ()
+    "Run cygwin bash in shell mode."
+    (interactive)
+    (let ((explicit-shell-file-name "C:/cygwin/bin/bash"))
+      (call-interactively 'shell)))
+
+  (c-add-style "my-style" 
+               '("stroustrup"
+                 (indent-tabs-mode . nil)
+                 (c-basic-offset . 4)
+                 (c-offsets-alist . ((inline-open . 0)
+                                     (brace-list-open . 0)
+                                     (statement-case-open . +)))))
+  (defun my-c++-mode-hook ()
+    (c-set-style "my-style")
+    (auto-fill-mode)         
+    (c-toggle-auto-hungry-state 1))
+
+  (add-hook 'c++-mode-hook 'my-c++-mode-hook)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
