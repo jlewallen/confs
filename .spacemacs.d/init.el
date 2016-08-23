@@ -311,10 +311,19 @@ you should place your code here."
   (setq explicit-shell-file-name shell-file-name)
   (setq explicit-sh-args '("-login" "-i"))
 
-  (setq-default js2-basic-offset 2
-                js-indent-level 2)
+  (set-default 'indent-tabs-mode nil)
+  (setq-default tab-width 4)
+  (setq tab-width 4)
+  (setq coffee-tab-width 4)
+  (setq typescript-indent-level 4
+        typescript-expr-indent-offset 4)
+  (setq-default js2-basic-offset 4
+                js-indent-level 4)
 
-  (setq typescript-indent-level 4)
+  (setq web-mode-markup-indent-offset 4)
+  (setq web-mode-css-indent-offset 4)
+  (setq web-mode-code-indent-offset 4)
+  (setq web-mode-attr-indent-offset 4)
 
   (defun cygwin-shell ()
     "Run cygwin bash in shell mode."
@@ -351,7 +360,6 @@ you should place your code here."
 
   (add-hook 'java-mode-hook 'jl-java-mode-hook)
 
-
   (defun jl-groovy-mode-hook ()
     (c-add-style "JL" jl-java-style t) 
     (setq tab-width 4
@@ -360,7 +368,25 @@ you should place your code here."
     (c-toggle-auto-hungry-state 1)
     )
 
+  (defun jl-typescript-mode-hook ()
+    (setq tab-width 4
+          typescript-indent-level 4
+          indent-tabs-mode nil)
+    (setq js2-basic-offset 4
+          js-indent-level 4)
+
+    (message "Hello 1")
+    (flycheck-mode +1)
+    (company-mode +1)
+    )
+
+  (add-hook 'text-mode-hook 'jl-typescript-mode-hook)
+  (add-hook 'typescript-mode-hook 'jl-typescript-mode-hook)
   (add-hook 'groovy-mode-hook 'jl-groovy-mode-hook)
+
+  (custom-set-variables
+   '(typescript-indent-level 4)
+   )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
