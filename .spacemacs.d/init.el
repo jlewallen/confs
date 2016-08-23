@@ -251,7 +251,7 @@ values."
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters the
    ;; point when it reaches the top or bottom of the screen. (default t)
-   dotspacemacs-smooth-scrolling t
+   dotspacemacs-smooth-scrolling nil
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
@@ -289,6 +289,14 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  (add-to-list 'load-path (expand-file-name "lisp" dotspacemacs-directory))
+
+  (setq require-final-newline t)
+
+  (setq flycheck-display-errors-delay 0.5)
+
+  (setq company-idle-delay 0.1)
   )
 
 (defun dotspacemacs/user-config ()
@@ -298,6 +306,9 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  (add-to-list 'projectile-globally-ignored-directories "*/node_modules")
+  (setq projectile-enable-caching t)
 
   (add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.pde\\'" . c++-mode))
@@ -311,19 +322,14 @@ you should place your code here."
   (setq explicit-shell-file-name shell-file-name)
   (setq explicit-sh-args '("-login" "-i"))
 
-  (set-default 'indent-tabs-mode nil)
+  (setq-default indent-tabs-mode nil)
   (setq-default tab-width 4)
-  (setq tab-width 4)
-  (setq coffee-tab-width 4)
+
   (setq typescript-indent-level 4
         typescript-expr-indent-offset 4)
+
   (setq-default js2-basic-offset 4
                 js-indent-level 4)
-
-  (setq web-mode-markup-indent-offset 4)
-  (setq web-mode-css-indent-offset 4)
-  (setq web-mode-code-indent-offset 4)
-  (setq web-mode-attr-indent-offset 4)
 
   (defun cygwin-shell ()
     "Run cygwin bash in shell mode."
@@ -369,13 +375,6 @@ you should place your code here."
     )
 
   (defun jl-typescript-mode-hook ()
-    (setq tab-width 4
-          typescript-indent-level 4
-          indent-tabs-mode nil)
-    (setq js2-basic-offset 4
-          js-indent-level 4)
-
-    (message "Hello 1")
     (flycheck-mode +1)
     (company-mode +1)
     )
@@ -383,10 +382,6 @@ you should place your code here."
   (add-hook 'text-mode-hook 'jl-typescript-mode-hook)
   (add-hook 'typescript-mode-hook 'jl-typescript-mode-hook)
   (add-hook 'groovy-mode-hook 'jl-groovy-mode-hook)
-
-  (custom-set-variables
-   '(typescript-indent-level 4)
-   )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
