@@ -382,6 +382,8 @@ you should place your code here."
   (add-hook 'text-mode-hook 'jl-typescript-mode-hook)
   (add-hook 'typescript-mode-hook 'jl-typescript-mode-hook)
   (add-hook 'groovy-mode-hook 'jl-groovy-mode-hook)
+
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
