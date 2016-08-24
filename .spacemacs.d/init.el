@@ -331,6 +331,8 @@ you should place your code here."
   (setq-default js2-basic-offset 4
                 js-indent-level 4)
 
+  (modify-syntax-entry ?_ "w")
+
   (defun cygwin-shell ()
     "Run cygwin bash in shell mode."
     (interactive)
