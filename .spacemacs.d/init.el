@@ -351,13 +351,13 @@ you should place your code here."
 
   (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 
-  (defconst jl-java-style 
-    '((c-basic-offset . 4) 
-      ) 
+  (defconst jl-java-style
+    '((c-basic-offset . 4)
+      )
     "JL Java Programming Style")
 
   (defun jl-java-mode-hook ()
-    (c-add-style "JL" jl-java-style t) 
+    (c-add-style "JL" jl-java-style t)
     (setq tab-width 4
           indent-tabs-mode nil
           c-indent-comments-syntactically-p t)
@@ -367,7 +367,7 @@ you should place your code here."
   (add-hook 'java-mode-hook 'jl-java-mode-hook)
 
   (defun jl-groovy-mode-hook ()
-    (c-add-style "JL" jl-java-style t) 
+    (c-add-style "JL" jl-java-style t)
     (setq tab-width 4
           indent-tabs-mode nil
           c-indent-comments-syntactically-p t)
