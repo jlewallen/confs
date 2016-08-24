@@ -307,7 +307,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  (add-to-list 'projectile-globally-ignored-directories "*/node_modules")
+  ; (add-to-list 'projectile-globally-ignored-directories "*/node_modules")
   (setq projectile-enable-caching t)
 
   (add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode))
