@@ -25,37 +25,44 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      better-defaults
+     org
+     themes-megapack
+     (syntax-checking
+      :variables
+      syntax-checking-enable-tooltips t)
+
+     version-control
+     (git
+      :variables
+      git-magit-status-fullscreen t)
+
      emacs-lisp
+
      (c-c++
       :variables
       c-c++-default-mode-for-headers 'c++-mode
       c-c++-enable-clang-support t)
-     (git
-      :variables
-      git-magit-status-fullscreen t)
-     javascript
-     typescript
+
+     ;; (rust
+     ;; :variables
+     ;; rust-enable-racer t)
+
      markdown
-     org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     (syntax-checking
-      :variables
-      syntax-checking-enable-tooltips t)
-     version-control
-     cb-groovy
+
      java
+     cb-groovy
+     ;; clojure
+
      python
      ruby
-     clojure
-     themes-megapack
+
+     javascript
+     typescript
      react
+
      csharp
-     (rust
-      :variables
-      rust-enable-racer t)
+     windows-scripts
+
      (shell
       :variables
       shell-default-shell 'eshell
