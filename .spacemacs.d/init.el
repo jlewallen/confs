@@ -301,6 +301,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   (setq require-final-newline t)
 
+  (setq create-lockfiles nil)
+
   (setq flycheck-display-errors-delay 0.5)
 
   (setq company-idle-delay 0.1)
