@@ -162,8 +162,8 @@ values."
    ;;                              :width 'normal
    ;;                              :powerline-scale 1.2)
 
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font `("Source Code Pro"
+                               :size, (if (and (eq (display-pixel-width) 3000) (eq(display-pixel-height) 2000)) 23 14)
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
