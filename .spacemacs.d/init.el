@@ -289,7 +289,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'changed
    ))
 
 (defun dotspacemacs/user-init ()
@@ -396,8 +396,6 @@ you should place your code here."
   (add-hook 'text-mode-hook 'jl-typescript-mode-hook)
   (add-hook 'typescript-mode-hook 'jl-typescript-mode-hook)
   (add-hook 'groovy-mode-hook 'jl-groovy-mode-hook)
-
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
