@@ -335,6 +335,8 @@ you should place your code here."
   (setq w32-quote-process-args ?\")
   (setq shell-file-name "bash")
   (setenv "SHELL" shell-file-name)
+  (setenv "PATH" (concat (getenv "PATH") ";C:/Program Files (x86)/Git/bin"))
+  (setq exec-path (append exec-path '("C:/Program Files (x86)/Git/bin")))
   (setq explicit-shell-file-name shell-file-name)
   (setq explicit-sh-args '("-login" "-i"))
 
@@ -397,9 +399,30 @@ you should place your code here."
     (company-mode +1)
     )
 
+  (defun jl-ledger-mode-hook ()
+    (defvar ledger-report-balance
+      (list "bal" (concat "hledger" " -f %(ledger-file) bal")))
+
+    (defvar ledger-report-reg
+      (list "reg" (concat "hledger" " -f %(ledger-file) reg")))
+
+    (defvar ledger-report-payee
+      (list "payee" (concat "hledger" " -f %(ledger-file) reg @%(payee)")))
+
+    (defvar ledger-report-account
+      (list "account" (concat "hledger" " -f %(ledger-file) reg %(account)")))
+
+    (setq ledger-reports
+          (list ledger-report-balance
+                ledger-report-reg
+                ledger-report-payee
+                ledger-report-account))
+    )
+
   (add-hook 'text-mode-hook 'jl-typescript-mode-hook)
   (add-hook 'typescript-mode-hook 'jl-typescript-mode-hook)
   (add-hook 'groovy-mode-hook 'jl-groovy-mode-hook)
+  (add-hook 'ledger-mode-hook 'jl-ledger-mode-hook)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
