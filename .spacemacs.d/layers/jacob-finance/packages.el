@@ -12,16 +12,14 @@
 (setq jacob-finance-packages
       '(
         company
-        ;; (flycheck-ledger :toggle (configuration-layer/package-usedp 'flycheck))
         ledger-mode
         ))
 
 
-(defun jacob-finance/init-flycheck-ledger ()
-  (with-eval-after-load 'flycheck
-    ;; (require 'flycheck-ledger)
-    ()
-    ))
+(defun jacob-ledger-all-accounts ()
+  (setq pcomplete-args '(""))
+  (ledger-find-accounts-in-buffer)
+  )
 
 (defun jacob-finance/customize ()
   (defvar ledger-report-balance
