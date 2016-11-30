@@ -57,6 +57,15 @@
               ledger-report-account))
   )
 
+(defun ledger-verify ()
+  (interactive)
+  (let* ((buffer (current-buffer))
+         (balance (with-temp-buffer
+                    (ledger-exec-ledger buffer (current-buffer) "--pedantic" "stats")
+                    (buffer-substring-no-properties (point-min) (1- (point-max))))))
+    (when balance
+      (message balance))))
+
 (defun ledger-add-food (title in amount out)
   (interactive
    (let ((accounts (mapcar 'list (jacob-ledger-accounts))))
@@ -97,6 +106,7 @@
         "R" 'ledger-report
         "t" 'ledger-insert-effective-date
         "y" 'ledger-set-year
+        "v" 'ledger-verify
         "f" 'ledger-add-food
         "RET" 'ledger-set-month)
       ;; temporary hack to work-around an issue with evil-define-key
