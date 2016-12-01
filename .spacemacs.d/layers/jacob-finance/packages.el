@@ -99,7 +99,7 @@
     :init
     (progn
       (jacob-finance/customize)
-      (setq ledger-post-amount-alignment-column 62)
+      (setq ledger-post-amount-alignment-column 72)
       (push 'company-capf company-backends-ledger-mode)
       (spacemacs/set-leader-keys-for-major-mode 'ledger-mode
         "hd" 'ledger-delete-current-transaction
