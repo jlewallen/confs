@@ -53,6 +53,9 @@
   (defvar ledger-report-balance
     (list "bal" (concat "ledger" " -f %(ledger-file) bal")))
 
+  (defvar ledger-report-assets
+    (list "ass" (concat "ledger" " -f %(ledger-file) bal \"(account$|assets:savings|^liabilities)\"")))
+
   (defvar ledger-report-reg
     (list "reg" (concat "ledger" " -f %(ledger-file) reg")))
 
@@ -61,6 +64,7 @@
 
   (setq ledger-reports
         (list ledger-report-balance
+              ledger-report-assets
               ledger-report-reg
               ledger-report-account)))
 
