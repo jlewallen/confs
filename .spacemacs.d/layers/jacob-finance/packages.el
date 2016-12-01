@@ -20,34 +20,34 @@
      (if ledger-master-file
          ledger-master-file
        (file-relative-name (buffer-file-name) default-directory)
-       ))
-  )
+       )))
 
 (defun jacob-ledger-find-accounts-in-buffer ()
+  "Wraps the ledger-mode method of the similar name to keep things from erroring on lack of pcomplete-args value"
   (setq pcomplete-args '(""))
-  (ledger-find-accounts-in-buffer)
-  )
+  (ledger-find-accounts-in-buffer))
 
 (defun jacob-strip-booleans (tree)
+  "Strip boolean values from a tree."
   (if (atom tree)
       tree
     (mapcar (lambda (node) (jacob-strip-booleans node))
             (remove t tree))))
 
 (defun jacob-expand-account-paths (tree)
+  "Expand and flatten a tree of accounts into paths."
   (cond
    ((and (eq 1 (length tree)) (atom (car tree))) tree)
    ((and (eq 1 (length tree)) t) (jacob-expand-account-paths (car tree)))
    ((atom (car tree))
-    (mapcar (lambda (node) (concat (car tree) ":" node)) (jacob-expand-account-paths (cdr tree)))
-    )
+    (mapcar (lambda (node) (concat (car tree) ":" node)) (jacob-expand-account-paths (cdr tree))))
    (t (apply 'append
              (mapcar (lambda (node) (jacob-expand-account-paths node)) tree)
              ))))
 
 (defun jacob-ledger-accounts ()
-  (jacob-expand-account-paths (jacob-strip-booleans (jacob-ledger-find-accounts-in-buffer)))
-  )
+  "Get the expanded account paths in the current file."
+  (jacob-expand-account-paths (jacob-strip-booleans (jacob-ledger-find-accounts-in-buffer))))
 
 (defun jacob-finance/customize ()
   (defvar ledger-report-balance
@@ -62,10 +62,10 @@
   (setq ledger-reports
         (list ledger-report-balance
               ledger-report-reg
-              ledger-report-account))
-  )
+              ledger-report-account)))
 
 (defun ledger-verify ()
+  "Verify the current ledger file with --pedantic and display some statistics."
   (interactive)
   (let* ((buffer (current-buffer))
          (balance (with-temp-buffer
@@ -100,6 +100,7 @@
     (progn
       (jacob-finance/customize)
       (setq ledger-post-amount-alignment-column 72)
+      (setq ledger-highlight-xact-under-point nil)
       (push 'company-capf company-backends-ledger-mode)
       (spacemacs/set-leader-keys-for-major-mode 'ledger-mode
         "hd" 'ledger-delete-current-transaction
