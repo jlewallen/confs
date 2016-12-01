@@ -15,6 +15,14 @@
         ledger-mode
         ))
 
+(eval-after-load "ledger-report"
+  '(defun ledger-master-file ()
+     (if ledger-master-file
+         ledger-master-file
+       (file-relative-name (buffer-file-name) default-directory)
+       ))
+  )
+
 (defun jacob-ledger-find-accounts-in-buffer ()
   (setq pcomplete-args '(""))
   (ledger-find-accounts-in-buffer)
@@ -43,13 +51,13 @@
 
 (defun jacob-finance/customize ()
   (defvar ledger-report-balance
-    (list "bal" (concat "hledger" " -f %(ledger-file) bal")))
+    (list "bal" (concat "ledger" " -f %(ledger-file) bal")))
 
   (defvar ledger-report-reg
-    (list "reg" (concat "hledger" " -f %(ledger-file) reg")))
+    (list "reg" (concat "ledger" " -f %(ledger-file) reg")))
 
   (defvar ledger-report-account
-    (list "account" (concat "hledger" " -f %(ledger-file) reg %(account)")))
+    (list "account" (concat "ledger" " -f %(ledger-file) reg %(account)")))
 
   (setq ledger-reports
         (list ledger-report-balance
