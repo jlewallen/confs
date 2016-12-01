@@ -302,6 +302,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   (add-to-list 'load-path (expand-file-name "lisp" dotspacemacs-directory))
 
+  (put 'ledger-master-file 'safe-local-variable (lambda (xx) t))
+
   (setq tramp-verbose 6)
 
   (setq require-final-newline t)
