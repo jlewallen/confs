@@ -59,6 +59,9 @@
   (defvar ledger-report-reg
     (list "reg" (concat "ledger" " -f %(ledger-file) reg")))
 
+  (defvar ledger-report-sanity-check
+    (list "reg" (concat "ledger" " -f %(ledger-file) \"(allocations|reserved)\"  --real")))
+
   (defvar ledger-report-account
     (list "account" (concat "ledger" " -f %(ledger-file) reg %(account)")))
 
@@ -66,6 +69,7 @@
         (list ledger-report-balance
               ledger-report-assets
               ledger-report-reg
+              ledger-report-sanity-check
               ledger-report-account)))
 
 (defun ledger-verify ()
