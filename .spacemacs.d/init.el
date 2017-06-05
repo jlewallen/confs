@@ -66,7 +66,7 @@ values."
      windows-scripts
 
      colors
-     jacob-finance
+     finance
 
      (shell
       :variables
@@ -168,7 +168,7 @@ values."
    ;;                              :powerline-scale 1.2)
 
    dotspacemacs-default-font `("Source Code Pro"
-                               :size, (if (and (eq (display-pixel-width) 3000) (eq(display-pixel-height) 2000)) 23 14)
+                               :size, (if (and (eq (display-pixel-width) 3000) (eq(display-pixel-height) 2000)) 23 13)
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -353,6 +353,8 @@ you should place your code here."
   (setq-default js2-basic-offset 4
                 js-indent-level 4)
 
+  (setq-default buffer-file-coding-system 'utf-8-unix)
+
   (modify-syntax-entry ?_ "w")
 
   (defun cygwin-shell ()
@@ -374,6 +376,16 @@ you should place your code here."
     (c-toggle-auto-hungry-state 1))
 
   (add-hook 'c++-mode-hook 'my-c++-mode-hook)
+
+  (defun unix-file ()
+    "Change the current buffer to Latin 1 with Unix line-ends."
+    (interactive)
+    (set-buffer-file-coding-system 'iso-latin-1-unix t))
+
+  (defun dos-file ()
+    "Change the current buffer to Latin 1 with DOS line-ends."
+    (interactive)
+    (set-buffer-file-coding-system 'iso-latin-1-dos t))
 
   (defconst jl-java-style
     '((c-basic-offset . 4)
