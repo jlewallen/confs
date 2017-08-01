@@ -119,10 +119,4 @@ fi
 # Alert alias for long running commands.
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Setup go environment.
-export GOROOT=~/tools/go1.8.3
-export GOPATH=~/go
-export PATH=$GOROOT/bin:$PATH
-export GIT_EDITOR=vim
-
 # EOF
