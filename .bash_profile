@@ -9,4 +9,9 @@ export GIT_EDITOR=vim
 
 export PATH=~/tools/bin:~/tools/node/bin:$GOROOT/bin:~/tools/cmake-3.9.0-Linux-x86_64/bin:$PATH
 
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+
 # EOF
