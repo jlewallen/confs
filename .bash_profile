@@ -14,4 +14,8 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 
+export PATH=$PATH:~/tools/protobuf-3.3.0/src/
+export PATH=$PATH:~/go/bin
+export PATH=$PATH:node_modules/.bin
+
 # EOF
