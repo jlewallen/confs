@@ -384,6 +384,8 @@ you should place your code here."
   (setq projectile-indexing-method 'native)
   (setq projectile-enable-caching t)
 
+  (setq ledger-post-amount-alignment-column 100)
+
   (add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.pde\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
