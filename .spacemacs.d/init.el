@@ -36,12 +36,37 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     ;; auto-completion
-     ;; better-defaults
+     auto-completion
+     better-defaults
      emacs-lisp
-     ;; git
-     ;; markdown
-     ;; org
+     org
+     themes-megapack
+
+     (syntax-checking :variables
+      syntax-checking-enable-tooltips t)
+
+     version-control
+     (git :variables
+      git-magit-status-fullscreen t)
+
+     (c-c++ :variables
+      c-c++-default-mode-for-headers 'c++-mode
+      c-c++-enable-clang-support t)
+
+     csv
+     markdown
+     java
+     cb-groovy
+     python
+     ruby
+     go
+     javascript
+     ;; typescript
+     react
+     ;; windows-scripts
+     ;; colors
+     finance
+
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -132,11 +157,21 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
+   ;; dotspacemacs-default-font '("Source Code Pro"
+   ;;                          :size 13
+   ;;                          :weight normal
+   ;;                          :width normal
+   ;;                          :powerline-scale 1.1)
+
+   dotspacemacs-default-font (list (font-get (or (find-font (font-spec :name "Hasklig"))
+                                                 (find-font (font-spec :name "Source Code Pro"))
+                                                 (find-font (font-spec :name "Menlo")))
+                                             :name)
+                                   :size (if (and (eq (display-pixel-width) 3000) (eq(display-pixel-height) 2000)) 22 12)
+                                   :weight 'normal
+                                   :width 'normal
+                                   :powerline-scale 1.2)
+
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands `M-x' (after pressing on the leader key).
@@ -337,6 +372,13 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (add-to-list 'load-path (expand-file-name "lisp" dotspacemacs-directory))
+
+  (put 'ledger-master-file 'safe-local-variable (lambda (xx) t))
+
+  (setq require-final-newline t)
+
+  (setq create-lockfiles nil)
   )
 
 (defun dotspacemacs/user-config ()
@@ -345,6 +387,53 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  (setq ledger-post-amount-alignment-column 100)
+
+  (add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode))
+  (add-to-list 'auto-mode-alist '("\\.pde\\'" . c++-mode))
+  (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+  (add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode))
+
+  (setq-default buffer-file-coding-system 'utf-8-unix)
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 4)
+  (setq-default js2-basic-offset 4
+                js-indent-level 4)
+
+  (modify-syntax-entry ?_ "w")
+
+  (defconst jl-java-style
+    '((c-basic-offset . 4)
+      )
+    "JL Java Programming Style")
+
+  (defun jl-java-mode-hook ()
+    (c-add-style "JL" jl-java-style t)
+    (setq tab-width 4
+          indent-tabs-mode nil
+          c-indent-comments-syntactically-p t)
+    (c-toggle-auto-hungry-state 1)
+    )
+
+  (add-hook 'java-mode-hook 'jl-java-mode-hook)
+
+  (defun jl-groovy-mode-hook ()
+    (c-add-style "JL" jl-java-style t)
+    (setq tab-width 4
+          indent-tabs-mode nil
+          c-indent-comments-syntactically-p t)
+    (c-toggle-auto-hungry-state 1)
+    )
+
+  (defun jl-typescript-mode-hook ()
+    (flycheck-mode +1)
+    (company-mode +1)
+    )
+
+  (add-hook 'text-mode-hook 'jl-typescript-mode-hook)
+  (add-hook 'typescript-mode-hook 'jl-typescript-mode-hook)
+  (add-hook 'groovy-mode-hook 'jl-groovy-mode-hook)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -361,7 +450,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org symon string-inflection spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el password-generator paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-purpose window-purpose imenu-list helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-lion evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav editorconfig dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (mmm-mode markdown-toc markdown-mode gh-md zonokai-theme zenburn-theme zen-and-art-theme yapfify white-sand-theme web-mode web-beautify unfill underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme tagedit sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smeargle slim-mode seti-theme scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor rubocop rspec-mode robe reverse-theme rebecca-theme realgud test-simple loc-changes load-relative rbenv rake railscasts-theme pyvenv pytest pyenv-mode py-isort purple-haze-theme pug-mode professional-theme planet-theme pip-requirements phoenix-dark-pink-theme phoenix-dark-mono-theme orgit organic-green-theme org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-download org-brain omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme mwim mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minitest minimal-theme meghanada material-theme majapahit-theme magit-gitflow madhat2r-theme lush-theme livid-mode skewer-mode live-py-mode light-soap-theme less-css-mode ledger-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc jbeans-theme jazz-theme ir-black-theme inkpot-theme impatient-mode simple-httpd hy-mode htmlize heroku-theme hemisu-theme helm-pydoc helm-gitignore helm-css-scss helm-company helm-c-yasnippet hc-zenburn-theme haml-mode gruvbox-theme gruber-darker-theme grandshell-theme gradle-mode gotham-theme godoctor go-rename go-guru go-eldoc gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gandalf-theme fuzzy flycheck-pos-tip pos-tip flycheck-ledger flycheck flatui-theme flatland-theme farmhouse-theme exotica-theme evil-org evil-magit magit magit-popup git-commit with-editor espresso-theme ensime sbt-mode scala-mode emmet-mode dracula-theme django-theme disaster diff-hl darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cython-mode cyberpunk-theme csv-mode company-web web-completion-data company-tern dash-functional tern company-statistics company-go go-mode company-emacs-eclim eclim company-c-headers company-anaconda company color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized coffee-mode cmake-mode cmake-ide levenshtein clues-theme clang-format chruby cherry-blossom-theme busybee-theme bundler inf-ruby bubbleberry-theme browse-at-remote birds-of-paradise-plus-theme badwolf-theme auto-yasnippet yasnippet apropospriate-theme anti-zenburn-theme anaconda-mode pythonic ample-zen-theme ample-theme alect-themes afternoon-theme ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org symon string-inflection spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el password-generator paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-purpose window-purpose imenu-list helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-lion evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav editorconfig dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
