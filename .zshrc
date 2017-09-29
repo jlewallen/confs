@@ -84,6 +84,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+unsetopt share_history
+
 # Setup go environment.
 export GOROOT=~/tools/go1.8.3
 export GOPATH=~/go
