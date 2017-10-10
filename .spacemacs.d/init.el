@@ -56,7 +56,7 @@ This function should only modify configuration layer settings."
      csv
      markdown
      java
-     cb-groovy
+     ;; cb-groovy
      python
      ruby
      go
