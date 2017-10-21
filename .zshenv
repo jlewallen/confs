@@ -1,14 +1,19 @@
 # Setup go environment.
-export GOROOT=~/tools/go1.8.3
 export GOPATH=~/go
 export GIT_EDITOR=vim
 
-export PATH=~/tools/bin:~/tools/node/bin:$GOROOT/bin:~/tools/cmake-3.9.0-Linux-x86_64/bin:$PATH
+export PATH=~/tools/bin:~/tools/node/bin:~/tools/cmake/bin:$GOROOT/bin:$PATH
 
-export ANDROID_HOME=$HOME/Android/Sdk
+if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
+    export JAVA_HOME=`/usr/libexec/java_home`
+    export ANDROID_HOME=$HOME/Library/Android/sdk
+else
+    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+    export ANDROID_HOME=$HOME/Android/Sdk
+fi
+
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 
 export PATH=$PATH:~/tools/protobuf-installed/bin/
 export PATH=$PATH:~/tools/nanopb/generator
