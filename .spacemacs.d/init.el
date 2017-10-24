@@ -65,7 +65,7 @@ This function should only modify configuration layer settings."
      react
      ;; windows-scripts
      ;; colors
-     finance
+     jlewallen-finance
 
      ;; (shell :variables
      ;;        shell-default-height 30
