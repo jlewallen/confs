@@ -2,11 +2,13 @@
 export GOPATH=~/go
 export GIT_EDITOR=vim
 
+export PATH=~/tools/bin:~/tools/node/bin:~/tools/cmake/bin:$PATH
+
 if [ -d ~/tools/go ]; then
     export GOROOT=~/tools/go
+    export PATH=$GOROOT/bin:$PATH
 fi
 
-export PATH=~/tools/bin:~/tools/node/bin:~/tools/cmake/bin:$GOROOT/bin:$PATH
 
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
     export JAVA_HOME=`/usr/libexec/java_home`
