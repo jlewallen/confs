@@ -61,7 +61,7 @@
     :defer t
     :init
     (progn
-      (setq ledger-post-amount-alignment-column 62)
+      (setq ledger-post-amount-alignment-column 100)
       (spacemacs/set-leader-keys-for-major-mode 'ledger-mode
          "hd" 'ledger-delete-current-transaction
          "a" 'ledger-add-transaction

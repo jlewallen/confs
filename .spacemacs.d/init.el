@@ -61,6 +61,7 @@ This function should only modify configuration layer settings."
      ruby
      go
      javascript
+     terraform
      ;; typescript
      react
      ;; windows-scripts
