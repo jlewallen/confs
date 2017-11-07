@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set +xe
+
+SRC=$GOPATH/src/github.com/conservify
+DEST=~/conservify
+
+pushd $DEST
+  for d in $SRC/*; do
+    name=`basename $d`
+    rel=`realpath --relative-to=$DEST $d`
+    if [ ! -h $name ]; then
+      ln -sf $rel $name;
+    else
+      echo "$name is good ($rel)"
+    fi
+  done
+popd

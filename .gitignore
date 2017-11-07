@@ -9,6 +9,13 @@
 !.zshrc
 !.zshenv
 !.gitconfig
+!go/
+!go/src/
+!go/src/github.com/
+!go/src/github.com/conservify/
 !go/src/github.com/conservify/.gitkeep
+!go/src/github.com/jlewallen/
 !go/src/github.com/jlewallen/.gitkeep
-!tools/bin
+!tools/
+!tools/bin/
+!tools/bin/*
