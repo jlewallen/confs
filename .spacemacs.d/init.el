@@ -170,7 +170,7 @@ It should only modify the values of Spacemacs settings."
                                                  (find-font (font-spec :name "Source Code Pro"))
                                                  (find-font (font-spec :name "Menlo")))
                                              :name)
-                                   :size (if (and (eq (display-pixel-width) 3000) (eq(display-pixel-height) 2000)) 22 12)
+                                   :size (if (and (eq (display-pixel-width) 3000) (eq(display-pixel-height) 2000)) 22 11)
                                    :weight 'normal
                                    :width 'normal
                                    :powerline-scale 1.2)

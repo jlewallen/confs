@@ -1,5 +1,4 @@
 *
-
 !.vimrc
 !.spacemacs.d/
 !.spacemacs.d/**/*
@@ -10,3 +9,6 @@
 !.zshrc
 !.zshenv
 !.gitconfig
+!go/src/github.com/conservify/.gitkeep
+!go/src/github.com/jlewallen/.gitkeep
+!tools/bin
