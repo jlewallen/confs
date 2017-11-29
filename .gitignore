@@ -11,6 +11,7 @@
 !.gitconfig
 !.i3/
 !.i3/*
+!.i3status.conf
 !go/
 !go/src/
 !go/src/github.com/
