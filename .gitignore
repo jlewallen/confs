@@ -9,6 +9,8 @@
 !.zshrc
 !.zshenv
 !.gitconfig
+!.i3/
+!.i3/*
 !go/
 !go/src/
 !go/src/github.com/
