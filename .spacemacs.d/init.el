@@ -410,7 +410,8 @@ before packages are loaded."
                '("stroustrup"
                  (indent-tabs-mode . nil)
                  (c-basic-offset . 4)
-                 (c-offsets-alist . ((inline-open . 0)
+                 (c-offsets-alist . ((innamespace . [0])
+                                     (inline-open . 0)
                                      (brace-list-open . 0)
                                      (statement-case-open . +)))))
   (defun my-c++-mode-hook ()
