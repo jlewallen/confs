@@ -22,3 +22,9 @@
 !tools/
 !tools/bin/
 !tools/bin/*
+!.local/
+!.local/share/
+!.local/share/xfce4/
+!.local/share/xfce4/terminal/
+!.local/share/xfce4/terminal/colorschemes/
+!.local/share/xfce4/terminal/colorschemes/*
