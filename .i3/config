@@ -130,6 +130,9 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec xfce4-session-logout
 
+# Remove the border everywhere
+# for_window [class="^.*"] border pixel 0
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
@@ -163,6 +166,17 @@ client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
 client.focused_inactive #333333 #5F676A #ffffff #484e50
 client.unfocused        #333333 #424242 #888888 #292d2e
 client.urgent           #C10004 #900000 #ffffff #900000
+
+set $bg-color            #242424
+set $inactive-bg-color   #1c1c1c
+set $text-color          #e5e5e5
+set $inactive-text-color #6E6E6E
+set $urgent-bg-color     #e52e71
+
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $bg-color           $bg-color          $inactive-text-color #00ff00
+client.focused_inactive $bg-color           $bg-color          $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 bar {
     position top
