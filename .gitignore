@@ -28,3 +28,5 @@
 !.local/share/xfce4/terminal/
 !.local/share/xfce4/terminal/colorschemes/
 !.local/share/xfce4/terminal/colorschemes/*
+!.ssh/
+!.ssh/config

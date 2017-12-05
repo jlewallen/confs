@@ -51,7 +51,7 @@ This function should only modify configuration layer settings."
 
      (c-c++ :variables
       c-c++-default-mode-for-headers 'c++-mode
-      c-c++-enable-clang-support t)
+      c-c++-enable-clang-support nil)
 
      csv
      markdown
@@ -170,7 +170,7 @@ It should only modify the values of Spacemacs settings."
                                                  (find-font (font-spec :name "Source Code Pro"))
                                                  (find-font (font-spec :name "Menlo")))
                                              :name)
-                                   :size (if (and (eq (display-pixel-width) 3000) (eq(display-pixel-height) 2000)) 22 10)
+                                   :size (if (and (eq (display-pixel-width) 3000) (eq(display-pixel-height) 2000)) 22 12)
                                    :weight 'normal
                                    :width 'normal
                                    :powerline-scale 1.2)
