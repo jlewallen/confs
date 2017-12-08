@@ -26,3 +26,17 @@ export PATH=$PATH:~/tools/nanopb/generator
 export PATH=$PATH:~/tools/bin
 export PATH=$PATH:~/go/bin
 export PATH=$PATH:node_modules/.bin
+
+if [ -z "$SSH_CONNECTION" ]; then
+    case $OSTYPE in
+        darwin*)
+            export EMACSCLIENT=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
+            alias emacsclient=$EMACSCLIENT
+            ;;
+        *)
+            export EMACSCLIENT=emacsclient
+            ;;
+    esac
+    alias ec="$EMACSCLIENT -c -n"
+else
+fi
