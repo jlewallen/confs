@@ -159,6 +159,15 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+assign [class="^Kicad$"] → 9
+assign [class="^Slack"] → 1
+assign [class="^Google-chrome"] → 1
+assign [class="^Git-gui"] → 1
+
+for_window [class="^Git-gui"] focus
+
+for_window [class="Spotify"] move to workspace 1
+
 # exec --no-startup-id nitrogen --restore
 # exec --no-startup-id synergy
 
