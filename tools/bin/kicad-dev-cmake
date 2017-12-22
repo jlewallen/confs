@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -xe
+
+mkdir -p build
+pushd build
+cmake -DCMAKE_BUILD_TYPE=Debug -DwxWidgets_USE_DEBUG=ON -DKICAD_SCRIPTING_WXPYTHON=ON -DKICAD_SCRIPTING=ON -DKICAD_SCRIPTING_MODULES=ON -DCMAKE_INSTALL_PREFIX=`realpath ../install` ../
+popd
