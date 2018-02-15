@@ -1,3 +1,0 @@
-#!/bin/bash
-
-scp build/fk-weather-module.bin wpi: && ssh wpi "tools/bin/flasher --binary fk-weather-module.bin --port devices/weather"
