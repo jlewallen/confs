@@ -2,7 +2,7 @@
 export GOPATH=~/go
 export GIT_EDITOR=vim
 
-export PATH=~/tools/bin:~/tools/node/bin:~/tools/cmake/bin:~/fieldkit/bin:~/fieldkit/dev-env/bin:$PATH
+export PATH=~/tools/bin:~/tools/node/bin:~/tools/cmake/bin:$PATH
 
 if [ -d ~/tools/go ]; then
     export GOROOT=~/tools/go
