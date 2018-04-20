@@ -3,6 +3,6 @@
 set -xe
 
 pushd build
-make
+make -j 2
 make install
 popd
