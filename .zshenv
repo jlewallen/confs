@@ -43,3 +43,6 @@ fi
 
 alias fix-home-workspaces="i3-msg 'workspace 1, move workspace to output HDMI-0'; i3-msg 'workspace 2, move workspace to output DVI-D-0'"
 alias fix-lab-workspaces="i3-msg 'workspace 1, move workspace to output HDMI-0'; i3-msg 'workspace 2, move workspace to output DVI-D-0'"
+
+alias cmb="(mkdir -p build && cd build && cmake ..)"
+alias cmm="(mkdir -p build && cd build && cmake .. && make)"

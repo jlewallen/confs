@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+for name in *; do
+  if [ -d $name ]; then
+    pushd $name > /dev/null
+    if [ -d .git ]; then
+    data=`git status -s | tr -d '[:space:]'`
+    if [ ! -z $data ]; then
+    echo "====================== $name"
+    git status -s
+    fi
+    else
+    echo "====================== $name"
+    echo "WARNING: Not a git directory."
+    fi
+    popd > /dev/null
+  fi
+done
