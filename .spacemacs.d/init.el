@@ -45,6 +45,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
      org
      themes-megapack
+     cmake
 
      (syntax-checking :variables
       syntax-checking-enable-tooltips t)
