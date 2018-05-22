@@ -46,3 +46,4 @@ alias fix-lab-workspaces="i3-msg 'workspace 1, move workspace to output HDMI-0';
 
 alias cmb="(mkdir -p build && cd build && cmake ..)"
 alias cmm="(mkdir -p build && cd build && cmake .. && make)"
+alias cmt="(mkdir -p build && cd build && cmake .. && make all test)"
