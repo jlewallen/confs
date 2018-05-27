@@ -37,7 +37,8 @@ if [ -z "$SSH_CONNECTION" ]; then
             export EMACSCLIENT=emacsclient
             ;;
     esac
-    alias ec="$EMACSCLIENT -c -n"
+    alias ecc="$EMACSCLIENT -n -c"
+    alias ec="$EMACSCLIENT -n"
 else
 fi
 

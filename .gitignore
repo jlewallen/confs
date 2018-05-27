@@ -12,6 +12,7 @@
 !.gitconfig
 !.i3/
 !.i3/*
+!.i3blocks.conf
 !.i3status.conf
 !go/
 !go/src/

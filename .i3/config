@@ -190,7 +190,7 @@ client.urgent           #C10004 #900000 #ffffff #900000
 
 bar {
     position top
-    status_command i3status
+    status_command i3blocks
     tray_output LVDS
 
     colors {
