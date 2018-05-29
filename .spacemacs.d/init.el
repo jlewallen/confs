@@ -532,7 +532,13 @@ before packages are loaded."
     (auto-fill-mode)
     (c-toggle-auto-hungry-state 1))
 
+  (defun my-c-mode-hook ()
+    (c-set-style "my-style")
+    (auto-fill-mode)
+    (c-toggle-auto-hungry-state 1))
+
   (add-hook 'c++-mode-hook 'my-c++-mode-hook)
+  (add-hook 'c-mode-hook 'my-c-mode-hook)
 
   (defconst jl-java-style
     '((c-basic-offset . 4)
