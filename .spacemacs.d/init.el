@@ -208,20 +208,20 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   ;; dotspacemacs-default-font '("Source Code Pro"
-   ;;                          :size 13
-   ;;                          :weight normal
-   ;;                          :width normal
-   ;;                          :powerline-scale 1.1)
+   dotspacemacs-default-font '("Source Code Pro"
+                             :size 12
+                             :weight normal
+                             :width normal
+                             :powerline-scale 1.1)
 
-   dotspacemacs-default-font (list (font-get (or (find-font (font-spec :name "Hasklig"))
-                                                 (find-font (font-spec :name "Source Code Pro"))
-                                                 (find-font (font-spec :name "Menlo")))
-                                             :name)
-                                   :size (if (and (eq (display-pixel-width) 3000) (eq(display-pixel-height) 2000)) 22 12)
-                                   :weight 'normal
-                                   :width 'normal
-                                   :powerline-scale 1.2)
+   ;; dotspacemacs-default-font (list (font-get (or (find-font (font-spec :name "Hasklig"))
+   ;;                                            (find-font (font-spec :name "Source Code Pro"))
+   ;;                                            (find-font (font-spec :name "Menlo")))
+   ;;                                        :name)
+   ;;                              :size (if (and (eq (display-pixel-width) 3000) (eq(display-pixel-height) 2000)) 22 12)
+   ;;                              :weight 'normal
+   ;;                              :width 'normal
+   ;;                              :powerline-scale 1.2)
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -532,7 +532,13 @@ before packages are loaded."
     (auto-fill-mode)
     (c-toggle-auto-hungry-state 1))
 
+  (defun my-c-mode-hook ()
+    (c-set-style "my-style")
+    (auto-fill-mode)
+    (c-toggle-auto-hungry-state 1))
+
   (add-hook 'c++-mode-hook 'my-c++-mode-hook)
+  (add-hook 'c-mode-hook 'my-c-mode-hook)
 
   (defconst jl-java-style
     '((c-basic-offset . 4)
