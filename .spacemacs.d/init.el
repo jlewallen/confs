@@ -530,11 +530,13 @@ before packages are loaded."
   (defun my-c++-mode-hook ()
     (c-set-style "my-style")
     (auto-fill-mode)
+    (c-set-offset 'inextern-lang 0)
     (c-toggle-auto-hungry-state 1))
 
   (defun my-c-mode-hook ()
     (c-set-style "my-style")
     (auto-fill-mode)
+    (c-set-offset 'inextern-lang 0)
     (c-toggle-auto-hungry-state 1))
 
   (add-hook 'c++-mode-hook 'my-c++-mode-hook)
