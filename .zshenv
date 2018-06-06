@@ -2,8 +2,6 @@
 export GOPATH=~/go
 export GIT_EDITOR=vim
 
-export PATH=~/tools/bin:~/tools/node/bin:~/tools/cmake/bin:$PATH
-
 if [ -d ~/tools/go ]; then
     export GOROOT=~/tools/go
     export PATH=$GOROOT/bin:$PATH
@@ -18,14 +16,16 @@ else
     export ANDROID_HOME=$HOME/Android/Sdk
 fi
 
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
 
-export PATH=$PATH:~/tools/protobuf-installed/bin/
-export PATH=$PATH:~/tools/nanopb/generator
-export PATH=$PATH:~/tools/bin
-export PATH=$PATH:~/go/bin
-export PATH=$PATH:node_modules/.bin
+export PATH=$HOME/tools/protobuf-installed/bin/:$PATH
+export PATH=$HOME/tools/nanopb/generator:$PATH
+export PATH=$HOME/tools/bin:$PATH
+export PATH=$HOME/tools/cmake/bin:$PATH
+export PATH=$HOME/tools/node/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
+export PATH=node_modules/.bin:$PATH
 
 if [ -z "$SSH_CONNECTION" ]; then
     case $OSTYPE in

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+OSX=/Applications/Emacs.app/Contents/MacOS/Emacs
+LOCAL=$HOME/tools/emacs-26.1-install/bin/emacs
+
+if [ -f $OSX ]; then
+  $OSX $@
+else
+  if [ -f $LOCAL ]; then
+    $LOCAL $@
+  fi
+fi
