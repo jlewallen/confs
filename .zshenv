@@ -7,7 +7,6 @@ if [ -d ~/tools/go ]; then
     export PATH=$GOROOT/bin:$PATH
 fi
 
-
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
     export JAVA_HOME=`/usr/libexec/java_home`
     export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -19,11 +18,13 @@ fi
 export PATH=$ANDROID_HOME/tools:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 
+export PATH=$HOME/tools/bin:$PATH
 export PATH=$HOME/tools/protobuf-installed/bin/:$PATH
 export PATH=$HOME/tools/nanopb/generator:$PATH
-export PATH=$HOME/tools/bin:$PATH
 export PATH=$HOME/tools/cmake/bin:$PATH
 export PATH=$HOME/tools/node/bin:$PATH
+export PATH=$HOME/fieldkit/bin:$PATH
+export PATH=$HOME/conservify/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=node_modules/.bin:$PATH
 
