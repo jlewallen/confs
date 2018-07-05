@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -ex
+
+FILE=$1
+TEMP=$FILE-temp
+cp $FILE $TEMP
+clang-format-6.0 -style=file $TEMP > $FILE
+rm $TEMP
+
