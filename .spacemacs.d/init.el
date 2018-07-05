@@ -511,7 +511,7 @@ before packages are loaded."
 
   (setq ledger-post-amount-alignment-column 100)
 
-  (setq org-journal-dir "~/dropbox/notes")
+  (setq org-journal-dir "~/dropbox/notes/journal")
 
   (add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.pde\\'" . c++-mode))
