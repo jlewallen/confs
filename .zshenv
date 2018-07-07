@@ -43,8 +43,8 @@ if [ -z "$SSH_CONNECTION" ]; then
 else
 fi
 
-alias fix-home-workspaces="i3-msg 'workspace 1, move workspace to output HDMI-0'; i3-msg 'workspace 2, move workspace to output DVI-D-0'"
-alias fix-lab-workspaces="i3-msg 'workspace 1, move workspace to output HDMI-0'; i3-msg 'workspace 2, move workspace to output DVI-D-0'"
+alias fix-home-workspaces="~/tools/bin/i3-setup-workspaces.sh --home"
+alias fix-work-workspaces="~/tools/bin/i3-setup-workspaces.sh --work"
 
 alias cmb="(mkdir -p build && cd build && cmake ..)"
 alias cmm="(mkdir -p build && cd build && cmake .. && make)"
