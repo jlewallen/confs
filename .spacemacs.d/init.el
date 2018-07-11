@@ -33,7 +33,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(graphviz
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -517,7 +517,6 @@ before packages are loaded."
   (add-to-list 'auto-mode-alist '("\\.pde\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode))
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . react-mode))
 
   (setq-default buffer-file-coding-system 'utf-8-unix)
   (setq-default indent-tabs-mode nil)
