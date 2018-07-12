@@ -22,6 +22,7 @@
 !go/src/github.com/jlewallen/
 !go/src/github.com/jlewallen/.gitkeep
 !tools/
+!tools/package.json
 !tools/bin/
 !tools/bin/*
 !.local/

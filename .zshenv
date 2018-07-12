@@ -23,6 +23,7 @@ export PATH=$HOME/tools/protobuf-installed/bin/:$PATH
 export PATH=$HOME/tools/nanopb/generator:$PATH
 export PATH=$HOME/tools/cmake/bin:$PATH
 export PATH=$HOME/tools/node/bin:$PATH
+export PATH=$HOME/tools/node_modules/.bin:$PATH
 export PATH=$HOME/fieldkit/bin:$PATH
 export PATH=$HOME/conservify/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
