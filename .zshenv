@@ -47,8 +47,5 @@ fi
 alias fix-home-workspaces="~/tools/bin/i3-setup-workspaces.sh --home"
 alias fix-work-workspaces="~/tools/bin/i3-setup-workspaces.sh --work"
 
-alias cmb="(mkdir -p build && cd build && cmake ..)"
-alias cmm="(mkdir -p build && cd build && cmake .. && make)"
-alias cmt="(mkdir -p build && cd build && cmake .. && make all test)"
-alias mib="(cd build && make)"
-alias tib="(cd build && make all test)"
+alias cmm="cmake -H. -Bbuild"
+alias cmb="cmake --build build --"
