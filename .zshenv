@@ -51,3 +51,4 @@ alias fix-work-workspaces="~/tools/bin/i3-setup-workspaces.sh --work"
 
 alias cmm="cmake -H. -Bbuild"
 alias cmb="cmake --build build --"
+alias cat="bat"
