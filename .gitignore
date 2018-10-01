@@ -37,3 +37,5 @@
 !.config/xfce4/
 !.config/xfce4/terminal/
 !.config/xfce4/terminal/terminalrc
+!.fonts/
+!.fonts/*
