@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# General stuff.
+
+./setup
+
+# Install oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# TODO: Set zsh as your shell!
+
+# NVidia Drivers
+sudo apt install nvidia-LATEST
+
+# spotify
+bash ./spotify
+
+# slack (https://slack.com/downloads/linux)
+
+sudo dpkg -i slack-*
+sudo  apt --fix-broken install
+
+# wireguard
+
+bash ./wireguard
+
+# bat (https://github.com/sharkdp/bat/releases)
+#
+sudo dpkg -i bat*
+
+# Spacemacs config
+
+git clone git@github.com:jlewallen/spacemacs.git ~/.emacs.d
+cd ~/.emacs.d
+git checkout jacob
