@@ -8,5 +8,9 @@ if [ -f $OSX ]; then
 else
   if [ -f $LOCAL ]; then
     $LOCAL $@
+  else
+    if [ -f /usr/bin/emacs ]; then
+      /usr/bin/emacs $@
+    fi
   fi
 fi
