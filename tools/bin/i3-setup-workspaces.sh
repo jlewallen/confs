@@ -13,6 +13,10 @@ for i in "$@"; do
             MONITOR_SIDE=$MONITOR_HOME_SIDE
             MONITOR_MAIN=$MONITOR_HOME_MAIN
             valid=YES
+
+            xrandr --output $MONITOR_SIDE --left-of $MONITOR_MAIN
+            xrandr --output $MONITOR_SIDE --pos 0x400
+
             ;;
         --work)
             MONITOR_SIDE=$MONITOR_WORK_SIDE
