@@ -28,6 +28,8 @@
 !tools/bin/*
 !tools/setup/
 !tools/setup/*
+!tools/setup/udev/
+!tools/setup/udev/*
 !.local/
 !.local/share/
 !.local/share/xfce4/
