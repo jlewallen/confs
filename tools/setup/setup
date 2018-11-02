@@ -19,6 +19,6 @@ sudo add-apt-repository ppa:kelleyk/emacs
 
 sudo apt-get update
 
-sudo apt-get install tmux vim git gitk i3 i3blocks zsh curl cmake emacs26 freecad dropbear-bin jq docker-ce parallel htop pulseaudio-module-bluetooth blueman pavucontrol xfce4-settings gnuplot git-gui microcom gdb-multiarch python-pip python-protobuf -y
+sudo apt-get install tmux vim git gitk i3 i3blocks zsh curl cmake emacs26 freecad dropbear-bin jq docker-ce parallel htop pulseaudio-module-bluetooth blueman pavucontrol xfce4-settings gnuplot git-gui microcom gdb-multiarch python-pip python-protobuf openjdk-11-jdk -y
 
 pip install s-tui --user
