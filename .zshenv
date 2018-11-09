@@ -42,7 +42,7 @@ if [ -z "$SSH_CONNECTION" ]; then
             ;;
     esac
     alias ecc="$EMACSCLIENT -n -c"
-    alias ec="$EMACSCLIENT -n"
+    alias ec="i3-msg workspace 1 ; $EMACSCLIENT -n"
 else
 fi
 
