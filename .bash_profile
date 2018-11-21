@@ -14,6 +14,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 
+export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$PATH:~/tools/protobuf-installed/bin/
 export PATH=$PATH:~/tools/nanopb/generator
 export PATH=$PATH:~/tools/bin
