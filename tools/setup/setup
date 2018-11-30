@@ -27,3 +27,10 @@ sudo apt-get install -y \
      nfs-kernel-server nfs-common
 
 pip install s-tui --user
+
+# This messes with embedded work.
+systemctl stop ModemManager
+systemctl disable ModemManager.service
+
+# Trying this out for now as well.
+sudo rm /lib/udev/rules.d/*mtp*
