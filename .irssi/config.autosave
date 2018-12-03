@@ -1,31 +1,26 @@
 servers = (
-  {
-    address = "irc.mozilla.org";
-    chatnat = "mozilla";
-    port = "6697";
-    use_ssl = "yes";
-    ssl_verify = "no";
-    autoconnect = "yes";
-  },
+  { address = "irc.ubuntu.com"; chatnet = "Ubuntu"; port = "8001"; },
   {
     address = "irc.freenode.net";
-    chatnet = "freenode";
+    chatnet = "Freenode";
     port = "6667";
     use_ssl = "no";
     ssl_verify = "no";
-    autoconnect = "no";
+    autoconnect = "yes";
   }
 );
 
 chatnets = {
-  mozilla = { type = "IRC"; nick = "jlewallen"; };
-  freenode = { type = "IRC"; nick = "jlewallen"; };
+  Freenode = {
+    type = "IRC";
+    nick = "jlewallen";
+    autosendcmd = "/msg nickserv identify <password removed> ;wait 2000";
+  };
+  Ubuntu = { type = "IRC"; };
 };
 
-channels = (
-  { name = "#rust"; chatnet = "mozilla"; autojoin = "yes"; },
-  { name = "#rust-beginners"; chatnet = "mozilla"; autojoin = "yes"; },
-  { name = "#rust-embedded"; chatnet = "mozilla"; autojoin = "yes"; },
+channels = ( 
+  { name = "#rust"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -189,12 +184,11 @@ statusbar = {
     };
   };
 };
-
 settings = {
   core = {
-     real_name = "Jacob Lewallen";
-     user_name = "jlewallen";
-     nick = "jlewallen";
+    real_name = "Jacob Lewallen";
+    user_name = "jlewallen";
+    nick = "jlewallen";
   };
   "fe-text" = { actlist_sort = "refnum"; };
 };
