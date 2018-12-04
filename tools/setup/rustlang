@@ -2,9 +2,12 @@
 
 curl -s https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly
 
-# sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa -y
-# sudo apt update
-# sudo apt install gcc-arm-embedded
-# rustup install nightly
-# rustup default nightly
-# rustup target add thumbv6m-none-eabi
+sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa -y
+sudo apt update
+sudo apt install gcc-arm-embedded
+rustup install nightly
+rustup default nightly
+rustup target add thumbv6m-none-eabi
+
+cargo +nightly install racer
+rustup component add rust-src
