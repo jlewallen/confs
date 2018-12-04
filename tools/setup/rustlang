@@ -15,3 +15,4 @@ rustup component add rust-src
 
 cargo +nightly install racer
 cargo +nightly install cargo-outdated
+cargo +nightly install cargo-edit
