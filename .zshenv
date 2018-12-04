@@ -51,7 +51,9 @@ fi
 alias fix-home-workspaces="~/tools/bin/i3-setup-workspaces.sh --home"
 alias fix-work-workspaces="~/tools/bin/i3-setup-workspaces.sh --work"
 
-alias spotify="/usr/bin/spotify --force-device-scale-factor=1.5"
+if [ "$(hostname 2> /dev/null)" = "JACOB-LAPTOP" ]; then
+    alias spotify="/usr/bin/spotify --force-device-scale-factor=1.5"
+fi
 
 alias cmm="cmake -H. -Bbuild"
 alias cmb="cmake --build build --"
