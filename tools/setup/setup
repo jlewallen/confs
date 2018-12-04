@@ -24,6 +24,7 @@ sudo apt-get install -y \
      gdb-multiarch gcc-arm-none-eabi qemu qemu-system \
      python-pip python3-pip python-protobuf \
      openjdk-8-jdk openjdk-11-jdk \
+     libssl-dev \
      ledger hledger hledger-ui hledger-web python-ledger \
      nfs-kernel-server nfs-common
 
