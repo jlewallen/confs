@@ -17,3 +17,5 @@ cargo +nightly install racer
 cargo +nightly install cargo-outdated
 cargo +nightly install cargo-edit
 cargo +nightly install cargo-modules
+
+cargo install svd2rust  --git https://github.com/rust-embedded/svd2rust.git
