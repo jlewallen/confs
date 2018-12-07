@@ -12,10 +12,13 @@ rustup target add thumbv6m-none-eabi
 
 rustup component add clippy-preview
 rustup component add rust-src
+rustup component add rustfmt-preview --toolchain nightly
 
 cargo +nightly install racer
 cargo +nightly install cargo-outdated
 cargo +nightly install cargo-edit
 cargo +nightly install cargo-modules
+cargo +nightly install cargo-expand
+cargo +nightly install form
 
-cargo install svd2rust  --git https://github.com/rust-embedded/svd2rust.git
+cargo install svd2rust --git https://github.com/rust-embedded/svd2rust.git
