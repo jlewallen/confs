@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -ex
+
+pushd /home/jlewallen/go/src/github.com/jlewallen/weekly-playlist
+go build -o weekly *.go
+# ./weekly --eclectic-only 
+popd
+
+pushd /home/jlewallen/go/src/github.com/jlewallen/playlist-generator
+go build -o generator *.go
+# ./generator
+popd
+
+
+pushd ~jlewallen/jlewallen/spotify
+
+pushd data/jlewallen.github.io/music/data
+git pull
+popd
+
+docker start some-redis || true
+docker build -t spotify .
+docker run --name spotify -v ~jlewallen/jlewallen/spotify/data:/app/data --rm --link some-redis:redis spotify
+
+pushd data/jlewallen.github.io/music/data
+git add . && git commit -av -m 'Updating playlists.' && git push origin
+popd
+
+popd
