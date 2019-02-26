@@ -583,6 +583,8 @@ before packages are loaded."
     (company-mode +1)
     )
 
+  (setq go-format-before-save t)
+
   (add-hook 'text-mode-hook 'jl-typescript-mode-hook)
   (add-hook 'typescript-mode-hook 'jl-typescript-mode-hook)
   (add-hook 'groovy-mode-hook 'jl-groovy-mode-hook)
