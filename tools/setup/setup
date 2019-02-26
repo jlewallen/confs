@@ -26,6 +26,7 @@ sudo apt-get install -y \
      openjdk-8-jdk openjdk-11-jdk \
      libssl-dev libncurses5-dev libncursesw5-dev \
      ledger hledger hledger-ui hledger-web python-ledger \
+     xfonts-terminus \
      nfs-kernel-server nfs-common
 
 pip install s-tui --user
@@ -36,3 +37,10 @@ systemctl disable ModemManager.service
 
 # Trying this out for now as well.
 sudo rm /lib/udev/rules.d/*mtp*
+
+cd /etc/fonts/conf.d
+sudo rm 70-no-bitmaps.conf
+sudo ln -s ../conf.avail/70-yes-bitmaps.conf .
+
+fc-cache -vf
+sudo fc-cache -vf
