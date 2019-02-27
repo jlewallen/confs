@@ -165,11 +165,14 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+u [title="Firefox"] focus
+bindsym $mod+i [class="Spotify"] focus
+
 assign [class="^Slack"] → 9
 assign [class="^Google-chrome"] → 9
 assign [class="^Git-gui"] → 9
-for_window [class="Spotify"] move to workspace 9
 
+for_window [class="Spotify"] move to workspace 9
 for_window [class="^Git-gui"] focus
 
 # exec --no-startup-id nitrogen --restore
