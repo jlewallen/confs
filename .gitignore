@@ -15,6 +15,7 @@
 !.i3/*
 !.i3blocks.conf
 !.i3status.conf
+!.xinitrc
 !.irssi/
 !.irssi/*
 !go/
