@@ -32,6 +32,7 @@ sudo apt-get install -y \
      nfs-kernel-server nfs-common
 
 pip install s-tui --user
+pip install pulsectl --user
 
 # This messes with embedded work.
 systemctl stop ModemManager
