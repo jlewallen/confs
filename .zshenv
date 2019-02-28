@@ -60,4 +60,7 @@ fi
 
 alias cmm="cmake -H. -Bbuild"
 alias cmb="cmake --build build --"
-alias cat="bat"
+
+if [ -x $(which bat) ]; then
+    alias cat="bat"
+fi
