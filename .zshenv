@@ -64,3 +64,5 @@ alias cmb="cmake --build build --"
 if [ -x $(which bat) ]; then
     alias cat="bat"
 fi
+
+alias warn="notify-send -u critical"
