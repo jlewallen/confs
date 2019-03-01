@@ -2,6 +2,8 @@
 
 set -ex
 
+source ~/.zshenv
+
 pushd /home/jlewallen/go/src/github.com/jlewallen/weekly-playlist
 go build -o weekly *.go
 ./weekly --eclectic-only
