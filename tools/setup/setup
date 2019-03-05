@@ -26,7 +26,7 @@ sudo apt-get install -y \
      openjdk-8-jdk openjdk-11-jdk \
      libssl-dev libncurses5-dev libncursesw5-dev \
      ledger hledger hledger-ui hledger-web python-ledger \
-     xfonts-terminus \
+     fonts-noto xfonts-terminus \
      xfce4-session \
      ruby \
      nfs-kernel-server nfs-common
