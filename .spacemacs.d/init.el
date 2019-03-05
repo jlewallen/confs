@@ -50,6 +50,7 @@ This function should only modify configuration layer settings."
      cmake
 
      jlewallen-shackle
+     jlewallen-extras
 
      (syntax-checking :variables
       syntax-checking-enable-tooltips t)
