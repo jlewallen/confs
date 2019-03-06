@@ -48,7 +48,6 @@ if [ -z "$SSH_CONNECTION" ]; then
     esac
     alias ecc="$EMACSCLIENT -n -c"
     alias ec="i3-msg workspace 1 ; $EMACSCLIENT -n"
-else
 fi
 
 alias fix-home-workspaces="~/tools/bin/i3-setup-workspaces.sh --home"
