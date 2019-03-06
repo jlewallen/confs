@@ -48,7 +48,8 @@ This function should only modify configuration layer settings."
      (syntax-checking :variables
                       syntax-checking-enable-tooltips t)
 
-     git
+     (git :variables
+          git-magit-status-fullscreen t)
      version-control
      github
 
@@ -203,13 +204,13 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
+   ;dotspacemacs-default-font '("Fira Code"
+   ;                           :size 14
+   ;                           :weight normal
+   ;                           :width normal
+   ;                           :powerline-scale 1.1)
    dotspacemacs-default-font '("Fantasque Sans Mono"
                                :size 15
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
-   dotspacemacs-default-font '("Fira Code"
-                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
