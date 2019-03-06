@@ -30,10 +30,38 @@
 ;;; Code:
 
 (defconst jlewallen-extras-packages
-  '(nimbus-theme))
+  '(
+    nimbus-theme
+    badger-theme
+    distinguished-theme
+    arjen-grey-theme
+    melancholy-theme
+    reykjavik-theme
+    paganini-theme
+    night-owl-theme
+    srcery-theme
+    klere-theme
+    boron-theme
+    firecode-theme
+    kooteen-theme
+    reverse-theme
+    waher-theme
+    ))
 
 (defun jlewallen-extras/init-nimbus-theme ())
-
-(defun jlewallen-extras/post-init-numbus-theme ())
+(defun jlewallen-extras/init-badger-theme ())
+(defun jlewallen-extras/init-distinguished-theme ())
+(defun jlewallen-extras/init-arjen-grey-theme ())
+(defun jlewallen-extras/init-melancholy-theme ())
+(defun jlewallen-extras/init-reykjavik-theme ())
+(defun jlewallen-extras/init-paganini-theme ())
+(defun jlewallen-extras/init-night-owl-theme ())
+(defun jlewallen-extras/init-srcery-theme ())
+(defun jlewallen-extras/init-klere-theme ())
+(defun jlewallen-extras/init-boron-theme ())
+(defun jlewallen-extras/init-firecode-theme ())
+(defun jlewallen-extras/init-kooteen-theme ())
+(defun jlewallen-extras/init-reverse-theme ())
+(defun jlewallen-extras/init-waher-theme ())
 
 ;;; packages.el ends here
