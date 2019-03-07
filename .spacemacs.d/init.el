@@ -40,7 +40,7 @@ This function should only modify configuration layer settings."
      jlewallen-shackle
      jlewallen-extras
      themes-megapack
-     evil-snipe
+     ; evil-snipe
      colors
 
      shell
