@@ -210,7 +210,7 @@ It should only modify the values of Spacemacs settings."
    ;                           :width normal
    ;                           :powerline-scale 1.1)
    dotspacemacs-default-font '("Fantasque Sans Mono"
-                               :size 15
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
