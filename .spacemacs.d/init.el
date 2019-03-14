@@ -220,7 +220,9 @@ It should only modify the values of Spacemacs settings."
                                                 (find-font (font-spec :name "Source Code Pro"))
                                                 (find-font (font-spec :name "Menlo")))
                                              :name)
-                                   :size (if (and (eq (display-pixel-width) 3000) (eq(display-pixel-height) 2000)) 22 16)
+                                   :size (cond
+                                          ((and (eq (display-pixel-width) 2560) (eq(display-pixel-height) 1440)) 22)
+                                          (t 16))
                                    :weight 'normal
                                    :width 'normal
                                    :powerline-scale 1.2)
@@ -468,6 +470,8 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (message "Resolution: %d %d" (display-pixel-width) (display-pixel-height))
+
   (add-to-list 'load-path (expand-file-name "lisp" dotspacemacs-directory))
 
   (put 'ledger-master-file 'safe-local-variable (lambda (xx) t))
