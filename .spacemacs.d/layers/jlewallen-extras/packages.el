@@ -43,8 +43,8 @@
     klere-theme
     boron-theme
     firecode-theme
-    kooteen-theme
-    reverse-theme
+    ; kooteen-theme
+    ; reverse-theme
     waher-theme
     ))
 

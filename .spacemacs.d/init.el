@@ -209,20 +209,23 @@ It should only modify the values of Spacemacs settings."
    ;                           :weight normal
    ;                           :width normal
    ;                           :powerline-scale 1.1)
-   dotspacemacs-default-font '("Fantasque Sans Mono"
-                               :size 15
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
+   ;dotspacemacs-default-font '("Fantasque Sans Mono"
+   ;                           :size 16
+   ;                           :weight normal
+   ;                           :width normal
+   ;                           :powerline-scale 1.1)
 
-   ;; dotspacemacs-default-font (list (font-get (or (find-font (font-spec :name "Hasklig"))
-   ;;                                            (find-font (font-spec :name "Source Code Pro"))
-   ;;                                            (find-font (font-spec :name "Menlo")))
-   ;;                                        :name)
-   ;;                              :size (if (and (eq (display-pixel-width) 3000) (eq(display-pixel-height) 2000)) 22 12)
-   ;;                              :weight 'normal
-   ;;                              :width 'normal
-   ;;                              :powerline-scale 1.2)
+   dotspacemacs-default-font (list (font-get (or(find-font (font-spec :name "Fantasque Sans Mono"))
+                                                (find-font (font-spec :name "Hasklig"))
+                                                (find-font (font-spec :name "Source Code Pro"))
+                                                (find-font (font-spec :name "Menlo")))
+                                             :name)
+                                   :size (cond
+                                          ((and (eq (display-pixel-width) 2560) (eq(display-pixel-height) 1440)) 22)
+                                          (t 16))
+                                   :weight 'normal
+                                   :width 'normal
+                                   :powerline-scale 1.2)
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -467,6 +470,8 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (message "Resolution: %d %d" (display-pixel-width) (display-pixel-height))
+
   (add-to-list 'load-path (expand-file-name "lisp" dotspacemacs-directory))
 
   (put 'ledger-master-file 'safe-local-variable (lambda (xx) t))
@@ -508,6 +513,13 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   (setq ledger-post-amount-alignment-column 100)
+
+  (advice-add 'org-journal-new-entry :around #'return-my-name)
+  (defun return-my-name (orig-fun &rest args)
+    (message "CALLING ORIGINAL %s" org-journal-dir)
+    (let ((orig-val (apply orig-fun args)))
+      (message "DONE CALLING ORIGINAL")
+      ))
 
   (setq org-journal-dir "~/dropbox/notes/journal")
   (setq org-journal-file-format "%Y%m%d.org")
