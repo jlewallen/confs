@@ -514,13 +514,6 @@ before packages are loaded."
 
   (setq ledger-post-amount-alignment-column 100)
 
-  (advice-add 'org-journal-new-entry :around #'return-my-name)
-  (defun return-my-name (orig-fun &rest args)
-    (message "CALLING ORIGINAL %s" org-journal-dir)
-    (let ((orig-val (apply orig-fun args)))
-      (message "DONE CALLING ORIGINAL")
-      ))
-
   (setq org-journal-dir "~/dropbox/notes/journal")
   (setq org-journal-file-format "%Y%m%d.org")
 
