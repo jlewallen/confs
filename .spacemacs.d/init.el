@@ -520,8 +520,12 @@ before packages are loaded."
   (setq org-journal-carryover-items "TODO=\"TODO\"")
 
   (setq deft-directory "~/dropbox/notes")
+  (setq deft-recursive nil)
 
   (with-eval-after-load 'org
+    (setq org-directory "~/dropbox/notes")
+    (setq org-default-notes-file (concat org-directory "/capture.org"))
+
     (setq org-agenda-files (list "~/dropbox/notes/journal"
                                  "~/dropbox/notes"))
     (message "Agenda carry-over: %s" org-journal-carryover-items))
