@@ -66,6 +66,7 @@ This function should only modify configuration layer settings."
      java
      python
      javascript
+     html
      react
      sql
      yaml
