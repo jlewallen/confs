@@ -519,7 +519,7 @@ before packages are loaded."
 
   (setq org-journal-dir "~/dropbox/notes/journal")
   (setq org-journal-file-format "%Y%m%d.org")
-  (setq org-journal-carryover-items "TODO=\"TODO\"")
+  (setq org-journal-carryover-items "agenda")
 
   (setq deft-directory "~/dropbox/notes")
   (setq deft-recursive nil)
