@@ -598,6 +598,8 @@ before packages are loaded."
   (add-hook 'text-mode-hook 'jl-typescript-mode-hook)
   (add-hook 'typescript-mode-hook 'jl-typescript-mode-hook)
   (add-hook 'groovy-mode-hook 'jl-groovy-mode-hook)
+
+  (server-start)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
