@@ -28,6 +28,7 @@ sudo apt-get install -y \
      libssl-dev libncurses5-dev libncursesw5-dev \
      ledger hledger hledger-ui hledger-web python-ledger \
      fonts-noto xfonts-terminus \
+     ranger \
      xfce4-session \
      ruby \
      nfs-kernel-server nfs-common
@@ -48,3 +49,6 @@ sudo ln -s ../conf.avail/70-yes-bitmaps.conf .
 
 fc-cache -vf
 sudo fc-cache -vf
+
+# TODO: Setup go first
+go get -u github.com/cjbassi/gotop
