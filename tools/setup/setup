@@ -20,7 +20,8 @@ sudo add-apt-repository ppa:kelleyk/emacs
 sudo apt-get update
 
 sudo apt-get install -y \
-     tmux vim git git-gui gitk i3 i3blocks zsh curl cmake emacs26 freecad dropbear-bin jq docker-ce parallel htop pulseaudio-module-bluetooth blueman pavucontrol xfce4-settings gnuplot git-gui microcom irssi pkg-config doxygen \
+     tmux tmuxinator vim git git-gui gitk i3 i3blocks zsh curl cmake emacs26 freecad dropbear-bin jq docker-ce parallel htop pulseaudio-module-bluetooth blueman \
+     pavucontrol xfce4-settings gnuplot git-gui microcom irssi pkg-config doxygen \
      gdb-multiarch gcc-arm-none-eabi qemu qemu-system \
      python-pip python3-pip python-protobuf \
      openjdk-8-jdk openjdk-11-jdk \
