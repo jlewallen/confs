@@ -58,6 +58,7 @@ if [ "$(hostname 2> /dev/null)" = "JACOB-LAPTOP" ]; then
     alias spotify="/usr/bin/spotify --force-device-scale-factor=1.5"
 fi
 
+alias tx="tmuxinator"
 alias cmm="cmake -H. -Bbuild"
 alias cmb="cmake --build build --"
 
