@@ -16,6 +16,10 @@
 !.i3blocks.conf
 !.i3status.conf
 !.xinitrc
+
+!./.tmuxinator/
+!./.tmuxinator/*
+
 !.irssi/
 !.irssi/*
 
