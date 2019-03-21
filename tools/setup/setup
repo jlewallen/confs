@@ -31,6 +31,7 @@ sudo apt-get install -y \
      ranger \
      xfce4-session \
      ruby \
+     python-tk ghostscript \
      nfs-kernel-server nfs-common
 
 pip install s-tui --user
