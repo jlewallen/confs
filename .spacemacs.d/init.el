@@ -40,7 +40,6 @@ This function should only modify configuration layer settings."
      jlewallen-shackle
      jlewallen-extras
      themes-megapack
-     ; evil-snipe
      colors
 
      shell
@@ -71,7 +70,6 @@ This function should only modify configuration layer settings."
      sql
      yaml
      cmake
-     ; pandoc
      emacs-lisp
      terraform
 
@@ -85,7 +83,10 @@ This function should only modify configuration layer settings."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(htmlize base16-theme doom-themes kaolin-themes)
+   dotspacemacs-additional-packages '(htmlize
+                                      base16-theme
+                                      doom-themes
+                                      kaolin-themes)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
