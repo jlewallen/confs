@@ -1,0 +1,8 @@
+#!/bin/bash
+
+while /bin/true; do
+  if wtf; then
+        break
+  fi
+  sleep 2
+done
