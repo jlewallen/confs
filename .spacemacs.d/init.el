@@ -44,11 +44,8 @@ This function should only modify configuration layer settings."
 
      shell
 
-     (syntax-checking :variables
-                      syntax-checking-enable-tooltips t)
-
-     (git :variables
-          git-magit-status-fullscreen t)
+     (syntax-checking :variables syntax-checking-enable-tooltips t)
+     (git :variables git-magit-status-fullscreen t)
      version-control
      github
 
@@ -74,7 +71,15 @@ This function should only modify configuration layer settings."
      terraform
 
      (org :variables
-          org-enable-org-journal-support t)
+          org-enable-org-journal-support t
+          org-journal-dir "~/dropbox/notes/journal"
+          org-journal-file-format "%Y%m%d.org"
+          org-journal-carryover-items "agenda"
+          ; org-journal-date-prefix "#+TITLE: "
+          ; org-journal-date-format "%A, %B %d %Y"
+          ; org-journal-time-prefix "* "
+          ; org-journal-time-format ""
+          )
      deft
 
      jlewallen-finance
@@ -518,9 +523,12 @@ before packages are loaded."
 
   (setq ledger-post-amount-alignment-column 100)
 
-  (setq org-journal-dir "~/dropbox/notes/journal")
-  (setq org-journal-file-format "%Y%m%d.org")
-  (setq org-journal-carryover-items "agenda")
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((sql . t)
+     (calc . t)
+     (shell . t)
+     (python . t)))
 
   (setq deft-directory "~/dropbox/notes")
   (setq deft-recursive nil)
