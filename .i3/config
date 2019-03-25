@@ -136,6 +136,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec xfce4-session-logout
+bindsym $mod+Shift+h exec i3lock -c 000000
 
 # Remove the border everywhere
 for_window [class="^.*"] border pixel 1
