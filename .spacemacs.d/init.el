@@ -74,7 +74,7 @@ This function should only modify configuration layer settings."
           org-enable-org-journal-support t
           org-journal-dir "~/dropbox/notes/journal"
           org-journal-file-format "%Y%m%d.org"
-          org-journal-carryover-items "agenda"
+          ; org-journal-carryover-items "agenda"
           ; org-journal-date-prefix "#+TITLE: "
           ; org-journal-date-format "%A, %B %d %Y"
           ; org-journal-time-prefix "* "
