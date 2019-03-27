@@ -1,9 +1,11 @@
 /*
 
 !.vimrc
+
 !.spacemacs.d/
 !.spacemacs.d/**/*
-!.bashrc
+.spacemacs.d/private.el
+
 !.bash_profile
 !.tmux.conf
 !.gitignore
