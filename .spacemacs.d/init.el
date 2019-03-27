@@ -1,6 +1,6 @@
 ;; -*- mode: emacs-lisp -*-
-;; This file is loaded by Spacemacs at startup.
-;; It must be stored in your home directory.
+
+(setq jlewallen-private-path "~/.spacemacs.d/private.el")
 
 (defun dotspacemacs/layers ()
   "Layer configuration:
@@ -33,63 +33,72 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
-     helm
-     auto-completion
-     better-defaults
-     jlewallen-shackle
-     jlewallen-extras
-     themes-megapack
-     colors
+   (append
+    '(
+      helm
+      auto-completion
+      better-defaults
+      jlewallen-shackle
+      jlewallen-extras
+      themes-megapack
+      colors
 
-     shell
+      shell
 
-     (syntax-checking :variables syntax-checking-enable-tooltips t)
-     (git :variables git-magit-status-fullscreen t)
-     version-control
-     github
+      (syntax-checking :variables syntax-checking-enable-tooltips t)
+      (git :variables git-magit-status-fullscreen t)
+      version-control
+      github
 
-     gtags
+      gtags
 
-     (c-c++ :variables
-            c-c++-default-mode-for-headers 'c++-mode
-            c-c++-enable-clang-support nil)
-     go
-     rust
-     graphviz
-     csv
-     markdown
-     java
-     python
-     javascript
-     html
-     react
-     sql
-     yaml
-     cmake
-     emacs-lisp
-     terraform
+      (c-c++ :variables
+             c-c++-default-mode-for-headers 'c++-mode
+             c-c++-enable-clang-support nil)
+      go
+      rust
+      graphviz
+      csv
+      markdown
+      java
+      python
+      javascript
+      html
+      react
+      sql
+      yaml
+      cmake
+      emacs-lisp
+      terraform
 
-     (google-calendar :variables
-                      org-gcal-client-id 'jlewallen-org-gcal-client-id
-                      org-gcal-client-secret 'jlewallen-org-gcal-secret
-                      org-gcal-file-alist '(("jlewalle@gmail.com" . "~/dropbox/notes/cal/jlewalle-at-gmail.org")
-                                            ("jacob@conservify.org" . "~/dropbox/notes/cal/jacob-at-conservify.org")))
+      (org :variables
+           org-enable-org-journal-support t
+           org-journal-dir "~/dropbox/notes/journal"
+           org-journal-file-format "%Y%m%d.org"
+           ; org-journal-carryover-items "agenda"
+           ; org-journal-date-prefix "#+TITLE: "
+           ; org-journal-date-format "%A, %B %d %Y"
+           ; org-journal-time-prefix "* "
+           ; org-journal-time-format ""
+           )
+      deft
 
-     (org :variables
-          org-enable-org-journal-support t
-          org-journal-dir "~/dropbox/notes/journal"
-          org-journal-file-format "%Y%m%d.org"
-          ; org-journal-carryover-items "agenda"
-          ; org-journal-date-prefix "#+TITLE: "
-          ; org-journal-date-format "%A, %B %d %Y"
-          ; org-journal-time-prefix "* "
-          ; org-journal-time-format ""
+      jlewallen-finance
+    )
+    (if (file-exists-p jlewallen-private-path)
+        (progn
+          (load-file jlewallen-private-path)
+          (message "Adding google calendar layer!")
+          '(
+            (google-calendar :variables
+                             org-gcal-client-id 'jlewallen-org-gcal-client-id
+                             org-gcal-client-secret 'jlewallen-org-gcal-secret
+                             org-gcal-file-alist '(("jlewalle@gmail.com" . "~/dropbox/notes/cal/jlewalle-at-gmail.org")
+                                                   ("jacob@conservify.org" . "~/dropbox/notes/cal/jacob-at-conservify.org"))))
           )
-     deft
+      )
+    )
 
-     jlewallen-finance
-     )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -489,8 +498,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
   (add-to-list 'load-path (expand-file-name "lisp" dotspacemacs-directory))
 
-  (if (file-exists-p "./private.el")
-      (load-file "./private.el"))
+  (if (file-exists-p jlewallen-private-path)
+      (load-file jlewallen-private-path))
 
   (put 'ledger-master-file 'safe-local-variable (lambda (xx) t))
 
