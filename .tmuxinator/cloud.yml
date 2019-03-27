@@ -1,0 +1,31 @@
+# ~/.tmuxinator/cloud.yml
+
+name: fk-cloud
+root: ~/fieldkit/cloud
+
+startup_window: 1
+startup_pane: 1
+
+windows:
+  - shell:
+  - server:
+      layout: main-horizontal
+      panes:
+        - server:
+          - make && ./run-server-containerless.sh
+        - shell:
+          - clear
+  - fe:
+      layout: main-horizontal
+      panes:
+        - server:
+          - cd frontend && yarn start
+        - shell:
+          - clear
+  - database:
+      layout: main-horizontal
+      panes:
+        - server:
+          -  psql -h 127.0.0.1 -U fieldkit
+        - shell:
+          - docker logs cloud_postgres_1 --follow

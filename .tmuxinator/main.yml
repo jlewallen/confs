@@ -1,0 +1,14 @@
+# ~/.tmuxinator/main.yml
+
+name: main
+root: ~/
+
+windows:
+  - shell:
+  - shell:
+  - status:
+      layout: even-vertical
+      panes:
+        - wtf-loop
+        - gotop
+  - dmesg: dmesg --follow

@@ -1,0 +1,11 @@
+# ~/.tmuxinator/dat.yml
+
+name: dat
+root: ~/jlewallen/datstuff
+
+windows:
+  - shell:
+      root: ~/jlewallen/datstuff/kappa-workshop
+      panes:
+        - clear; node single-chat.js
+  - shell:
