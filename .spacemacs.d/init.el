@@ -556,6 +556,7 @@ before packages are loaded."
     (setq org-default-notes-file (concat org-directory "/capture.org"))
 
     (setq org-agenda-files (list "~/dropbox/notes/journal"
+                                 "~/dropbox/notes/cal"
                                  "~/dropbox/notes")))
 
   (add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode))
