@@ -94,7 +94,9 @@ This function should only modify configuration layer settings."
                              org-gcal-client-id 'jlewallen-org-gcal-client-id
                              org-gcal-client-secret 'jlewallen-org-gcal-secret
                              org-gcal-file-alist '(("jlewalle@gmail.com" . "~/dropbox/notes/cal/jlewalle-at-gmail.org")
-                                                   ("jacob@conservify.org" . "~/dropbox/notes/cal/jacob-at-conservify.org"))))
+                                                   ("jacob@conservify.org" . "~/dropbox/notes/cal/jacob-at-conservify.org")
+                                                   ("conservify.org_6s0g5r7mvja0e7pa9vaejha3cc@group.calendar.google.com" . "~/dropbox/notes/cal/conservify-main.org")
+                                                   ("conservify.org_dlir8q235nhb60o5gpi2dj3gd4@group.calendar.google.com" . "~/dropbox/notes/cal/conservify-travel.org"))))
           )
       )
     )
