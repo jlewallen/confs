@@ -538,8 +538,7 @@ before packages are loaded."
     (setq org-default-notes-file (concat org-directory "/capture.org"))
 
     (setq org-agenda-files (list "~/dropbox/notes/journal"
-                                 "~/dropbox/notes"))
-    (message "Agenda carry-over: %s" org-journal-carryover-items))
+                                 "~/dropbox/notes")))
 
   (add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.pde\\'" . c++-mode))
