@@ -5,6 +5,7 @@
 !.spacemacs.d/
 !.spacemacs.d/**/*
 .spacemacs.d/private.el
+.spacemacs.d/private.el.backup
 
 !.bash_profile
 !.tmux.conf
