@@ -548,6 +548,7 @@ before packages are loaded."
    '((sql . t)
      (calc . t)
      (shell . t)
+     (ledger . t)
      (python . t)))
 
   (setq deft-directory "~/dropbox/notes")
