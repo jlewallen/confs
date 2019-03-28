@@ -1,11 +1,9 @@
 # ~/.tmuxinator/main.yml
 
-name: main
+name: status
 root: ~/
 
 windows:
-  - shell:
-  - shell:
   - status:
       layout: even-vertical
       panes:
