@@ -549,6 +549,7 @@ before packages are loaded."
      (calc . t)
      (shell . t)
      (ledger . t)
+     (ditaa . t)
      (python . t)))
 
   (setq deft-directory "~/dropbox/notes")
