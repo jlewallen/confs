@@ -1,0 +1,15 @@
+# ~/.tmuxinator/datstuff.yml
+
+name: dat
+root: ~/jlewallen/datstuff
+
+windows:
+  - shell:
+      panes:
+        - clear; ./test.py
+  - shell:
+      panes:
+        - clear; rm -rf dd-*; babel-node drive.js
+  - shell:
+      panes:
+        - clear; rm -rf dd-*; babel-node single-chat.js
