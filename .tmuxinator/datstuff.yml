@@ -1,6 +1,6 @@
 # ~/.tmuxinator/datstuff.yml
 
-name: dat
+name: datstuff
 root: ~/jlewallen/datstuff
 
 windows:
