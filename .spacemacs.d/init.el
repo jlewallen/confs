@@ -75,6 +75,8 @@ This function should only modify configuration layer settings."
            org-enable-org-journal-support t
            org-journal-dir "~/dropbox/notes/journal"
            org-journal-file-format "%Y%m%d.org"
+
+           org-ditaa-jar-path "/usr/share/ditaa/ditaa.jar"
            ; org-journal-carryover-items "agenda"
            ; org-journal-date-prefix "#+TITLE: "
            ; org-journal-date-format "%A, %B %d %Y"
@@ -533,6 +535,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
   (setq-default js2-strict-trailing-comma-warning nil)
+
+  (setq compilation-read-command nil)
   )
 
 (defun dotspacemacs/user-config ()
