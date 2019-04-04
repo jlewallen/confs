@@ -513,6 +513,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
                 js2-basic-offset 4
                 js-indent-level 4
                 css-indent-offset 4
+                sgml-basic-offset 4
                 web-mode-markup-indent-offset 4
                 web-mode-css-indent-offset 4
                 web-mode-code-indent-offset 4
