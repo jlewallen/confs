@@ -537,6 +537,14 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq-default js2-strict-trailing-comma-warning nil)
 
   (setq compilation-read-command nil)
+
+  (setq compilation-finish-function
+        (lambda (buf str)
+          (if (null (string-match ".*exited abnormally.*" str))
+              ;;no errors, make the compilation window go away in a few seconds
+              (progn
+                (run-at-time "2 sec" nil 'delete-windows-on (get-buffer-create "*compilation*"))
+                (message "No Compilation Errors!")))))
   )
 
 (defun dotspacemacs/user-config ()
