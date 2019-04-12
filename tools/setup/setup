@@ -30,11 +30,9 @@ sudo apt-get install -y \
      fonts-noto xfonts-terminus \
      ranger ditaa pcmanfm \
      xfce4-session \
-     ruby \
+     ruby p7zip xclip xsel \
      python-tk ghostscript \
      nfs-kernel-server nfs-common
-
-sudo apt-get install --assume-yes xclip xsel
 
 pip install s-tui --user
 pip install pulsectl --user
