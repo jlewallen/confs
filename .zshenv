@@ -69,3 +69,4 @@ if [ -x $(which bat) ]; then
 fi
 
 alias warn="notify-send -u critical"
+alias flag="notify-send -u critical DONE"
