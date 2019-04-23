@@ -70,3 +70,6 @@ fi
 
 alias warn="notify-send -u critical"
 alias flag="notify-send -u critical DONE"
+alias sdone="spd-say done"
+alias rword="shuf -n1 /usr/share/dict/american-english"
+alias sword="spd-say `shuf -n1 /usr/share/dict/american-english`"
