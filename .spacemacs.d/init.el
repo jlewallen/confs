@@ -88,6 +88,7 @@ This function should only modify configuration layer settings."
       jlewallen-finance
       jlewallen-olivetti
       jlewallen-fountain
+      vue
     )
     (if (file-exists-p jlewallen-private-path)
         (progn

@@ -28,7 +28,7 @@ sudo apt-get install -y \
      libssl-dev libncurses5-dev libncursesw5-dev \
      ledger hledger hledger-ui hledger-web python-ledger \
      fonts-noto xfonts-terminus \
-     ranger ditaa pcmanfm \
+     ranger ditaa pcmanfm nemo \
      xfce4-session \
      ruby p7zip xclip xsel \
      python-tk ghostscript \
