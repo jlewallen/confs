@@ -177,9 +177,11 @@ assign [class="^Slack"] → 9
 assign [class="^Google-chrome"] → 9
 assign [class="^Firefox"] → 9
 assign [class="^Git-gui"] → 9
+assign [class="^Gitk"] → 9
 
 for_window [class="Spotify"] move to workspace 9
 for_window [class="^Git-gui"] focus
+for_window [class="^Gitk"] focus
 
 # exec --no-startup-id nitrogen --restore
 # exec --no-startup-id synergy
