@@ -32,7 +32,8 @@ sudo apt-get install -y \
      xfce4-session \
      ruby p7zip xclip xsel \
      python-tk ghostscript \
-     nfs-kernel-server nfs-common
+     nfs-kernel-server nfs-common \
+     colordiff
 
 pip install s-tui --user
 pip install pulsectl --user
