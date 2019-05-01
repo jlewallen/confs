@@ -3,8 +3,8 @@
 MONITOR_WORK_SIDE="HDMI-0"
 MONITOR_WORK_MAIN="DVI-D-0"
 
-MONITOR_HOME_SIDE="HDMI-0"
-MONITOR_HOME_MAIN="DVI-D-0"
+MONITOR_HOME_SIDE="DP-0"
+MONITOR_HOME_MAIN="HDMI-0"
 
 valid=""
 for i in "$@"; do
@@ -13,6 +13,9 @@ for i in "$@"; do
             MONITOR_SIDE=$MONITOR_HOME_SIDE
             MONITOR_MAIN=$MONITOR_HOME_MAIN
             valid=YES
+
+            xrandr --output $MONITOR_SIDE --left-of $MONITOR_MAIN
+            xrandr --output $MONITOR_SIDE --pos 0x400
 
             ;;
         --work)
