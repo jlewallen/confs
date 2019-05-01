@@ -54,3 +54,5 @@ sudo fc-cache -vf
 
 # TODO: Setup go first
 go get -u github.com/cjbassi/gotop
+
+go get gopkg.in/Netflix-Skunkworks/go-jira.v1/cmd/jira
