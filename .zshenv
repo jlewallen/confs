@@ -31,7 +31,6 @@ export PATH=$HOME/tools/node/bin:$PATH
 export PATH=$HOME/tools/node_modules/.bin:$PATH
 export PATH=$HOME/tools/wtf:$PATH
 export PATH=$HOME/tools/p4merge/bin:$PATH
-export PATH=$HOME/fieldkit/bin:$PATH
 export PATH=$HOME/conservify/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=node_modules/.bin:$PATH
@@ -39,6 +38,10 @@ export PATH=node_modules/.bin:$PATH
 export MAKEFLAGS=--no-print-directory
 
 export CMAKE_MODULE_PATH=$HOME/conservify/cmake
+
+export PATH=$HOME/fieldkit/bin:$PATH
+export PATH=$HOME/fieldkit/app-protocol/build/linux-amd64:$PATH
+export PATH=$HOME/fieldkit/testing/build/linux-amd64:$PATH
 
 if [ -z "$SSH_CONNECTION" ]; then
     case $OSTYPE in
