@@ -77,7 +77,8 @@ This function should only modify configuration layer settings."
            org-journal-file-format "%Y%m%d.org"
 
            org-ditaa-jar-path "/usr/share/ditaa/ditaa.jar"
-           ; org-journal-carryover-items "agenda"
+           org-journal-carryover-items nil
+
            ; org-journal-date-prefix "#+TITLE: "
            ; org-journal-date-format "%A, %B %d %Y"
            ; org-journal-time-prefix "* "
