@@ -43,19 +43,18 @@ export PATH=$HOME/fieldkit/bin:$PATH
 export PATH=$HOME/fieldkit/app-protocol/build/linux-amd64:$PATH
 export PATH=$HOME/fieldkit/testing/build/linux-amd64:$PATH
 
-if [ -z "$SSH_CONNECTION" ]; then
-    case $OSTYPE in
-        darwin*)
-            export EMACSCLIENT=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
-            alias emacsclient=$EMACSCLIENT
-            ;;
-        *)
-            export EMACSCLIENT=emacsclient
-            ;;
-    esac
-    alias ecc="$EMACSCLIENT -n -c"
-    alias ec="i3-msg workspace 1 ; $EMACSCLIENT -n"
-fi
+case $OSTYPE in
+    darwin*)
+        export EMACSCLIENT=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
+        alias emacsclient=$EMACSCLIENT
+        ;;
+    *)
+        export EMACSCLIENT=emacsclient
+        ;;
+esac
+
+alias ecc="$EMACSCLIENT -n -c"
+alias ec="i3-msg workspace 1 ; $EMACSCLIENT -n"
 
 alias fix-home-workspaces="~/tools/bin/i3-setup-workspaces.sh --home"
 alias fix-work-workspaces="~/tools/bin/i3-setup-workspaces.sh --work"
