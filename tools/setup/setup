@@ -19,31 +19,49 @@ sudo add-apt-repository ppa:kelleyk/emacs
 
 sudo apt-get update
 
-sudo apt-get install -y \
-     tmux tmuxinator vim git git-gui gitk i3 i3blocks zsh curl cmake emacs26 freecad dropbear-bin jq docker-ce parallel htop pulseaudio-module-bluetooth blueman \
-     pavucontrol xfce4-settings gnuplot git-gui microcom irssi pkg-config doxygen \
-     gdb-multiarch gcc-arm-none-eabi qemu qemu-system \
-     python-pip python3-pip python-protobuf \
-     openjdk-8-jdk openjdk-11-jdk \
-     libssl-dev libncurses5-dev libncursesw5-dev \
-     ledger hledger hledger-ui hledger-web python-ledger \
-     fonts-noto xfonts-terminus \
-     ranger ditaa pcmanfm nemo \
-     xfce4-session \
-     ruby p7zip xclip xsel \
-     python-tk ghostscript \
-     nfs-kernel-server nfs-common \
-     colordiff
+# Desktop
+
+sudo apt-get install -y emacs26 freecad htop pulseaudio-module-bluetooth blueman pavucontrol
+
+# Dev
+
+sudo apt-get install -y gdb-multiarch gcc-arm-none-eabi qemu qemu-system git-gui pkg-config doxygen libssl-dev libncurses5-dev libncursesw5-dev ruby cmake
+
+# System
+
+sudo apt-get install -y nfs-kernel-server nfs-common xclip xsel python-tk ghostscript zsh docker-ce
+
+# Window Manager and Graphical
+
+sudo apt-get install -y i3 i3blocks ranger ditaa pcmanfm nemo xfce4-session xfce4-settings fonts-noto xfonts-terminus 
+
+# Tools
+
+sudo apt-get install -y colordiff p7zip tmux tmuxinator vim git git-gui gitk parallel curl jq htop gnuplot microcom dropbear-bin
+
+# Ledger/Finances
+
+sudo apt-get install -y ledger hledger hledger-ui hledger-web python-ledger
+
+# Java
+
+sudo apt-get install -y openjdk-8-jdk openjdk-11-jdk
+
+# Python
+
+sudo apt-get install -y python-pip python3-pip python-protobuf
 
 pip install s-tui --user
 pip install pulsectl --user
 
-# This messes with embedded work.
+# Disable ModemManager, which interferes with Arduino/MCU work.
+
 systemctl stop ModemManager
 systemctl disable ModemManager.service
-
 # Trying this out for now as well.
 sudo rm /lib/udev/rules.d/*mtp*
+
+# Pretty fonts and stuff.
 
 cd /etc/fonts/conf.d
 sudo rm 70-no-bitmaps.conf
@@ -53,6 +71,20 @@ fc-cache -vf
 sudo fc-cache -vf
 
 # TODO: Setup go first
-go get -u github.com/cjbassi/gotop
 
+# Some random golang tools.
+
+go get -u github.com/cjbassi/gotop
 go get gopkg.in/Netflix-Skunkworks/go-jira.v1/cmd/jira
+
+# Setup gtags/ctags
+
+pushd ~/tools
+sudo apt install -y install exuberant-ctags python-pygments
+wget http://tamacom.com/global/global-6.6.3.tar.gz
+tar xf global-6.6.3.tar.gz
+cd global-6.6.3
+./configure --with-exuberant-ctags=/usr/bin/ctags
+make -j4
+sudo make install
+popd
