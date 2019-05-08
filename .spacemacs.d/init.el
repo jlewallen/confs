@@ -539,7 +539,81 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
     (setq web-mode-code-indent-offset 4)
     (setq web-mode-indent-style 4))
 
-  (add-hook 'web-mode-hook  'my-web-mode-hook)
+  (add-hook 'web-mode-hook 'my-web-mode-hook)
+
+  ; This was accepting an action variable, but I kept running into 'error in
+  ; process sentinal' errors about the variable being void.
+  (defun my-make-gtags-sentinel ()
+    (lambda (process _event)
+      (when (eq (process-status process) 'exit)
+        (if (zerop (process-exit-status process))
+            (message "Success: create TAGS")
+          (message "Failed: create TAGS(%d)" (process-exit-status process))))))
+
+  (defun my-create-tags-if-needed (SRC-DIR &optional FORCE)
+    "Return the full path of tags file"
+    (let ((dir (file-name-as-directory (file-truename SRC-DIR)) )
+          file)
+      (setq file (concat dir "GTAGS"))
+      (when (or FORCE (not (file-exists-p file)))
+        (message "Creating GTAGS in %s ..." dir)
+        ; (shell-command (format "ctags -f %s -e -R --exclude=.git --exclude=gitdeps --exclude=node_modules %s" file dir))
+        (let ((default-directory dir)
+              (proc-buf (get-buffer-create " *helm-gtags-create*")))
+          (let ((proc (start-file-process "helm-gtags-create" proc-buf "gtags" "-q")))
+            (set-process-sentinel proc (my-make-gtags-sentinel))))
+        )
+      file
+      ))
+
+  (defvar my-tags-updated-time nil)
+
+  (defun my-update-tags ()
+    (interactive)
+    "Check the tags in tags-table-list and re-create it"
+    (dolist (tag tags-table-list)
+      (my-create-tags-if-needed (file-name-directory tag) t)
+      ))
+
+  (defun my-auto-update-tags-when-save ()
+    (interactive)
+    (message "my-auto-update: %s" (- (float-time (current-time))  (float-time my-tags-updated-time)))
+    (cond
+
+     ((not my-tags-updated-time)
+      (setq my-tags-updated-time (current-time)))
+
+     ((< (- (float-time (current-time)) (float-time my-tags-updated-time)) 300)
+      )
+
+     (t
+      (my-update-tags)
+      (message "updated tags after %d seconds." (- (float-time (current-time))  (float-time my-tags-updated-time)))
+      (setq my-tags-updated-time (current-time))
+      )
+     ))
+
+  (defun my-project-name-contains-substring (REGEX)
+    (let ((dir (if (buffer-file-name)
+                   (file-name-directory (buffer-file-name))
+                 "")))
+      (string-match-p REGEX dir)))
+
+  (defun my-setup-dev-env ()
+    (cond
+     ((my-project-name-contains-substring "fieldkit")
+      (setq tags-table-list (list (my-create-tags-if-needed "~/fieldkit")))
+      (message "project: fk (%s)" tags-table-list)
+      )
+     (t
+      (message "project: NONE")
+      )
+     )
+    )
+
+  (add-hook 'after-save-hook 'my-auto-update-tags-when-save)
+  (add-hook 'c++-mode-hook 'my-setup-dev-env)
+  (add-hook 'c-mode-hook 'my-setup-dev-env)
 
   (with-eval-after-load 'web-mode
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
