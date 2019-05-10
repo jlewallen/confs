@@ -37,7 +37,7 @@ sudo apt-get install -y i3 i3blocks ranger ditaa pcmanfm nemo xfce4-session xfce
 
 # Tools
 
-sudo apt-get install -y colordiff p7zip tmux tmuxinator vim git git-gui gitk parallel curl jq htop gnuplot microcom dropbear-bin
+sudo apt-get install -y colordiff p7zip tmux tmuxinator vim git git-gui gitk parallel curl jq htop gnuplot microcom dropbear-bin at
 
 # Ledger/Finances
 
