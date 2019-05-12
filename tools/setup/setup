@@ -19,37 +19,43 @@ sudo add-apt-repository ppa:kelleyk/emacs
 
 sudo apt-get update
 
-# Desktop
-
-sudo apt-get install -y emacs26 freecad htop pulseaudio-module-bluetooth blueman pavucontrol
-
-# Dev
-
-sudo apt-get install -y gdb-multiarch gcc-arm-none-eabi qemu qemu-system git-gui pkg-config doxygen libssl-dev libncurses5-dev libncursesw5-dev ruby cmake
-
 # System
 
-sudo apt-get install -y nfs-kernel-server nfs-common xclip xsel python-tk ghostscript zsh docker-ce
-
-# Window Manager and Graphical
-
-sudo apt-get install -y i3 i3blocks ranger ditaa pcmanfm nemo xfce4-session xfce4-settings fonts-noto xfonts-terminus 
-
-# Tools
-
-sudo apt-get install -y colordiff p7zip tmux tmuxinator vim git git-gui gitk parallel curl jq htop gnuplot microcom dropbear-bin at ncdu
-
-# Ledger/Finances
-
-sudo apt-get install -y ledger hledger hledger-ui hledger-web python-ledger
+sudo apt install -y nfs-kernel-server nfs-common docker-ce
 
 # Java
 
-sudo apt-get install -y openjdk-8-jdk openjdk-11-jdk
+sudo apt install -y openjdk-8-jdk openjdk-11-jdk
+
+# Shell
+
+sudo apt install -y zsh
+
+# Dev
+
+sudo apt install -y gdb-multiarch gcc-arm-none-eabi qemu qemu-system git-gui pkg-config doxygen libssl-dev libncurses5-dev libncursesw5-dev ruby cmake
+
+# Window Manager and Graphical
+
+sudo apt install -y i3 i3blocks ranger ditaa pcmanfm nemo xfce4-session xfce4-settings fonts-noto xfonts-terminus hsetroot feh xclip xsel
+
+# Desktop
+
+sudo apt install -y emacs26 freecad pulseaudio-module-bluetooth blueman pavucontrol
+
+# Tools
+
+sudo apt install -y colordiff p7zip tmux tmuxinator vim git git-gui gitk parallel curl jq htop gnuplot microcom dropbear-bin at ncdu
+
+# Ledger/Finances
+
+sudo apt install -y ledger hledger hledger-ui hledger-web python-ledger
 
 # Python
 
-sudo apt-get install -y python-pip python3-pip python-protobuf
+sudo apt install -y python-pip python3-pip python-protobuf python-tk ghostscript
+
+# END apt
 
 pip install s-tui --user
 pip install pulsectl --user
@@ -88,3 +94,5 @@ cd global-6.6.3
 make -j4
 sudo make install
 popd
+
+# TODO Kill ModemManager
