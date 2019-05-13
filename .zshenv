@@ -16,7 +16,10 @@ else
 fi
 
 export PATH=$HOME/.cargo/bin:$PATH
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+
+if [ -x "$(which rustc)" ]; then
+    export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+fi
 
 export EDITOR=vim
 
@@ -75,4 +78,4 @@ alias warn="notify-send -u critical"
 alias flag="notify-send -u critical DONE"
 alias sdone="spd-say done"
 alias rword="shuf -n1 /usr/share/dict/american-english"
-alias sword="spd-say `shuf -n1 /usr/share/dict/american-english`"
+alias sword='spd-say `shuf -n1 /usr/share/dict/american-english`'
