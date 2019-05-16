@@ -1023,7 +1023,7 @@ instructions constituting the current statement are marked, if available."""
         return {
             'context': {
                 'doc': 'Number of context instructions.',
-                'default': 3,
+                'default': 12,
                 'type': int,
                 'check': check_ge_zero
             },
