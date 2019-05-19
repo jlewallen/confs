@@ -21,7 +21,7 @@ sudo apt-get update
 
 # System
 
-sudo apt install -y nfs-kernel-server nfs-common docker-ce docker-compose
+sudo apt install -y nfs-kernel-server nfs-common docker-ce docker-compose cgroup-bin
 
 # Java
 
