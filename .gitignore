@@ -64,3 +64,5 @@ tools/*
 
 !./.fonts/
 !./.fonts/*
+
+tools/bin/hugo
