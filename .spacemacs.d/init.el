@@ -43,7 +43,7 @@ This function should only modify configuration layer settings."
       themes-megapack
       colors
 
-      shell
+      (shell :variables shell-default-shell 'eshell)
 
       (syntax-checking :variables syntax-checking-enable-tooltips t)
       (git :variables git-magit-status-fullscreen t)
