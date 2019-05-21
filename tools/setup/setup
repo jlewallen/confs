@@ -21,7 +21,7 @@ sudo apt-get update
 
 # System
 
-sudo apt install -y nfs-kernel-server nfs-common docker-ce
+sudo apt install -y nfs-kernel-server nfs-common docker-ce docker-compose cgroup-bin
 
 # Java
 
@@ -45,7 +45,7 @@ sudo apt install -y emacs26 freecad pulseaudio-module-bluetooth blueman pavucont
 
 # Tools
 
-sudo apt install -y colordiff p7zip tmux tmuxinator vim git git-gui gitk parallel curl jq htop gnuplot microcom dropbear-bin at ncdu
+sudo apt install -y colordiff p7zip tmux tmuxinator vim git git-gui gitk parallel curl jq htop gnuplot microcom dropbear-bin at ncdu stress postgresql-client-10
 
 # Ledger/Finances
 
