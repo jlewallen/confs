@@ -610,9 +610,9 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
      )
     )
 
-  (add-hook 'after-save-hook 'my-auto-update-tags-when-save)
-  (add-hook 'c++-mode-hook 'my-setup-dev-env)
-  (add-hook 'c-mode-hook 'my-setup-dev-env)
+  ; (add-hook 'after-save-hook 'my-auto-update-tags-when-save)
+  ; (add-hook 'c++-mode-hook 'my-setup-dev-env)
+  ; (add-hook 'c-mode-hook 'my-setup-dev-env)
 
   (with-eval-after-load 'web-mode
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
