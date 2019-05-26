@@ -34,6 +34,7 @@ export PATH=$HOME/tools/node/bin:$PATH
 export PATH=$HOME/tools/node_modules/.bin:$PATH
 export PATH=$HOME/tools/wtf:$PATH
 export PATH=$HOME/tools/p4merge/bin:$PATH
+export PATH=$HOME/tools/jlink:$PATH
 export PATH=$HOME/conservify/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=node_modules/.bin:$PATH
