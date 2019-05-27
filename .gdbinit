@@ -12,6 +12,7 @@ import struct
 import termios
 import traceback
 import math
+import subprocess
 
 # Common attributes ------------------------------------------------------------
 
@@ -1516,6 +1517,21 @@ class Expressions(Dashboard.Module):
             }
         }
 
+class JacobRerun(gdb.Command):
+    "My standard rerun procedure."
+    def __init__ (self):
+        super(JacobRerun, self).__init__ ("jrr",
+            gdb.COMMAND_SUPPORT,
+            gdb.COMPLETE_NONE, True)
+
+    def invoke(self, arg, from_tty):
+        made = subprocess.run(["make", "-j4"])
+        if made.returncode != 0:
+            return False
+        gdb.execute("load")
+        gdb.execute("monitor reset")
+        gdb.execute("continue")
+
 # XXX traceback line numbers in this Python block must be increased by 1
 end
 
@@ -1533,6 +1549,8 @@ set auto-load safe-path /
 # Start ------------------------------------------------------------------------
 
 python Dashboard.start()
+
+python JacobRerun()
 
 # ------------------------------------------------------------------------------
 # Copyright (c) 2015-2017 Andrea Cardaci <cyrus.and@gmail.com>
