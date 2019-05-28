@@ -15,7 +15,6 @@ urxvt.lineSpace: 0
 urxvt.internalBorder: 10
 urxvt.cursorBlink: true
 urxvt.cursorUnderline: false
-urxvt.saveline: 2048
 urxvt.scrollBar: false
 urxvt.scrollBar_right: false
 urxvt.urgentOnBell: true
@@ -23,6 +22,7 @@ urxvt.depth: 32
 urxvt.iso14755: false
 urxvt.termName: rxvt-256color
 urxvt.saveLines: 1000000
+urxvt.fading: 10
 
 ! *.font: xft:Iosevka:style=Regular:size=8
 ! *.boldFont: xft:Iosevka:style=Bold:size=8
@@ -37,22 +37,27 @@ urxvt.keysym.Control-Down: \033[1;5B
 urxvt.keysym.Control-Right: \033[1;5C
 urxvt.keysym.Control-Left: \033[1;5D
 
+urxvt.perl-ext:
+urxvt.perl-ext-common:
+
 !! Copy Paste & Other Extensions
 ! urxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
-urxvt.copyCommand: xclip -i -selection clipboard
-urxvt.pasteCommand: xclip -o -selection clipboard
-urxvt.keysym.M-c: perl:clipboard:copy
-urxvt.keysym.M-v: perl:clipboard:paste
-urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-urxvt.keysym.M-Escape: perl:keyboard-select:activate
-urxvt.keysym.M-s: perl:keyboard-select:search
-urxvt.keysym.M-u: perl:url-select:select_next
+! urxvt.copyCommand: xclip -i -selection clipboard
+! urxvt.pasteCommand: xclip -o -selection clipboard
+! urxvt.keysym.M-c: perl:clipboard:copy
+! urxvt.keysym.M-v: perl:clipboard:paste
+! urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+! urxvt.keysym.M-Escape: perl:keyboard-select:activate
+! urxvt.keysym.M-s: perl:keyboard-select:search
+! urxvt.keysym.M-u: perl:url-select:select_next
+
 urxvt.urlLauncher: firefox
 urxvt.underlineURLs: true
 urxvt.urlButton: 1
 
 ! #include "tools/setup/base16-xresources/xresources/base16-gruvbox-dark-hard-256.Xresources"
 #include "tools/setup/base16-xresources/xresources/base16-brewer-256.Xresources"
+! #include "tools/setup/colors1.Xresources"
 
 !urxvt*depth: 32
 !urxvt*background: rgba:0000/0000/0200/c800
