@@ -37,7 +37,7 @@ sudo apt install -y gdb-multiarch gcc-arm-none-eabi qemu qemu-system git-gui pkg
 
 # Window Manager and Graphical
 
-sudo apt install -y i3 i3blocks ranger ditaa pcmanfm nemo xfce4-session xfce4-settings fonts-noto xfonts-terminus hsetroot feh xclip xsel
+sudo apt install -y i3 i3blocks ranger ditaa pcmanfm nemo xfce4-session xfce4-settings fonts-noto xfonts-terminus hsetroot feh xclip xsel rxvt-unicode
 
 # Desktop
 
