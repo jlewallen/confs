@@ -20,6 +20,8 @@
 !.i3blocks.conf
 !.i3status.conf
 !.xinitrc
+!.Xdefaults
+!.Xresources
 
 !/.tmuxinator/
 !/.tmuxinator/*
