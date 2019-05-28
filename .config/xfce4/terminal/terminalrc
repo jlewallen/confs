@@ -26,8 +26,8 @@ MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
-ColorForeground=#b8bbc2
+ColorForeground=#b7b8b9
 ColorCursor=x
-ColorPalette=#061229;#d07346;#99bf52;#fbd461;#5299bf;#9989cc;#72b9bf;#b8bbc2;#717885;#d07346;#99bf52;#fbd461;#5299bf;#9989cc;#72b9bf;#ffffff
-ColorBackground=#061229
+ColorPalette=#0c0d0e;#e31a1c;#31a354;#dca060;#3182bd;#756bb1;#80b1d3;#b7b8b9;#737475;#e31a1c;#31a354;#dca060;#3182bd;#756bb1;#80b1d3;#fcfdfe
+ColorBackground=#0c0d0e
 
