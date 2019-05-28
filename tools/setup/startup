@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -xe
+
+xset +fp ~/.fonts/misc/
+fc-cache -fv

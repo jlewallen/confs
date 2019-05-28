@@ -1,8 +1,10 @@
 !! urxvt Appearance
-urxvt.font: xft:Terminus:style=Regular:size=12
-urxvt.boldFont: xft:Terminus:style=Bold:size=12
-urxvt.italicFont: xft:Terminus:style=Italic:size=12
-urxvt.boldItalicFont: xft:Terminus:style=Bold Italic:size=12
+
+! For some reason fonts are larger on one of my machine than on the other?
+urxvt.font: xft:Terminus:style=Regular:size=10
+urxvt.boldFont: xft:Terminus:style=Bold:size=10
+urxvt.italicFont: xft:Terminus:style=Italic:size=10
+urxvt.boldItalicFont: xft:Terminus:style=Bold Italic:size=10
 urxvt.letterSpace: 0
 
 ! urxvt.font: xft:DejaVu Sans Mono:pixelsize=13
