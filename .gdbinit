@@ -1520,9 +1520,7 @@ class Expressions(Dashboard.Module):
 class JacobRerun(gdb.Command):
     "My standard rerun procedure."
     def __init__ (self):
-        super(JacobRerun, self).__init__ ("jrr",
-            gdb.COMMAND_SUPPORT,
-            gdb.COMPLETE_NONE, True)
+        super(JacobRerun, self).__init__("jrr", gdb.COMMAND_SUPPORT, gdb.COMPLETE_NONE, True)
 
     def invoke(self, arg, from_tty):
         made = subprocess.run(["make", "-j4"])
@@ -1531,6 +1529,30 @@ class JacobRerun(gdb.Command):
         gdb.execute("load")
         gdb.execute("monitor reset")
         gdb.execute("continue")
+
+class JacobStopNotifier(gdb.Command):
+    def __init__(self):
+        super(JacobStopNotifier, self).__init__("jsn", gdb.COMMAND_SUPPORT, gdb.COMPLETE_NONE, True)
+        self.enable()
+
+    def enable(self):
+        gdb.events.cont.connect(self.on_continue)
+        gdb.events.stop.connect(self.on_stop)
+        gdb.events.exited.connect(self.on_exit)
+
+    def on_continue(self, _):
+        pass
+
+    def on_stop(self, ev):
+        # TODO Check to see if the gdb tmux is visible?
+        if isinstance(ev, gdb.BreakpointEvent):
+            subprocess.run(["notify-send", "gdb stopped: bp"])
+        elif isinstance(ev, gdb.SignalEvent):
+            subprocess.run(["notify-send", "gdb stopped: sig"])
+        return True
+
+    def on_exit(self, _):
+        pass
 
 # XXX traceback line numbers in this Python block must be increased by 1
 end
@@ -1549,6 +1571,8 @@ set auto-load safe-path /
 # Start ------------------------------------------------------------------------
 
 python Dashboard.start()
+
+python JacobStopNotifier()
 
 python JacobRerun()
 
