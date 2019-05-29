@@ -54,6 +54,7 @@ bindsym $mod+Shift+Right move right
 
 # audio control
 bindsym $mod+Tab          exec "~/tools/bin/i3-workspaces-toggle.sh"
+bindsym $mod+Shift+Tab    exec "~/tools/bin/i3-toggle-two-up.sh"
 bindsym $mod+u            exec "playerctl play-pause"
 bindsym $mod+y            exec "playerctl next"
 
