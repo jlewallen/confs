@@ -9,13 +9,13 @@ case $active in
        if [ -f $previous_file ]; then
            previous=`head $previous_file`
            rm /tmp/jacob-i3-previous
-           i3-msg workspace $previous
+           i3-msg workspace number $previous
        else
-           i3-msg workspace 2
+           i3-msg workspace number 2
        fi
        ;;
     *)
        echo $active > /tmp/jacob-i3-previous
-       i3-msg workspace 1
+       i3-msg workspace number 1
        ;;
 esac

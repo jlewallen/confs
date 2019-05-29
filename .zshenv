@@ -58,7 +58,7 @@ case $OSTYPE in
 esac
 
 alias ecc="$EMACSCLIENT -n -c"
-alias ec="i3-msg workspace 1 ; $EMACSCLIENT -n"
+alias ec="i3-msg workspace number 1 ; $EMACSCLIENT -n"
 
 alias fix-home-workspaces="~/tools/bin/i3-setup-workspaces.sh --home"
 alias fix-work-workspaces="~/tools/bin/i3-setup-workspaces.sh --work"
