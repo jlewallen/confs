@@ -620,6 +620,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
   (setq-default js2-strict-trailing-comma-warning nil)
+  (setq-default js2-mode-show-parse-errors nil)
+  (setq-default js2-mode-show-strict-warnings nil)
 
   (setq compilation-read-command nil)
 
