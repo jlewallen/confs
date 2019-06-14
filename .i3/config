@@ -81,9 +81,9 @@ bindsym $mod+Shift+space  floating toggle
 bindsym $mod+space        focus mode_toggle
 
 # switch to workspace
-bindsym $mod+1            workspace number 1 emacs
-bindsym $mod+2            workspace number 2 tmux-a
-bindsym $mod+3            workspace number 3 tmux-b
+bindsym $mod+1            workspace number 1
+bindsym $mod+2            workspace number 2
+bindsym $mod+3            workspace number 3
 bindsym $mod+4            workspace number 4
 bindsym $mod+5            workspace number 5
 bindsym $mod+6            workspace number 6
@@ -93,9 +93,9 @@ bindsym $mod+9            workspace number 9
 bindsym $mod+0            workspace number 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1      move container to workspace number 1 emacs
-bindsym $mod+Shift+2      move container to workspace number 2 tmux-a
-bindsym $mod+Shift+3      move container to workspace number 3 tmux-b
+bindsym $mod+Shift+1      move container to workspace number 1
+bindsym $mod+Shift+2      move container to workspace number 2
+bindsym $mod+Shift+3      move container to workspace number 3
 bindsym $mod+Shift+4      move container to workspace number 4
 bindsym $mod+Shift+5      move container to workspace number 5
 bindsym $mod+Shift+6      move container to workspace number 6
@@ -118,8 +118,8 @@ bindsym $mod+Shift+t      exec "~/tools/bin/i3-timer.sh"
 
 # finding common programs
 bindsym $mod+p            [class="Spotify"] focus
-bindsym $mod+x            [title="Firefox"] focus
 bindsym $mod+o            [title="Slack"] focus
+bindsym $mod+x            [title="Firefox"] focus
 
 # Remove the border everywhere
 for_window [class="^.*"] border pixel 1
@@ -147,10 +147,12 @@ bindsym $mod+r mode "resize"
 assign [class="^Slack"] → 9
 assign [class="^Google-chrome"] → 9
 assign [class="^Firefox"] → 9
-assign [class="^Git-gui"] → 9
-assign [class="^Gitk"] → 9
 for_window [class="Spotify"] move to workspace 9
+
+assign [class="^Git-gui"] → 9
 for_window [class="^Git-gui"] focus
+
+assign [class="^Gitk"] → 9
 for_window [class="^Gitk"] focus
 
 # colors
@@ -158,17 +160,6 @@ client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
 client.focused_inactive #333333 #5F676A #ffffff #484e50
 client.unfocused        #333333 #424242 #888888 #292d2e
 client.urgent           #C10004 #900000 #ffffff #900000
-
-# set $bg-color            #242424
-# set $inactive-bg-color   #1c1c1c
-# set $text-color          #e5e5e5
-# set $inactive-text-color #6E6E6E
-# set $urgent-bg-color     #e52e71
-
-# client.focused          $bg-color           $bg-color          $text-color          #00ff00
-# client.unfocused        $bg-color           $bg-color          $inactive-text-color #00ff00
-# client.focused_inactive $bg-color           $bg-color          $inactive-text-color #00ff00
-# client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 bar {
     position top
