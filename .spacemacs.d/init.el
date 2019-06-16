@@ -711,6 +711,14 @@ before packages are loaded."
     (c-toggle-auto-hungry-state 1)
     )
 
+  (defun jl-fixup-fringe-coloring (&rest args)
+    (set-face-attribute 'fringe nil :background nil))
+
+  (advice-add 'load-theme :after 'jl-fixup-fringe-coloring)
+
+  ; (add-hook 'after-save-hook 'jl-fixup-fringe-coloring)
+  ; (add-hook 'focus-out-hook 'jl-fixup-fringe-coloring)
+
   (add-hook 'java-mode-hook 'jl-java-mode-hook)
 
   (defun jl-groovy-mode-hook ()
