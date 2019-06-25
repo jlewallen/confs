@@ -668,6 +668,7 @@ before packages are loaded."
   (add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.pde\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+  (add-to-list 'auto-mode-alist '("\\.tcc\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode))
 
   (setq-default buffer-file-coding-system 'utf-8-unix)
