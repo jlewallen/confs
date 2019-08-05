@@ -63,6 +63,7 @@ This function should only modify configuration layer settings."
       java
       python
       javascript
+      typescript
       html
       react
       sql
@@ -245,7 +246,8 @@ It should only modify the values of Spacemacs settings."
    ;                           :width normal
    ;                           :powerline-scale 1.1)
 
-   dotspacemacs-default-font (list (font-get (or(find-font (font-spec :name "Fantasque Sans Mono"))
+   dotspacemacs-default-font (list (font-get (or(find-font (font-spec :name "Iosevka"))
+                                                (find-font (font-spec :name "Fantasque Sans Mono"))
                                                 (find-font (font-spec :name "Hasklig"))
                                                 (find-font (font-spec :name "Source Code Pro"))
                                                 (find-font (font-spec :name "Menlo")))
