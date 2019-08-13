@@ -118,7 +118,7 @@ bindsym $mod+Shift+t      exec "~/tools/bin/i3-timer.sh"
 
 # finding common programs
 bindsym $mod+p            [class="Spotify"] focus
-bindsym $mod+o            [class="slack"] focus
+bindsym $mod+o            [title="Slack"] focus
 bindsym $mod+x            [title="Firefox"] focus
 
 # Remove the border everywhere
