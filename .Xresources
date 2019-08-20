@@ -268,7 +268,7 @@ urxvt*shading: 10
 ! #include "tools/setup/base16-xresources/xresources/base16-woodland-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-gruvbox-dark-hard-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-gruvbox-light-soft-256.Xresources"
-! #include "tools/setup/base16-xresources/xresources/base16-brewer-256.Xresources"
+#include "tools/setup/base16-xresources/xresources/base16-brewer-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-nord-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-zenburn-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-twilight-256.Xresources"
