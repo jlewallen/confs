@@ -744,7 +744,7 @@ before packages are loaded."
   (add-hook 'groovy-mode-hook 'jl-groovy-mode-hook)
 
   (spacemacs/set-leader-keys "fww" (lambda () (interactive) (find-file "~/dropbox/notes/notes.org")))
-  (spacemacs/set-leader-keys "fwc" (lambda () (interactive) (find-file "~/dropbox/finance/checking.ledger")))
+  (spacemacs/set-leader-keys "fwc" (lambda () (interactive) (find-file "~/dropbox/finances/checking.ledger")))
 
   (server-start)
   )
