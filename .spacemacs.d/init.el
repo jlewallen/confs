@@ -115,6 +115,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages '(htmlize
                                       base16-theme
                                       doom-themes
+                                      darcula-theme
                                       kaolin-themes)
 
    ;; A list of packages that cannot be updated.
