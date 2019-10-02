@@ -71,6 +71,10 @@ alias tx="tmuxinator"
 alias cmm="cmake -H. -Bbuild"
 alias cmb="cmake --build build --"
 
+if [ -f ~/.zshenv.private.sh ]; then
+    source ~/.zshenv.private.sh
+fi
+
 if [ -x $(which bat) ]; then
     alias cat="bat"
 fi

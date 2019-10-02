@@ -1,0 +1,7 @@
+#!/bin/bash
+
+WIFI=wlx74da382b4ff2
+
+ifconfig down enp3s0
+nmcli d wifi connect "Maker City" password $MAKER_CITY_WIFI_PASSWORD
+dhclient -v $WIFI
