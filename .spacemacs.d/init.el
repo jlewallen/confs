@@ -506,6 +506,12 @@ It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (message "Resolution: %d %d" (display-pixel-width) (display-pixel-height))
 
+  ; (setq package-check-signature nil)
+
+  (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                           ("marmalade" . "https://marmalade-repo.org/packages/")
+                           ("melpa" . "http://melpa.org/packages/")))
+
   (add-to-list 'load-path (expand-file-name "lisp" dotspacemacs-directory))
 
   (if (file-exists-p jlewallen-private-path)
