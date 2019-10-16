@@ -1,0 +1,6 @@
+#!/bin/bash
+
+JLinkExe -autoconnect 0 <<EOF
+ShowEmuList
+q
+EOF

@@ -247,8 +247,8 @@ It should only modify the values of Spacemacs settings."
    ;                           :width normal
    ;                           :powerline-scale 1.1)
 
-   dotspacemacs-default-font (list (font-get (or (find-font (font-spec :name "Cascadia Code"))
-                                                 (find-font (font-spec :name "Ubuntu Mono"))
+   dotspacemacs-default-font (list (font-get (or (find-font (font-spec :name "Ubuntu Mono"))
+                                                 (find-font (font-spec :name "Cascadia Code"))
                                                  (find-font (font-spec :name "Iosevka"))
                                                  (find-font (font-spec :name "Fantasque Sans Mono"))
                                                  (find-font (font-spec :name "Hasklig"))
@@ -257,8 +257,8 @@ It should only modify the values of Spacemacs settings."
                                              :name)
                                    :size (cond
                                           ((and (eq (display-pixel-width) 2560) (eq(display-pixel-height) 1440)) 22) ; Work thinkpad.
-                                          ((and (eq (display-pixel-width) 5760) (eq(display-pixel-height) 1600)) 15) ; Work desktop, brand new Dell monitor.
-                                          (t 15))
+                                          ((and (eq (display-pixel-width) 5760) (eq(display-pixel-height) 1600)) 16) ; Work desktop, brand new Dell monitor.
+                                          (t 16))
                                    :weight 'normal
                                    :width 'normal
                                    :powerline-scale 1.2)
