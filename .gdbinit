@@ -2148,7 +2148,7 @@ python JacobRerun()
 
 dashboard -layout assembly source stack registers
 dashboard source -style height 30
-dashboard assembly -style height 30
+dashboard assembly -style height 50
 
 # ------------------------------------------------------------------------------
 # Copyright (c) 2015-2019 Andrea Cardaci <cyrus.and@gmail.com>
