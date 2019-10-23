@@ -28,8 +28,9 @@ DEVICE_ID=`jq -r .status.identity.deviceId < $STATUS`
 
 echo Querying block sync...
 
-DEVICE_ID_HEX=`echo $DEVICE_ID | base64 -d | od -t x1 -An | sed "s/ //g"`
+DEVICE_ID_HEX=`echo $DEVICE_ID | base64 -d | od -t x1 -An | tr -d '\040\011\012\015'`
 DEVICE_DIR=$ROOT_DIR/$DEVICE_ID_HEX
+GENERATION_HEX=`echo $GENERATION | base64 -d | od -t x1 -An | tr -d '\040\011\012\015'`
 
 mkdir -p $DEVICE_DIR
 
@@ -37,21 +38,21 @@ mv $STATUS $DEVICE_DIR
 
 fk-dev.sh $ROOT_URL/data/devices/$DEVICE_ID_HEX/summary > $DEVICE_DIR/$PORTAL_SUMMARY
 
-LAST_GENERATION=`jq -r ".provisions[0].generation" < $DEVICE_DIR/$PORTAL_SUMMARY`
-LAST_META=`jq -r ".provisions[0].meta.last" < $DEVICE_DIR/$PORTAL_SUMMARY`
-LAST_DATA=`jq -r ".provisions[0].data.last" < $DEVICE_DIR/$PORTAL_SUMMARY`
+LAST_PORTAL_GENERATION=`jq -r ".provisions[0].generation" < $DEVICE_DIR/$PORTAL_SUMMARY`
+LAST_PORTAL_META=`jq -r ".provisions[0].meta.last" < $DEVICE_DIR/$PORTAL_SUMMARY`
+LAST_PORTAL_DATA=`jq -r ".provisions[0].data.last" < $DEVICE_DIR/$PORTAL_SUMMARY`
 
-if [ $GENERATION == $LAST_GENERATION ]; then
-    echo "Same Gen"
+if [ $GENERATION_HEX == $LAST_PORTAL_GENERATION ]; then
+    echo "Same Generation"
 else
-    LAST_META=0
-    LAST_DATA=0
+    LAST_PORTAL_META=0
+    LAST_PORTAL_DATA=0
 fi
 
-echo $GENERATION
-echo $LAST_GENERATION
-echo $LAST_META
-echo $LAST_DATA
+echo $GENERATION_HEX
+echo $LAST_PORTAL_GENERATION
+echo $LAST_PORTAL_META
+echo $LAST_PORTAL_DATA
 
 echo Downloading...
 
