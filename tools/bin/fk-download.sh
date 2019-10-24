@@ -61,8 +61,8 @@ fi
 if [ -z $DRY ]; then
     echo Downloading...
 
-    curl -sv "http://$IP:$PORT/fk/v1/download/meta?first=$LAST_META" -o $DEVICE_DIR/$META 2> $DEVICE_DIR/$META.headers
-    curl -sv "http://$IP:$PORT/fk/v1/download/data?first=$LAST_DATA" -o $DEVICE_DIR/$DATA 2> $DEVICE_DIR/$DATA.headers
+    curl -sv "http://$IP:$PORT/fk/v1/download/meta?first=$LAST_PORTAL_META" -o $DEVICE_DIR/$META 2> $DEVICE_DIR/$META.headers
+    curl -sv "http://$IP:$PORT/fk/v1/download/data?first=$LAST_PORTAL_DATA" -o $DEVICE_DIR/$DATA 2> $DEVICE_DIR/$DATA.headers
 
     META_FK_BLOCKS=`grep Fk-Blocks $DEVICE_DIR/$META.headers | sed -e "s/< //"`
     DATA_FK_BLOCKS=`grep Fk-Blocks $DEVICE_DIR/$DATA.headers | sed -e "s/< //"`

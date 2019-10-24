@@ -1,0 +1,1 @@
+JLinkGDBServer -if SWD -device ATSAMD51P20 -Port 5331 -select usb=801000989 -RTTTelnetPort 9500

@@ -155,6 +155,8 @@ for_window [class="^Git-gui"] focus
 assign [class="^Gitk"] → 9
 for_window [class="^Gitk"] focus
 
+# for_window [title="Android Emulator.*"] floating enable
+
 # colors
 client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
 client.focused_inactive #333333 #5F676A #ffffff #484e50
