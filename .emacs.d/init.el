@@ -33,6 +33,7 @@
 (setq inhibit-startup-message t
 	  initial-scratch-message ""
 	  create-lockfiles nil
+	  backup-inhibited t
 	  ring-bell-function 'ignore
 	  tramp-default-method "ssh"
 	  large-file-warning-threshold nil
@@ -57,8 +58,7 @@
               web-mode-markup-indent-offset 4
               web-mode-css-indent-offset 4
               web-mode-code-indent-offset 4
-              web-mode-attr-indent-offset 4
-              backup-inhibited t)
+              web-mode-attr-indent-offset 4)
 
 (setq delete-trailing-lines t)
 
@@ -151,7 +151,7 @@ current."
   (setq helm-always-two-windows t)
   (setq helm-split-window-inside-p t)
   (setq helm-display-buffer-default-height 23)
-  
+
   (helm-mode 1))
 
 (use-package helm
@@ -166,12 +166,17 @@ current."
 ;; ---------------------------------------------------------------------------------------
 ;; miscellaneous
 
-;; (setq golden-ratio-auto-scale t)
-(use-package golden-ratio
-  :config (golden-ratio-mode 1))
+(defun my/golden-ratio ()
+  ;; (setq golden-ratio-auto-scale t)
+  (golden-ratio-mode 1))
 
-;; (defun my/shackle-config ())
-;; (use-package shackle :config (my/shackle-config))
+(use-package golden-ratio
+  :config (my/golden-ratio))
+
+(defun my/shackle-config ())
+
+(use-package shackle
+  :config (my/shackle-config))
 
 ;; ---------------------------------------------------------------------------------------
 ;; general
@@ -187,6 +192,90 @@ current."
                    (not (eq buffer current-buffer)))
                  (mapcar #'car (window-prev-buffers window)))
      nil t)))
+
+;; from magnars
+(defun my/rename-current-buffer-file (&optional arg)
+  "Rename the current buffer and the file it is visiting.
+If the buffer isn't visiting a file, ask if it should
+be saved to a file, or just renamed.
+
+If called without a prefix argument, the prompt is
+initialized with the current directory instead of filename."
+  (interactive "P")
+  (let* ((name (buffer-name))
+         (filename (buffer-file-name)))
+    (if (and filename (file-exists-p filename))
+        ;; the buffer is visiting a file
+        (let* ((dir (file-name-directory filename))
+               (new-name (read-file-name "New name: " (if arg dir filename))))
+          (cond ((get-buffer new-name)
+                 (error "A buffer named '%s' already exists!" new-name))
+                (t
+                 (let ((dir (file-name-directory new-name)))
+                   (when (and (not (file-exists-p dir))
+                              (yes-or-no-p
+                               (format "Create directory '%s'?" dir)))
+                     (make-directory dir t)))
+                 (rename-file filename new-name 1)
+                 (rename-buffer new-name)
+                 (set-visited-file-name new-name)
+                 (set-buffer-modified-p nil)
+                 (when (fboundp 'recentf-add-file)
+                   (recentf-add-file new-name)
+                   (recentf-remove-if-non-kept filename))
+                 (when (and (configuration-layer/package-used-p 'projectile)
+                            (projectile-project-p))
+                   (call-interactively #'projectile-invalidate-cache))
+                 (message "File '%s' successfully renamed to '%s'"
+                          name (file-name-nondirectory new-name)))))
+      ;; the buffer is not visiting a file
+      (let ((key))
+        (while (not (memq key '(?s ?r)))
+          (setq key (read-key (propertize
+                               (format
+                                (concat "Buffer '%s' is not visiting a file: "
+                                        "[s]ave to file or [r]ename buffer?")
+                                name)
+                               'face 'minibuffer-prompt)))
+          (cond ((eq key ?s)            ; save to file
+                 ;; this allows for saving a new empty (unmodified) buffer
+                 (unless (buffer-modified-p) (set-buffer-modified-p t))
+                 (save-buffer))
+                ((eq key ?r)            ; rename buffer
+                 (let ((new-name (read-string "New buffer name: ")))
+                   (while (get-buffer new-name)
+                     ;; ask to rename again, if the new buffer name exists
+                     (if (yes-or-no-p
+                          (format (concat "A buffer named '%s' already exists: "
+                                          "Rename again?")
+                                  new-name))
+                         (setq new-name (read-string "New buffer name: "))
+                       (keyboard-quit)))
+                   (rename-buffer new-name)
+                   (message "Buffer '%s' successfully renamed to '%s'"
+                            name new-name)))
+                ;; ?\a = C-g, ?\e = Esc and C-[
+                ((memq key '(?\a ?\e)) (keyboard-quit))))))))
+
+;; from magnars
+(defun my/delete-current-buffer-file ()
+  "Removes file connected to current buffer and kills buffer."
+  (interactive)
+  (let ((filename (buffer-file-name))
+        (buffer (current-buffer))
+        (name (buffer-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (ido-kill-buffer)
+      (if (yes-or-no-p
+            (format "Are you sure you want to delete this file: '%s'?" name))
+          (progn
+            (delete-file filename t)
+            (kill-buffer buffer)
+            (when (and (configuration-layer/package-used-p 'projectile)
+                       (projectile-project-p))
+              (call-interactively #'projectile-invalidate-cache))
+            (message "File deleted: '%s'" filename))
+        (message "Canceled: File deletion")))))
 
 ;; found at http://emacswiki.org/emacs/KillingBuffers
 (defun my/kill-other-buffers (&optional arg)
@@ -264,6 +353,8 @@ If the universal prefix argument is used then will the windows too."
    "Ts" #'helm-themes
 
    "fs" #'evil-write-all
+   "fD" #'my/delete-current-buffer-file
+   "fR" #'my/rename-current-buffer-file
 
    "fed" #'my/find-dotfile
 
