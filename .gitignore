@@ -8,6 +8,11 @@
 .spacemacs.d/private.el
 .spacemacs.d/private.el.backup
 
+!.emacs.d/
+.emacs.d/*
+!.emacs.d/init.el
+!.emacs.d/themes.el
+
 !.bash_profile
 !.tmux.conf
 !.gitignore
