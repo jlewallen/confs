@@ -103,10 +103,15 @@ current."
 ;; ---------------------------------------------------------------------------------------
 ;; evil-mode
 
+(defun my/evil-mode-initialize ()
+  (setq evil-want-C-u-scroll t))
+
 (defun my/evil-mode-config ()
   (evil-mode 1))
 
-(use-package evil :config (my/evil-mode-config))
+(use-package evil
+  :init (my/evil-mode-initialize)
+  :config (my/evil-mode-config))
 
 (use-package evil-surround
   :after (evil)
