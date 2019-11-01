@@ -436,10 +436,19 @@ If the universal prefix argument is used then will the windows too."
    "mFr" #'lsp-workspace-folders-remove
    "mFa" #'lsp-workspace-folders-add
 
+   ;; semantic code navigation from ccls
    "nh"  #'my/navigate-left
    "nj"  #'my/navigate-down
    "nk"  #'my/navigate-up
    "nl"  #'my/navigate-right
+
+   ;; org stuff
+
+   ;; journal
+   "ojj" #'org-journal-new-entry
+   "ojn" #'org-journal-open-next-entry
+   "ojp" #'org-journal-open-previous-entry
+
    ))
 
 (use-package general
@@ -460,20 +469,25 @@ If the universal prefix argument is used then will the windows too."
 ;; org
 
 (defun my/org-config ()
-  (setq org-enable-org-journal-support t)
-  (setq org-journal-dir "~/dropbox/notes/journal")
-  (setq org-journal-file-format "%Y%m%d.org")
-  (setq org-ditaa-jar-path "/usr/share/ditaa/ditaa.jar")
-  (setq org-journal-carryover-items nil)
-  (setq org-directory "~/dropbox/notes")
   (setq org-default-notes-file (concat org-directory "/capture.org"))
 
+  (setq org-directory "~/dropbox/notes")
   (setq org-agenda-files (list "~/dropbox/notes/journal"
                                "~/dropbox/notes/cal"
                                "~/dropbox/notes")))
 
 (use-package org
   :config (my/org-config))
+
+(use-package org-journal
+  :ensure t
+  :after org
+  :custom
+  (org-journal-dir "~/dropbox/notes/journal/")
+  (org-journal-date-prefix "#+FILETAGS: journal\n\n")
+  ;; (org-journal-time-prefix "")
+  (org-journal-file-format "%Y%m%d.org")
+  (org-journal-date-format "%A, %d %B %Y"))
 
 ;; ---------------------------------------------------------------------------------------
 ;; magit
