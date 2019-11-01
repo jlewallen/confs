@@ -487,6 +487,12 @@ If the universal prefix argument is used then will the windows too."
   :after magit
   :config (my/magit-config))
 
+(use-package git-timemachine)
+(use-package git-gutter-fringe+
+  :config
+  (global-git-gutter+-mode)
+  (git-gutter-fr+-minimal))
+
 ;; ---------------------------------------------------------------------------------------
 ;; programming modes
 
