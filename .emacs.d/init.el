@@ -132,9 +132,12 @@ current."
             (lambda()
               (define-key helm-buffer-map (kbd "ESC") 'helm-keyboard-quit)
               (define-key helm-find-files-map (kbd "ESC") 'helm-keyboard-quit)
-              (define-key helm-map (kbd "ESC") 'helm-keyboard-quit)))
+			  (define-key helm-map (kbd "ESC") 'helm-keyboard-quit)))
 
-  (setq helm-display-function 'pop-to-buffer)
+  (setq helm-always-two-windows t)
+  (setq helm-split-window-inside-p t)
+  (setq helm-display-buffer-default-height 23)
+  
   (helm-mode 1))
 
 (use-package helm
@@ -153,10 +156,8 @@ current."
 (use-package golden-ratio
   :config (golden-ratio-mode 1))
 
-(defun my/shackle-config ())
-
-(use-package shackle
-  :config (my/shackle-config))
+;; (defun my/shackle-config ())
+;; (use-package shackle :config (my/shackle-config))
 
 ;; ---------------------------------------------------------------------------------------
 ;; general
@@ -525,6 +526,8 @@ If the universal prefix argument is used then will the windows too."
 (use-package protobuf-mode)
 
 (server-start)
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
