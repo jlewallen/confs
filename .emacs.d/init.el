@@ -4,8 +4,6 @@
 ;;
 ;;
 
-(setq inhibit-startup-message t)
-
 ;; ---------------------------------------------------------------------------------------
 ;; package loading
 
@@ -32,6 +30,14 @@
 ;; ---------------------------------------------------------------------------------------
 ;; general configuration
 
+(setq inhibit-startup-message t
+	  initial-scratch-message ""
+	  create-lockfiles nil
+	  ring-bell-function 'ignore
+	  tramp-default-method "ssh"
+	  large-file-warning-threshold nil
+	  recentf-max-saved-items 100)
+
 (setq gc-cons-threshold 402653184
       gc-cons-percentage 0.6
       file-name-handler-alist nil
@@ -54,13 +60,14 @@
               web-mode-attr-indent-offset 4
               backup-inhibited t)
 
+(setq delete-trailing-lines t)
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 (set-window-scroll-bars (minibuffer-window) nil nil)
-(setq create-lockfiles nil)
-(setq ring-bell-function 'ignore)
-(setq recentf-max-saved-items 100)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
