@@ -402,9 +402,11 @@ If the universal prefix argument is used then will the windows too."
    "w<S-up>"    #'evil-window-move-very-top
    "w<S-right>" #'evil-window-move-far-right
 
-   "mgd" #'lsp-find-definition
-   "mgr" #'lsp-find-references
-   "mgs" #'helm-lsp-workspace-symbol
+   ;; "cd"  #'xref-find-definitions
+   ;; "cr"  #'xref-find-references
+   "cd"  #'lsp-find-definition
+   "cr"  #'lsp-find-references
+   "cs"  #'helm-lsp-workspace-symbol
 
    ;; format
    "m=b" #'lsp-format-buffer
@@ -518,6 +520,7 @@ If the universal prefix argument is used then will the windows too."
 ;; GO111MODULE=on go get golang.org/x/tools/gopls@latest
 ;; pip install python-language-server
 ;; npm install -g javascript-typescript-langserver
+;; npm install -g typescript-language-server
 
 (use-package smartparens :defer)
 
@@ -625,6 +628,11 @@ If the universal prefix argument is used then will the windows too."
 
 (use-package cc-mode :config (my/cc-mode-config))
 (use-package cmake-ide :after cc-mode)
+
+(use-package modern-cpp-font-lock
+  :after cc-mode
+  :config
+  (modern-c++-font-lock-global-mode t))
 
 (defun my/go-mode-config ()
   (require 'go-guru)
