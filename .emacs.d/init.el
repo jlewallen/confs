@@ -83,7 +83,10 @@ If FRAME is nil, configure current frame. If non-nil, make FRAME
 current."
   (when frame (select-frame frame))
   (when (window-system)
-    (set-face-attribute 'default nil :height 100 :family "Ubuntu Mono")))
+	(message "setting faces")
+    (set-face-attribute 'default nil :height 110 :family "Ubuntu Mono")))
+
+(define-key special-event-map [config-changed-event] 'ignore)
 
 (if (daemonp)
     (add-hook 'after-make-frame-functions #'my/setup-frame)
