@@ -83,13 +83,18 @@ If FRAME is nil, configure current frame. If non-nil, make FRAME
 current."
   (when frame (select-frame frame))
   (when (window-system)
-	(message "setting faces")
-    (set-face-attribute 'default nil :height 110 :family "Ubuntu Mono")))
+	(message "setting faces, resolution: %d %d" (display-pixel-width) (display-pixel-height))
+	(set-face-attribute 'default nil
+						:family "Ubuntu Mono"
+						:height (cond
+								 ((and (eq (display-pixel-width) 2560) (eq(display-pixel-height) 1440)) 120) ; thinkpad.
+								 ((and (eq (display-pixel-width) 5760) (eq(display-pixel-height) 1600)) 110) ; work desktop
+								 (t 110)))))
 
 (define-key special-event-map [config-changed-event] 'ignore)
 
 (if (daemonp)
-    (add-hook 'after-make-frame-functions #'my/setup-frame)
+	(add-hook 'after-make-frame-functions #'my/setup-frame)
   (my/setup-frame))
 
 ;; ---------------------------------------------------------------------------------------
