@@ -12,6 +12,7 @@
 .emacs.d/*
 !.emacs.d/init.el
 !.emacs.d/themes.el
+!.emacs.d/keys.el
 !.emacs.d/funcs.el
 
 !.bash_profile
