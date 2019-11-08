@@ -12,6 +12,7 @@
  "fR" #'my/rename-current-buffer-file
 
  "fed" #'my/find-dotfile
+ "fek" #'my/find-dotfile-keys
 
  "bb" #'helm-mini
  "bn" #'next-buffer
@@ -77,8 +78,8 @@
  ;; jump
  ;; backend
  "mbd" #'lsp-describe-session
- "mbr" #'lsp-restart-workspace
- "mbs" #'lsp-shutdown-workspace
+ "mbr" #'lsp-workspace-restart
+ "mbs" #'lsp-workspace-shutdown
 
  ;; refactor
  "mrr" #'lsp-rename
@@ -99,10 +100,23 @@
  "nk"  #'my/navigate-up
  "nl"  #'my/navigate-right
 
- ;; org stuff
-
  ;; journal
  "ojj" #'org-journal-new-entry
+ )
+
+(general-define-key
+ :keymaps 'org-mode-map
+ :states 'normal
+ :prefix "SPC"
  "ojn" #'org-journal-open-next-entry
  "ojp" #'org-journal-open-previous-entry
+ )
+
+(general-define-key
+ :keymaps 'ledger-mode-map
+ :states 'normal
+ :prefix "SPC"
+ "mc" #'ledger-toggle-current
+ "mC" #'ledger-mode-clean-buffer
+ "mD" #'my/ledger-duplicate-current-transaction
  )

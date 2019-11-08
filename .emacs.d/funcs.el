@@ -144,6 +144,11 @@ If the universal prefix argument is used then will the windows too."
   (interactive)
   (find-file-existing "~/.emacs.d/init.el"))
 
+(defun my/find-dotfile-keys ()
+  "Edit the keys.el `dotfile', in the current window."
+  (interactive)
+  (find-file-existing "~/.emacs.d/keys.el"))
+
 (defun my/navigate-left ()
   (interactive)
   (ccls-navigate "L"))
@@ -159,3 +164,15 @@ If the universal prefix argument is used then will the windows too."
 (defun my/navigate-up ()
   (interactive)
   (ccls-navigate "U"))
+
+(defun my/ledger-duplicate-current-transaction (date)
+  "Ask for a new DATE and copy the transaction under point to that date.  Leave point on the first amount.  Toggle if cleared."
+  (interactive  (list
+				 (ledger-read-date "Copy to date: ")))
+  (let* ()
+	(ledger-copy-transaction-at-point date)
+	(if (eq (ledger-transaction-state) 'cleared)
+		(ledger-toggle-current-transaction)
+	  )
+	)
+  )

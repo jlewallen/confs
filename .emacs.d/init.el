@@ -398,7 +398,11 @@ current."
   :config (my/js2-mode-config))
 
 (use-package vue-mode)
-(use-package ledger-mode)
+
+(use-package ledger-mode
+  :config
+  (setq ledger-post-amount-alignment-column 100))
+
 (use-package yaml-mode)
 (use-package json-mode)
 (use-package protobuf-mode)
