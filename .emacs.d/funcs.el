@@ -165,6 +165,14 @@ If the universal prefix argument is used then will the windows too."
   (interactive)
   (ccls-navigate "U"))
 
+(defun my/jlewallen-open-notes ()
+  (interactive)
+  (find-file-existing "~/dropbox/notes/notes.org"))
+
+(defun my/jlewallen-open-agenda ()
+  (interactive)
+  (find-file-existing "~/dropbox/notes/agenda.org"))
+
 (defun my/ledger-duplicate-current-transaction (date)
   "Ask for a new DATE and copy the transaction under point to that date.  Leave point on the first amount.  Toggle if cleared."
   (interactive  (list

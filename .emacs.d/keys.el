@@ -5,6 +5,7 @@
  "TAB" #'my/alternate-buffer
 
  "ff" #'helm-find-files
+ "fo" #'ff-find-other-file
  "Ts" #'helm-themes
 
  "fs" #'evil-write-all
@@ -102,6 +103,8 @@
 
  ;; journal
  "ojj" #'org-journal-new-entry
+ "ojn" #'my/jlewallen-open-notes
+ "oja" #'my/jlewallen-open-agenda
  )
 
 (general-define-key
