@@ -113,6 +113,7 @@
  :prefix "SPC"
  "ojn" #'org-journal-open-next-entry
  "ojp" #'org-journal-open-previous-entry
+ "oc"  #'org-toggle-checkbox
  )
 
 (general-define-key
