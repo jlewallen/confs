@@ -9,13 +9,7 @@
 .spacemacs.d/private.el.backup
 
 !.emacs.d/
-.emacs.d/*
-!.emacs.d/init.el
-!.emacs.d/themes.el
-!.emacs.d/keys.el
-!.emacs.d/funcs.el
-!.emacs.d/evil-org-mode/
-!.emacs.d/evil-org-mode/*
+!.emacs.d/*
 
 !.bash_profile
 !.tmux.conf
