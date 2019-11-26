@@ -222,6 +222,11 @@ current."
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 
+(defun my/org-bullets ()
+  (add-to-list 'load-path "~/.emacs.d/org-bullets")
+  (require 'org-bullets)
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
 (defun my/org-config ()
   (setq org-default-notes-file (concat org-directory "/capture.org"))
 
@@ -229,7 +234,8 @@ current."
   (setq org-agenda-files (list "~/dropbox/notes/journal"
                                "~/dropbox/notes/cal"
                                "~/dropbox/notes"))
-  (my/evil-org-mode))
+  (my/evil-org-mode)
+  (my/org-bullets))
 
 (use-package org
   :config (my/org-config))
