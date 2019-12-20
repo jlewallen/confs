@@ -251,7 +251,7 @@ urxvt.urlButton: 1
 ! #include "tools/setup/base16-xresources/xresources/base16-tomorrow-night-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-tomorrow-night.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-tomorrow.Xresources"
-#include "tools/setup/base16-xresources/xresources/base16-tube-256.Xresources"
+! #include "tools/setup/base16-xresources/xresources/base16-tube-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-tube.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-twilight.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-unikitty-dark-256.Xresources"
@@ -265,7 +265,7 @@ urxvt.urlButton: 1
 ! #include "tools/setup/base16-xresources/xresources/base16-zenburn.Xresources"
 
 
-! #include "tools/setup/base16-xresources/xresources/base16-woodland-256.Xresources"
+#include "tools/setup/base16-xresources/xresources/base16-woodland-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-gruvbox-dark-hard-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-gruvbox-light-soft-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-brewer-256.Xresources"
