@@ -114,6 +114,7 @@
  "ojn" #'org-journal-open-next-entry
  "ojp" #'org-journal-open-previous-entry
  "oc"  #'org-toggle-checkbox
+ "oa"  #'org-archive-subtree-default
  )
 
 (general-define-key
