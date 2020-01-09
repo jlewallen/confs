@@ -1,17 +1,20 @@
+
 /*
 
 !.vimrc
 !.globalrc
 
+!.shell.d
+!.shell.d/*
+
 !.spacemacs.d/
 !.spacemacs.d/**/*
+
 .spacemacs.d/private.el
 .spacemacs.d/private.el.backup
 
 !.emacs.d/
-.emacs.d/*
-!.emacs.d/init.el
-!.emacs.d/themes.el
+!.emacs.d/*
 
 !.bash_profile
 !.tmux.conf
@@ -35,6 +38,7 @@
 !.irssi/*
 
 tools/*
+
 !/tools/
 !/tools/package.json
 !/tools/bin/
@@ -46,14 +50,6 @@ tools/*
 !/tools/setup/fonts/
 !/tools/setup/fonts/*
 
-!./go/
-!./go/src/
-!./go/src/github.com/
-!./go/src/github.com/conservify/
-!./go/src/github.com/conservify/.gitkeep
-!./go/src/github.com/jlewallen/
-!./go/src/github.com/jlewallen/.gitkeep
-
 !./.local/
 !./.local/share/
 !./.local/share/xfce4/
@@ -64,12 +60,12 @@ tools/*
 !./.ssh/
 !./.ssh/config
 
-!./.config/
-!./.config/xfce4/
-!./.config/xfce4/terminal/
-!./.config/xfce4/terminal/terminalrc
+!.config/
+.config/*
+!.config/broot/
 
 !./.fonts/
 !./.fonts/*
 
 tools/bin/hugo
+tools/bin/broot

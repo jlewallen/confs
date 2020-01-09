@@ -22,7 +22,7 @@ urxvt.depth: 32
 urxvt.iso14755: false
 urxvt.termName: rxvt-256color
 urxvt.saveLines: 1000000
-urxvt.fading: 10
+!urxvt.fading: 10
 
 ! *.font: xft:Iosevka:style=Regular:size=8
 ! *.boldFont: xft:Iosevka:style=Bold:size=8
@@ -58,8 +58,8 @@ urxvt.urlButton: 1
 !urxvt*depth: 32
 !urxvt*background: rgba:0000/0000/0200/c800
 
-urxvt*transparent: true
-urxvt*shading: 10
+!urxvt*transparent: true
+!urxvt*shading: 10
 
 ! #include "tools/setup/base16-xresources/xresources/base16-3024-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-3024.Xresources"
@@ -251,7 +251,7 @@ urxvt*shading: 10
 ! #include "tools/setup/base16-xresources/xresources/base16-tomorrow-night-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-tomorrow-night.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-tomorrow.Xresources"
-#include "tools/setup/base16-xresources/xresources/base16-tube-256.Xresources"
+! #include "tools/setup/base16-xresources/xresources/base16-tube-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-tube.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-twilight.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-unikitty-dark-256.Xresources"
@@ -265,7 +265,7 @@ urxvt*shading: 10
 ! #include "tools/setup/base16-xresources/xresources/base16-zenburn.Xresources"
 
 
-! #include "tools/setup/base16-xresources/xresources/base16-woodland-256.Xresources"
+#include "tools/setup/base16-xresources/xresources/base16-woodland-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-gruvbox-dark-hard-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-gruvbox-light-soft-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-brewer-256.Xresources"

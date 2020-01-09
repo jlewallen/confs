@@ -1,0 +1,3 @@
+#!/bin/bash
+
+JLinkGDBServer -if SWD -device ATSAMD51P20 -select usb=269402783 -Port 2000 -RTTTelnetPort 2001

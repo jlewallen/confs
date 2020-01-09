@@ -1,0 +1,23 @@
+# ~/.tmuxinator/jlw-2100.yml
+
+name: jlw-2100
+root: ~/fieldkit/firmware
+
+startup_window: 0
+startup_pane: 1
+
+windows:
+  - session:
+      layout: even-horizontal
+      panes:
+        - gdb:
+          - sleep 2 && gdb-multiarch -q -ex "js 2100" build/samd51/fk/fk-bundled-fkb.elf
+        - shell:
+          - clear
+        - logs:
+          - JLinkRTTClient -RTTTelnetPort 2101
+  - jlink:
+      layout: even-horizontal
+      panes:
+        - jlink:
+            - JLinkGDBServer -if SWD -device ATSAMD51P20 -select usb=801011801 -Port 2100 -RTTTelnetPort 2101
