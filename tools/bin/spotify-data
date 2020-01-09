@@ -4,15 +4,17 @@ set -ex
 
 source ~/.zshenv
 
-#pushd /home/jlewallen/go/src/github.com/jlewallen/weekly-playlist
-#go build -o weekly *.go
-#./weekly --eclectic-only
+#pushd /home/jlewallen/jlewallen/weekly-playlist
+#if [ -f weekly ]; then
+	#./weekly --eclectic-only
+#fi
 #popd
 
-#pushd /home/jlewallen/go/src/github.com/jlewallen/playlist-generator
-#go build -o generator *.go
-#./generator
-#popd
+pushd /home/jlewallen/jlewallen/playlist-generator
+if [ -f generator ]; then
+	./generator
+popd
+popd
 
 pushd ~jlewallen/jlewallen/spotify
 
