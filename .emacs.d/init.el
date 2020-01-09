@@ -412,7 +412,13 @@ current."
 (use-package js2-mode
   :config (my/js2-mode-config))
 
-(use-package vue-mode)
+(defun my/vue-mode-config ()
+  (add-hook 'mmm-mode-hook
+			(lambda ()
+			  (set-face-background 'mmm-default-submode-face nil))))
+
+(use-package vue-mode
+  :config (my/vue-mode-config))
 
 (use-package ledger-mode
   :config
