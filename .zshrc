@@ -127,3 +127,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 unsetopt share_history
+
+source ~/.shell.d/*.sh
