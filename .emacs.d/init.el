@@ -413,9 +413,10 @@ current."
   :config (my/js2-mode-config))
 
 (defun my/vue-mode-config ()
-  (add-hook 'mmm-mode-hook
-			(lambda ()
-			  (set-face-background 'mmm-default-submode-face nil))))
+  (setq mmm-js-mode-enter-hook (lambda () (setq syntax-ppss-table nil)))
+  (setq mmm-typescript-mode-enter-hook (lambda () (setq syntax-ppss-table nil)))
+  (add-hook 'js-mode-hook (lambda () (setq syntax-ppss-table nil)))
+  (add-hook 'mmm-mode-hook (lambda () (set-face-background 'mmm-default-submode-face nil))))
 
 (use-package vue-mode
   :config (my/vue-mode-config))
