@@ -37,7 +37,9 @@ function move_files {
 	skip=false
 
 	for a in ${to}/${fr}*; do
-		skip=true
+		if [ -f ${a} ]; then
+			skip=true
+		fi
 	done
 
 	if [ "$skip" = true ]; then
