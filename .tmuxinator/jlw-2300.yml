@@ -11,7 +11,7 @@ windows:
       layout: even-horizontal
       panes:
         - gdb:
-          - sleep 2 && gdb-multiarch -q -ex "js 2300" build/samd51/fk/fk-bundled-fkb.elf
+          - sleep 1 && gdb-multiarch -q -ex "js 2300" build/samd51/fk/fk-bundled-fkb.elf
         - shell:
           - clear
         - logs:
