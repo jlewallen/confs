@@ -120,7 +120,9 @@ current."
   (my/load-file-here "themes.el")
   (setq custom-safe-themes t)
   (dolist (pkg jl-themes-packages)
-    (package-install pkg)))
+	(package-install pkg))
+  (add-to-list 'custom-theme-load-path "themes")
+  (load-theme 'horizon t))
 
 (defun my/fixup-fringe-coloring (&rest args)
   (set-face-attribute 'fringe nil :background nil))
