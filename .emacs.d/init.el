@@ -27,8 +27,11 @@
 
 (setq load-prefer-newer t)
 
+(defun my/path-file-here (file)
+  (expand-file-name file (file-name-directory (or load-file-name buffer-file-name))))
+
 (defun my/load-file-here (file)
-  (load-file (expand-file-name file (file-name-directory (or load-file-name buffer-file-name)))))
+  (load-file (my/path-file-here file)))
 
 ;; ---------------------------------------------------------------------------------------
 ;; general configuration
@@ -121,7 +124,7 @@ current."
   (setq custom-safe-themes t)
   (dolist (pkg jl-themes-packages)
 	(package-install pkg))
-  (add-to-list 'custom-theme-load-path "themes")
+  (add-to-list 'custom-theme-load-path (my/path-file-here "themes"))
   (load-theme 'horizon t))
 
 (defun my/fixup-fringe-coloring (&rest args)
