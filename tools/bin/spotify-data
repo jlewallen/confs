@@ -1,33 +1,16 @@
 #!/bin/bash
 
-set -ex
-
-source ~/.zshenv
-
-#pushd /home/jlewallen/jlewallen/weekly-playlist
-#if [ -f weekly ]; then
-	#./weekly --eclectic-only
-#fi
-#popd
+set -e
 
 pushd /home/jlewallen/jlewallen/playlist-generator
 if [ -f generator ]; then
 	./generator
-popd
-popd
-
-pushd ~jlewallen/jlewallen/spotify
-
-pushd data/jlewallen.github.io/music/data
-git pull
+	echo "copying new playlists"
+	rsync -vua *.json ~/dropbox/personal/jacoblewallen.com/content/music
+fi
 popd
 
-docker start some-redis || true
-docker build -t spotify .
-docker run --name spotify -v ~jlewallen/jlewallen/spotify/data:/app/data --rm --link some-redis:redis spotify
-
-pushd data/jlewallen.github.io/music/data
-git add . && git commit -av -m 'Updating playlists.' && git push origin
-popd
-
+pushd ~/dropbox/personal
+echo "uploading site"
+make upload
 popd
