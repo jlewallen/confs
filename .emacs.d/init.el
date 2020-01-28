@@ -37,9 +37,9 @@
 ;; general configuration
 
 (setq gc-cons-threshold 402653184
-      gc-cons-percentage 0.6
-      file-name-handler-alist nil
-      site-run-file nil)
+	  gc-cons-percentage 0.6
+	  file-name-handler-alist nil
+	  site-run-file nil)
 
 (setq inhibit-startup-message t
 	  initial-scratch-message ""
@@ -51,20 +51,20 @@
 	  recentf-max-saved-items 100)
 
 (setq user-full-name "Jacob Lewallen"
-      user-mail-address "jlewallen@gmail.com"
-      calendar-location-name "Los Angeles"
-      calendar-latitude 34.052234
-      calendar-longitude -118.243685)
+	  user-mail-address "jlewallen@gmail.com"
+	  calendar-location-name "Los Angeles"
+	  calendar-latitude 34.052234
+	  calendar-longitude -118.243685)
 
 (setq-default tab-width 4
-              js2-basic-offset 4
-              js-indent-level 4
-              css-indent-offset 4
-              sgml-basic-offset 4
-              web-mode-markup-indent-offset 4
-              web-mode-css-indent-offset 4
-              web-mode-code-indent-offset 4
-              web-mode-attr-indent-offset 4)
+			  js2-basic-offset 4
+			  js-indent-level 4
+			  css-indent-offset 4
+			  sgml-basic-offset 4
+			  web-mode-markup-indent-offset 4
+			  web-mode-css-indent-offset 4
+			  web-mode-code-indent-offset 4
+			  web-mode-attr-indent-offset 4)
 
 (setq delete-trailing-lines t)
 
@@ -86,19 +86,19 @@
 
 (defun my/face-ubuntu-mono ()
   (set-face-attribute 'default nil
-		      :family "Ubuntu Mono"
-		      :height (cond
-				((and (eq (display-pixel-width) 2560) (eq (display-pixel-height) 1440)) 120) ; thinkpad
-				((and (eq (display-pixel-width) 5760) (eq (display-pixel-height) 1600)) 110) ; desktops
-				(t 110))))
+					  :family "Ubuntu Mono"
+					  :height (cond
+							   ((and (eq (display-pixel-width) 2560) (eq (display-pixel-height) 1440)) 120) ; thinkpad
+							   ((and (eq (display-pixel-width) 5760) (eq (display-pixel-height) 1600)) 110) ; desktops
+							   (t 110))))
 
 (defun my/face-source-code-pro ()
   (set-face-attribute 'default nil
-		      :family "Source Code Pro"
-		      :height (cond
-				((and (eq (display-pixel-width) 2560) (eq (display-pixel-height) 1440)) 110) ; thinkpad
-				((and (eq (display-pixel-width) 5760) (eq (display-pixel-height) 1600)) 100) ; desktops
-				(t 100))))
+					  :family "Source Code Pro"
+					  :height (cond
+							   ((and (eq (display-pixel-width) 2560) (eq (display-pixel-height) 1440)) 110) ; thinkpad
+							   ((and (eq (display-pixel-width) 5760) (eq (display-pixel-height) 1600)) 100) ; desktops
+							   (t 100))))
 
 (defun my/setup-frame (&optional frame)
   "Configure look of FRAME.
@@ -172,9 +172,9 @@ current."
   (define-key helm-map (kbd "C-w") #'evil-delete-backward-word)
   (define-key helm-map (kbd "ESC") #'helm-keyboard-quit)
   (add-hook 'helm-after-initialize-hook
-            (lambda()
-              (define-key helm-buffer-map (kbd "ESC") 'helm-keyboard-quit)
-              (define-key helm-find-files-map (kbd "ESC") 'helm-keyboard-quit)
+			(lambda()
+			  (define-key helm-buffer-map (kbd "ESC") 'helm-keyboard-quit)
+			  (define-key helm-find-files-map (kbd "ESC") 'helm-keyboard-quit)
 			  (define-key helm-map (kbd "ESC") 'helm-keyboard-quit)))
 
   (setq helm-always-two-windows t)
@@ -248,8 +248,8 @@ current."
 
   (setq org-directory "~/dropbox/notes")
   (setq org-agenda-files (list "~/dropbox/notes/journal"
-                               "~/dropbox/notes/cal"
-                               "~/dropbox/notes"))
+							   "~/dropbox/notes/cal"
+							   "~/dropbox/notes"))
   (my/evil-org-mode)
   (my/org-bullets))
 
@@ -313,13 +313,11 @@ current."
 
   (setq lsp-enable-snippet nil)
 
-  ;; enable lsp-mode for various languages
-  (add-hook 'go-mode-hook #'lsp)
-  (add-hook 'c++-mode-hook #'lsp)
-  (add-hook 'python-mode-hook #'lsp)
-  (add-hook 'js-mode-hook #'lsp)
-  (add-hook 'js2-mode-hook #'lsp)
-  (add-hook 'rust-mode-hook #'lsp))
+  (setq lsp-log-io nil)
+  (setq lsp-trace nil)
+  (setq lsp-print-performance t)
+  (setq lsp-response-timeout 20)
+  )
 
 (defun my/ccls-config ()
   (setq ccls-executable "ccls")
@@ -336,6 +334,13 @@ current."
 (use-package lsp-mode
   :ensure t
   :after ccls
+  :hook ((vue-mode . lsp)
+		 (typescript-mode . lsp)
+		 (rust-mode . lsp)
+		 (js2-mode . lsp)
+		 (js-mode . lsp)
+		 (c++-mode . lsp)
+		 (python-mode . lsp))
   :config (my/lsp-config))
 
 (use-package lsp-ui
@@ -343,16 +348,16 @@ current."
   :after lsp-mode
   :config
   (setq lsp-ui-doc-enable t
-        lsp-ui-doc-use-childframe t
-        lsp-ui-doc-position 'top
-        lsp-ui-doc-include-signature t
-        lsp-ui-sideline-enable nil
-        lsp-ui-flycheck-enable t
-        lsp-ui-flycheck-list-position 'right
-        lsp-ui-flycheck-live-reporting t
-        lsp-ui-peek-enable t
-        lsp-ui-peek-list-width 60
-        lsp-ui-peek-peek-height 25)
+		lsp-ui-doc-use-childframe t
+		lsp-ui-doc-position 'top
+		lsp-ui-doc-include-signature t
+		lsp-ui-sideline-enable nil
+		lsp-ui-flycheck-enable t
+		lsp-ui-flycheck-list-position 'right
+		lsp-ui-flycheck-live-reporting t
+		lsp-ui-peek-enable t
+		lsp-ui-peek-list-width 60
+		lsp-ui-peek-peek-height 25)
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
 (use-package company
@@ -370,32 +375,32 @@ current."
 
   ;; disable client-side cache because the lsp server does a better job.
   (setq company-transformers nil
-        company-lsp-async t
-        company-lsp-cache-candidates nil))
+		company-lsp-async t
+		company-lsp-cache-candidates nil))
 
 (use-package python-mode)
 
 (defun my/cc-mode-config ()
   (c-add-style "my-c-style"
-               '("stroustrup"
-                 (indent-tabs-mode . nil)
-                 (c-basic-offset . 4)
-                 (c-offsets-alist . ((innamespace . [0])
-                                     (inline-open . 0)
-                                     (brace-list-open . 0)
-                                     (statement-case-open . +)))))
+			   '("stroustrup"
+				 (indent-tabs-mode . nil)
+				 (c-basic-offset . 4)
+				 (c-offsets-alist . ((innamespace . [0])
+									 (inline-open . 0)
+									 (brace-list-open . 0)
+									 (statement-case-open . +)))))
 
   (defun my/c++-mode-hook ()
-    (c-set-style "my-c-style")
-    (auto-fill-mode)
-    (c-set-offset 'inextern-lang 0)
-    (c-toggle-auto-hungry-state 1))
+	(c-set-style "my-c-style")
+	(auto-fill-mode)
+	(c-set-offset 'inextern-lang 0)
+	(c-toggle-auto-hungry-state 1))
 
   (defun my/c-mode-hook ()
-    (c-set-style "my-c-style")
-    (auto-fill-mode)
-    (c-set-offset 'inextern-lang 0)
-    (c-toggle-auto-hungry-state 1))
+	(c-set-style "my-c-style")
+	(auto-fill-mode)
+	(c-set-offset 'inextern-lang 0)
+	(c-toggle-auto-hungry-state 1))
 
   (add-hook 'c++-mode-hook 'my/c++-mode-hook)
   (add-hook 'c-mode-hook 'my/c-mode-hook)
