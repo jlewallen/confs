@@ -68,6 +68,7 @@
  ;; format
  "m=b" #'lsp-format-buffer
  "m=r" #'lsp-format-region
+ "mmp" #'prettier-js
 
  ;; goto
  "mgt" #'lsp-find-type-definition
