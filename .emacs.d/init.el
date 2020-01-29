@@ -180,6 +180,7 @@ current."
   (setq helm-always-two-windows t)
   (setq helm-split-window-inside-p t)
   (setq helm-display-buffer-default-height 23)
+  (setq helm-candidate-number-limit 1000)
 
   (helm-mode 1))
 
