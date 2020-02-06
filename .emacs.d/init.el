@@ -174,7 +174,6 @@ current."
 			(lambda()
 			  (define-key helm-buffer-map (kbd "ESC") #'helm-keyboard-quit)
 			  (define-key helm-find-files-map (kbd "ESC") #'helm-keyboard-quit)
-			  ; (define-key helm-M-x-map (kbd "ESC") #'helm-keyboard-quit)
 			  (define-key helm-map (kbd "ESC") #'helm-keyboard-quit)))
 
   (setq helm-always-two-windows t)
@@ -279,8 +278,11 @@ current."
   :after magit
   :config (my/magit-config))
 
-(use-package git-timemachine)
+(use-package git-timemachine
+  :after evil-magit)
+
 (use-package git-gutter-fringe+
+  :after evil-magit
   :config
   (global-git-gutter+-mode)
   (git-gutter-fr+-minimal))

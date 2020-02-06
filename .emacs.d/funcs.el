@@ -184,3 +184,8 @@ If the universal prefix argument is used then will the windows too."
 	  )
 	)
   )
+
+(defun my/magit-status-fullscreen ()
+  (interactive)
+  (let ((pop-up-windows nil))
+    (call-interactively 'magit-status)))

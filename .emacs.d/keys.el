@@ -24,6 +24,7 @@
  "wo" #'other-frame
 
  "gs" #'magit-status
+ "gS" #'my/magit-status-fullscreen
 
  "wm" #'my/toggle-maximize-buffer
  "w|" #'my/maximize-vertically
