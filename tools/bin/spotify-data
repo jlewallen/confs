@@ -7,6 +7,7 @@ if [ -f generator ]; then
 	./generator
 	echo "copying new playlists"
 	rsync -vua *.json ~/dropbox/personal/jacoblewallen.com/content/music
+	rsync -vua *.json ~/dropbox/personal/jacoblewallen.com/public/music
 fi
 popd
 
