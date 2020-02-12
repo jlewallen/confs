@@ -424,6 +424,8 @@ current."
 (use-package cmake-ide :after cc-mode)
 (use-package cmake-mode :after cc-mode)
 
+(use-package terraform-mode)
+
 (use-package modern-cpp-font-lock
   :after cc-mode
   :config
@@ -472,18 +474,55 @@ current."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(Linum-format "%7i ")
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-term-color-vector
+   [unspecified "#1d2021" "#d72638" "#88b92d" "#f19d1a" "#1e8bac" "#be4264" "#1e8bac" "#d5d5d5"])
  '(beacon-color "#F8BBD0")
+ '(compilation-message-face (quote default))
+ '(cua-global-mark-cursor-color "#689d6a")
+ '(cua-normal-cursor-color "#7c6f64")
+ '(cua-overwrite-cursor-color "#b57614")
+ '(cua-read-only-cursor-color "#98971a")
+ '(cursor-type (quote bar))
  '(evil-emacs-state-cursor (quote ("#D50000" hbar)) t)
  '(evil-insert-state-cursor (quote ("#D50000" bar)) t)
  '(evil-normal-state-cursor (quote ("#F57F17" box)) t)
  '(evil-visual-state-cursor (quote ("#66BB6A" box)) t)
+ '(fci-rule-character-color "#452E2E")
+ '(fci-rule-color "#f1c40f")
+ '(frame-brackground-mode (quote dark))
+ '(fringe-mode 6 nil (fringe))
  '(helm-completion-style (quote emacs))
+ '(highlight-changes-colors (quote ("#d3869b" "#8f3f71")))
  '(highlight-indent-guides-auto-enabled nil)
  '(highlight-symbol-colors
    (quote
 	("#F57F17" "#66BB6A" "#0097A7" "#42A5F5" "#7E57C2" "#D84315")))
  '(highlight-symbol-foreground-color "#546E7A")
  '(highlight-tail-colors (quote (("#F8BBD0" . 0) ("#FAFAFA" . 100))))
+ '(hl-bg-colors
+   (quote
+	("#e29a3f" "#df6835" "#cf5130" "#f598a7" "#c2608f" "#5b919b" "#82cc73" "#c6c148")))
+ '(hl-fg-colors
+   (quote
+	("#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7")))
+ '(hl-paren-background-colors (quote ("#2492db" "#95a5a6" nil)))
+ '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
+ '(jdee-db-active-breakpoint-face-colors (cons "#171F24" "#c792ea"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#171F24" "#c3e88d"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#171F24" "#37474F"))
+ '(line-spacing 0.2)
+ '(linum-format (quote dynamic))
+ '(lsp-ui-doc-border "#665c54")
+ '(main-line-color1 "#222232")
+ '(main-line-color2 "#333343")
+ '(main-line-separator-style (quote chamfer))
+ '(nrepl-message-colors
+   (quote
+	("#9d0006" "#af3a03" "#b57614" "#747400" "#c6c148" "#004858" "#689d6a" "#d3869b" "#8f3f71")))
+ '(objed-cursor-color "#ff5370")
  '(org-journal-date-format "%A, %d %B %Y")
  '(org-journal-date-prefix "#+FILETAGS: journal
 
@@ -492,10 +531,53 @@ current."
  '(org-journal-file-format "%Y%m%d.org")
  '(package-selected-packages
    (quote
-	(cmake-mode evil-org-mode evil-org poet-theme zerodark-theme warm-night-theme zenburn-theme zen-and-art-theme yaml-mode white-sand-theme which-key vue-mode use-package underwater-theme ujelly-theme typescript-mode twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smartparens seti-theme reverse-theme rebecca-theme railscasts-theme python-mode purple-haze-theme protobuf-mode professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme nimbus-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme magit madhat2r-theme lush-theme lsp-ui light-soap-theme ledger-mode kaolin-themes json-mode js2-mode jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme helm-xref helm-themes helm-projectile helm-lsp helm-company hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme golden-ratio go-guru general gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme evil-surround espresso-theme dracula-theme doom-themes django-theme darktooth-theme darkokai-theme darkmine-theme darkburn-theme darcula-theme dakrone-theme cyberpunk-theme company-lsp color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmake-ide clues-theme cherry-blossom-theme ccls busybee-theme bubbleberry-theme birds-of-paradise-plus-theme base16-theme badwolf-theme auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme)))
+	(terraform-mode cmake-mode evil-org-mode evil-org poet-theme zerodark-theme warm-night-theme zenburn-theme zen-and-art-theme yaml-mode white-sand-theme which-key vue-mode use-package underwater-theme ujelly-theme typescript-mode twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smartparens seti-theme reverse-theme rebecca-theme railscasts-theme python-mode purple-haze-theme protobuf-mode professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme nimbus-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme magit madhat2r-theme lush-theme lsp-ui light-soap-theme ledger-mode kaolin-themes json-mode js2-mode jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme helm-xref helm-themes helm-projectile helm-lsp helm-company hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme golden-ratio go-guru general gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme evil-surround espresso-theme dracula-theme doom-themes django-theme darktooth-theme darkokai-theme darkmine-theme darkburn-theme darcula-theme dakrone-theme cyberpunk-theme company-lsp color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmake-ide clues-theme cherry-blossom-theme ccls busybee-theme bubbleberry-theme birds-of-paradise-plus-theme base16-theme badwolf-theme auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme)))
  '(pos-tip-background-color "#ffffffffffff")
  '(pos-tip-foreground-color "#78909C")
- '(tabbar-background-color "#ffffffffffff"))
+ '(powerline-color1 "#3d3d68")
+ '(powerline-color2 "#292945")
+ '(rustic-ansi-faces
+   ["#263238" "#ff5370" "#c3e88d" "#ffcb6b" "#82aaff" "#c792ea" "#89DDFF" "#EEFFFF"])
+ '(smartrep-mode-line-active-bg (solarized-color-blend "#98971a" "#ebdbb2" 0.2))
+ '(sml/active-background-color "#34495e")
+ '(sml/active-foreground-color "#ecf0f1")
+ '(sml/inactive-background-color "#dfe4ea")
+ '(sml/inactive-foreground-color "#34495e")
+ '(tabbar-background-color "#ffffffffffff")
+ '(term-default-bg-color "#fbf1c7")
+ '(term-default-fg-color "#7c6f64")
+ '(vc-annotate-background "#ecf0f1")
+ '(vc-annotate-background-mode nil)
+ '(vc-annotate-color-map
+   (quote
+	((30 . "#e74c3c")
+	 (60 . "#c0392b")
+	 (90 . "#e67e22")
+	 (120 . "#d35400")
+	 (150 . "#f1c40f")
+	 (180 . "#d98c10")
+	 (210 . "#2ecc71")
+	 (240 . "#27ae60")
+	 (270 . "#1abc9c")
+	 (300 . "#16a085")
+	 (330 . "#2492db")
+	 (360 . "#0a74b9"))))
+ '(vc-annotate-very-old-color "#0a74b9")
+ '(weechat-color-list
+   (quote
+	(unspecified "#fbf1c7" "#ebdbb2" "#750000" "#9d0006" "#747400" "#98971a" "#8a5100" "#b57614" "#004858" "#076678" "#9f4d64" "#d3869b" "#2e7d33" "#689d6a" "#7c6f64" "#3c3836")))
+ '(when
+	  (or
+	   (not
+		(boundp
+		 (quote ansi-term-color-vector)))
+	   (not
+		(facep
+		 (aref ansi-term-color-vector 0)))))
+ '(xterm-color-names
+   ["#ebdbb2" "#9d0006" "#98971a" "#b57614" "#076678" "#d3869b" "#689d6a" "#32302f"])
+ '(xterm-color-names-bright
+   ["#fbf1c7" "#af3a03" "#a89984" "#3c3836" "#7c6f64" "#8f3f71" "#665c54" "#282828"]))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
