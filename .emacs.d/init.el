@@ -465,6 +465,7 @@ current."
 (use-package yaml-mode)
 (use-package json-mode)
 (use-package protobuf-mode)
+(use-package groovy-mode)
 
 (server-start)
 
