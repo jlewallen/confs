@@ -1,11 +1,2 @@
 #!/bin/bash
 
-set -xe
-
-pushd ~/fieldkit/cloud
-make refresh-production
-ssh code mkdir -p /tmp/database
-rsync -zvua --progress schema-production/*  code:/tmp/database
-ssh code ls -alh /tmp/database
-ssh code mv /tmp/database/* sharing/shares/prod-database
-popd

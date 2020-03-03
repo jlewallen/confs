@@ -1,9 +1,17 @@
 #!/bin/bash
 
-URL=http://127.0.0.1:8080
+BASE_URL=http://127.0.0.1:8080
 
 if [ -z $FK_AUTH ]; then
-    export FK_AUTH=`curl -si $URL/login --data "{\"email\":\"$FK_EMAIL\",\"password\":\"$FK_PASSWORD\"}" | grep -i Authorization | sed -e "s/Authorization: Bearer //i" | tr -d '\n' | tr -d '\r'`
+    export FK_AUTH=`curl -si $BASE_URL/login --data "{\"email\":\"$FK_EMAIL\",\"password\":\"$FK_PASSWORD\"}" | grep -i Authorization | sed -e "s/Authorization: Bearer //i" | tr -d '\n' | tr -d '\r'`
 fi
 
-curl -s -H "Authorization: Bearer $FK_AUTH" "$@"
+if [ $# -eq 1 ]; then
+	if [[ $1 == http* ]]; then
+		curl -s -H "Authorization: Bearer $FK_AUTH" "$@"
+	else
+		curl -s -H "Authorization: Bearer $FK_AUTH" "$BASE_URL$1"
+	fi
+else
+	curl -s -H "Authorization: Bearer $FK_AUTH" "$@"
+fi
