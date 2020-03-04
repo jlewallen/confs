@@ -43,9 +43,7 @@ export MAKEFLAGS=--no-print-directory
 
 export CMAKE_MODULE_PATH=$HOME/conservify/cmake
 
-export PATH=$HOME/fieldkit/bin:$PATH
-export PATH=$HOME/fieldkit/app-protocol/build/linux-amd64:$PATH
-export PATH=$HOME/fieldkit/testing/build/linux-amd64:$PATH
+export PATH=$HOME/fieldkit/fkc/build:$PATH
 
 case $OSTYPE in
     darwin*)
