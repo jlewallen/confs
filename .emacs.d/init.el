@@ -391,7 +391,18 @@ current."
 		company-lsp-async t
 		company-lsp-cache-candidates nil))
 
-(use-package python-mode)
+(defun my/python-config ())
+
+(use-package python-mode
+  :config (my/python-config))
+
+(defun my/python-black-config ()
+  (add-hook 'python-mode-hook #'python-black-on-save-mode))
+
+(use-package python-black
+  :demand t
+  :after python-mode
+  :config (my/python-black-config))
 
 (defun my/cc-mode-config ()
   (c-add-style "my-c-style"
@@ -479,7 +490,7 @@ current."
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-term-color-vector
-   [unspecified "#1d2021" "#d72638" "#88b92d" "#f19d1a" "#1e8bac" "#be4264" "#1e8bac" "#d5d5d5"])
+   [unspecified "#1d2021" "#d72638" "#88b92d" "#f19d1a" "#1e8bac" "#be4264" "#1e8bac" "#d5d5d5"] t)
  '(beacon-color "#F8BBD0")
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#689d6a")
@@ -487,12 +498,33 @@ current."
  '(cua-overwrite-cursor-color "#b57614")
  '(cua-read-only-cursor-color "#98971a")
  '(cursor-type (quote bar))
+ '(ensime-sem-high-faces
+   (quote
+	((var :foreground "#9876aa" :underline
+		  (:style wave :color "yellow"))
+	 (val :foreground "#9876aa")
+	 (varField :slant italic)
+	 (valField :foreground "#9876aa" :slant italic)
+	 (functionCall :foreground "#a9b7c6")
+	 (implicitConversion :underline
+						 (:color "#808080"))
+	 (implicitParams :underline
+					 (:color "#808080"))
+	 (operator :foreground "#cc7832")
+	 (param :foreground "#a9b7c6")
+	 (class :foreground "#4e807d")
+	 (trait :foreground "#4e807d" :slant italic)
+	 (object :foreground "#6897bb" :slant italic)
+	 (package :foreground "#cc7832")
+	 (deprecated :strike-through "#a9b7c6"))))
  '(evil-emacs-state-cursor (quote ("#D50000" hbar)) t)
  '(evil-insert-state-cursor (quote ("#D50000" bar)) t)
  '(evil-normal-state-cursor (quote ("#F57F17" box)) t)
  '(evil-visual-state-cursor (quote ("#66BB6A" box)) t)
  '(fci-rule-character-color "#452E2E")
  '(fci-rule-color "#f1c40f")
+ '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
+ '(frame-background-mode (quote dark))
  '(frame-brackground-mode (quote dark))
  '(fringe-mode 6 nil (fringe))
  '(helm-completion-style (quote emacs))
@@ -517,6 +549,7 @@ current."
  '(line-spacing 0.2)
  '(linum-format (quote dynamic))
  '(lsp-ui-doc-border "#665c54")
+ '(magit-diff-use-overlays nil)
  '(main-line-color1 "#222232")
  '(main-line-color2 "#333343")
  '(main-line-separator-style (quote chamfer))
@@ -532,7 +565,8 @@ current."
  '(org-journal-file-format "%Y%m%d.org")
  '(package-selected-packages
    (quote
-	(terraform-mode cmake-mode evil-org-mode evil-org poet-theme zerodark-theme warm-night-theme zenburn-theme zen-and-art-theme yaml-mode white-sand-theme which-key vue-mode use-package underwater-theme ujelly-theme typescript-mode twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smartparens seti-theme reverse-theme rebecca-theme railscasts-theme python-mode purple-haze-theme protobuf-mode professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme nimbus-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme magit madhat2r-theme lush-theme lsp-ui light-soap-theme ledger-mode kaolin-themes json-mode js2-mode jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme helm-xref helm-themes helm-projectile helm-lsp helm-company hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme golden-ratio go-guru general gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme evil-surround espresso-theme dracula-theme doom-themes django-theme darktooth-theme darkokai-theme darkmine-theme darkburn-theme darcula-theme dakrone-theme cyberpunk-theme company-lsp color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmake-ide clues-theme cherry-blossom-theme ccls busybee-theme bubbleberry-theme birds-of-paradise-plus-theme base16-theme badwolf-theme auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme)))
+	(python-black terraform-mode cmake-mode evil-org-mode evil-org poet-theme zerodark-theme warm-night-theme zenburn-theme zen-and-art-theme yaml-mode white-sand-theme which-key vue-mode use-package underwater-theme ujelly-theme typescript-mode twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smartparens seti-theme reverse-theme rebecca-theme railscasts-theme python-mode purple-haze-theme protobuf-mode professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme nimbus-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme magit madhat2r-theme lush-theme lsp-ui light-soap-theme ledger-mode kaolin-themes json-mode js2-mode jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme helm-xref helm-themes helm-projectile helm-lsp helm-company hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme golden-ratio go-guru general gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme evil-surround espresso-theme dracula-theme doom-themes django-theme darktooth-theme darkokai-theme darkmine-theme darkburn-theme darcula-theme dakrone-theme cyberpunk-theme company-lsp color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmake-ide clues-theme cherry-blossom-theme ccls busybee-theme bubbleberry-theme birds-of-paradise-plus-theme base16-theme badwolf-theme auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme)))
+ '(pdf-view-midnight-colors (cons "#c5c8c6" "#1d1f21"))
  '(pos-tip-background-color "#ffffffffffff")
  '(pos-tip-foreground-color "#78909C")
  '(powerline-color1 "#3d3d68")
@@ -575,6 +609,7 @@ current."
 	   (not
 		(facep
 		 (aref ansi-term-color-vector 0)))))
+ '(window-divider-mode nil)
  '(xterm-color-names
    ["#ebdbb2" "#9d0006" "#98971a" "#b57614" "#076678" "#d3869b" "#689d6a" "#32302f"])
  '(xterm-color-names-bright
