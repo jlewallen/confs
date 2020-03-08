@@ -6,8 +6,8 @@ pushd /home/jlewallen/jlewallen/playlist-generator
 if [ -f generator ]; then
 	./generator
 	echo "copying new playlists"
-	rsync -vua *.json ~/dropbox/personal/jacoblewallen.com/content/music
-	rsync -vua *.json ~/dropbox/personal/jacoblewallen.com/public/music
+	rsync -vua .cache/*.json ~/dropbox/personal/jacoblewallen.com/content/music
+	rsync -vua .cache/*.json ~/dropbox/personal/jacoblewallen.com/public/music
 fi
 popd
 
