@@ -1,0 +1,3 @@
+#!/bin/bash
+
+feh --auto-zoom --scale-down --image-bg black -x -q
