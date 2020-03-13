@@ -17,7 +17,7 @@ fi
 
 export PATH=$HOME/.cargo/bin:$PATH
 
-if [ -x "$(which rustc)" ]; then
+if [ -x "$(command -v rustc)" ]; then
     export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fi
 
@@ -73,7 +73,7 @@ if [ -f ~/.zshenv.private.sh ]; then
     source ~/.zshenv.private.sh
 fi
 
-if [ -x $(which bat) ]; then
+if [ -x "$(command -v bat)" ]; then
     alias cat="bat"
 fi
 
