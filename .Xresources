@@ -217,7 +217,7 @@ urxvt.urlButton: 1
 ! #include "tools/setup/base16-xresources/xresources/base16-one-light.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-paraiso-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-paraiso.Xresources"
-! #include "tools/setup/base16-xresources/xresources/base16-phd-256.Xresources"
+#include "tools/setup/base16-xresources/xresources/base16-phd-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-phd.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-pico-256.Xresources"
 ! #include "tools/setup/base16-xresources/xresources/base16-pico.Xresources"

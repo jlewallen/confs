@@ -36,37 +36,34 @@
 ;; ---------------------------------------------------------------------------------------
 ;; general configuration
 
-(setq gc-cons-threshold 402653184
-	  gc-cons-percentage 0.6
-	  file-name-handler-alist nil
-	  site-run-file nil)
-
-(setq inhibit-startup-message t
-	  initial-scratch-message ""
-	  create-lockfiles nil
-	  backup-inhibited t
-	  ring-bell-function 'ignore
-	  tramp-default-method "ssh"
-	  large-file-warning-threshold nil
-	  recentf-max-saved-items 100)
-
-(setq user-full-name "Jacob Lewallen"
-	  user-mail-address "jlewallen@gmail.com"
-	  calendar-location-name "Los Angeles"
-	  calendar-latitude 34.052234
-	  calendar-longitude -118.243685)
-
-(setq-default tab-width 4
-			  js2-basic-offset 4
-			  js-indent-level 4
-			  css-indent-offset 4
-			  sgml-basic-offset 4
-			  web-mode-markup-indent-offset 4
-			  web-mode-css-indent-offset 4
-			  web-mode-code-indent-offset 4
-			  web-mode-attr-indent-offset 4)
-
+(setq gc-cons-threshold 402653184)
+(setq gc-cons-percentage 0.6)
+(setq file-name-handler-alist nil)
+(setq site-run-file nil)
+(setq inhibit-startup-message t)
+(setq initial-scratch-message "")
+(setq create-lockfiles nil)
+(setq backup-inhibited t)
+(setq ring-bell-function 'ignore)
+(setq tramp-default-method "ssh")
+(setq large-file-warning-threshold nil)
+(setq recentf-max-saved-items 100)
 (setq delete-trailing-lines t)
+(setq user-full-name "Jacob Lewallen")
+(setq user-mail-address "jlewallen@gmail.com")
+(setq calendar-location-name "Los Angeles")
+(setq calendar-latitude 34.052234)
+(setq calendar-longitude -118.243685)
+
+(setq-default tab-width 4)
+(setq-default js2-basic-offset 4)
+(setq-default js-indent-level 4)
+(setq-default css-indent-offset 4)
+(setq-default sgml-basic-offset 4)
+(setq-default web-mode-markup-indent-offset 4)
+(setq-default web-mode-css-indent-offset 4)
+(setq-default web-mode-code-indent-offset 4)
+(setq-default web-mode-attr-indent-offset 4)
 
 (tool-bar-mode 0)
 (menu-bar-mode 0)
