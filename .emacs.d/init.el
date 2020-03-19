@@ -290,16 +290,6 @@ current."
 ;; ---------------------------------------------------------------------------------------
 ;; programming modes
 
-(defun my/prettier-js-config ()
-  (setq prettier-target-mode "js2-mode"))
-
-(use-package prettier-js
-  :hook ((js2-mode . prettier-js-mode)
-		 (js-mode . prettier-js-mode)
-		 (typescript-mode . prettier-js-mode)
-		 (vue-mode . prettier-js-mode))
-  :config (my/prettier-js-config))
-
 ;; https://github.com/MaskRay/ccls/wiki/Project-Setup
 ;; https://www.mortens.dev/blog/emacs-and-the-language-server-protocol/
 ;; installed llvm/clangd into my path
@@ -477,6 +467,16 @@ current."
 (use-package json-mode)
 (use-package protobuf-mode)
 (use-package groovy-mode)
+
+(defun my/prettier-js-config ())
+
+(use-package prettier-js
+  :after lsp-mode
+  :hook ((js2-mode . prettier-js-mode)
+		 (js-mode . prettier-js-mode)
+		 (typescript-mode . prettier-js-mode)
+		 (vue-mode . prettier-js-mode))
+  :config (my/prettier-js-config))
 
 (server-start)
 
