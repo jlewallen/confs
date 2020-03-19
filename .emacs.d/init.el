@@ -80,6 +80,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (my/load-file-here "funcs.el")
+(my/load-file-here "add-node-modules-path.el")
 
 ;; ---------------------------------------------------------------------------------------
 ;; appearance
@@ -262,7 +263,6 @@ current."
   :custom
   (org-journal-dir "~/dropbox/notes/journal/")
   (org-journal-date-prefix "#+FILETAGS: journal\n\n")
-  ;; (org-journal-time-prefix "")
   (org-journal-file-format "%Y%m%d.org")
   (org-journal-date-format "%A, %d %B %Y"))
 
@@ -443,11 +443,14 @@ current."
 (use-package go-mode
   :config (my/go-mode-config))
 
-(use-package typescript-mode)
+(use-package typescript-mode
+  :hook (typescript-mode . add-node-modules-path))
 
 (defun my/js2-mode-config ())
 
 (use-package js2-mode
+  :hook ((js2-mode . add-node-modules-path)
+		 (js-mode . add-node-modules-path))
   :config (my/js2-mode-config))
 
 (defun my/vue-mode-config ()
