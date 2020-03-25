@@ -123,7 +123,6 @@ current."
   (dolist (pkg jl-themes-packages)
 	(package-install pkg))
   (add-to-list 'custom-theme-load-path (my/path-file-here "themes"))
-  (load-theme 'weyland-yutani t)
   (load-theme 'horizon t))
 
 (defun my/fixup-fringe-coloring (&rest args)
