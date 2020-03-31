@@ -1,7 +1,0 @@
-#!/bin/bash
-
-pushd build
-INSTALLED=`realpath ../install`
-popd
-
-LD_LIBRARY_PATH=$INSTALLED/lib $INSTALLED/bin/kicad

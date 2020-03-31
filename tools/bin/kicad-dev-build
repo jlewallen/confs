@@ -1,8 +1,0 @@
-#!/bin/bash
-
-set -xe
-
-pushd build
-make -j 2
-make install
-popd
