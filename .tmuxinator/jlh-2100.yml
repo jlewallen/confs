@@ -1,0 +1,23 @@
+# ~/.tmuxinator/jlh-2100.yml
+
+name: jlh-2100
+root: ~/fieldkit/firmware/modules/weather/sidecar
+
+startup_window: 0
+startup_pane: 1
+
+windows:
+  - session:
+      layout: even-horizontal
+      panes:
+        - gdb:
+          - sleep 1 && gdb-multiarch -q -ex "js 2100" ../../../build/samd09/modules/weather/sidecar/fk-weather-sidecar-aggregated.elf
+        - shell:
+          - clear
+        - logs:
+          - JLinkRTTClient -RTTTelnetPort 2002
+  - jlink:
+      layout: even-horizontal
+      panes:
+        - jlink:
+            - JLinkGDBServer -if SWD -device ATSAMD09D14A -select usb=269402795 -Port 2100 -RTTTelnetPort 2002

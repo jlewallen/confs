@@ -1,7 +1,0 @@
-#!/bin/bash
-
-for dir in */.git; do
-  PROJECT=`dirname $dir`
-  echo -n "$PROJECT "
-  (cd $PROJECT && git pull)
-done
