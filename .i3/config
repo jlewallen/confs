@@ -52,9 +52,10 @@ bindsym $mod+Shift+Down   move down
 bindsym $mod+Shift+Up     move up
 bindsym $mod+Shift+Right  move right
 
-# audio control
+# audio and layout control
 bindsym $mod+Tab          exec "~/tools/bin/i3-workspaces-toggle.sh"
 bindsym $mod+Shift+Tab    exec "~/tools/bin/i3-toggle-two-up.sh"
+bindsym $mod+a            exec "~/tools/bin/i3-focus.sh"
 bindsym $mod+u            exec "playerctl play-pause"
 bindsym $mod+y            exec "playerctl next"
 

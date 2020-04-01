@@ -5,3 +5,4 @@ transient
 scratch.el
 *.cache
 .lsp-session-*
+tramp
