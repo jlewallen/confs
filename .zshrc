@@ -23,21 +23,15 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="pygmalion"
 ZSH_THEME="random"
-ZSH_THEME="risto"
-ZSH_THEME="pmcgee"
-ZSH_THEME="strug"
+ZSH_THEME="pygmalion"
+#ZSH_THEME="risto"
 ZSH_THEME="maran"
-ZSH_THEME="macovsky"
-ZSH_THEME="intheloop"
-ZSH_THEME="dst"
-ZSH_THEME="steeef"
-ZSH_THEME="awesomepanda"
-ZSH_THEME="gianu"
+#ZSH_THEME="macovsky"
+#ZSH_THEME="gianu"
 ZSH_THEME="superjarin"
-ZSH_THEME="lambda"
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="lambda"
+#ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

@@ -132,7 +132,7 @@ current."
 
 (advice-add 'load-theme :after 'my/fixup-fringe-coloring)
 
-(load-theme 'nimbus t)
+(load-theme 'doom-laserwave t)
 
 ;; ---------------------------------------------------------------------------------------
 ;; evil-mode
