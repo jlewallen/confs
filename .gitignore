@@ -30,6 +30,7 @@
 !.xinitrc
 !.Xdefaults
 !.Xresources
+!.Xmodmap
 
 !/.tmuxinator/
 !/.tmuxinator/*
