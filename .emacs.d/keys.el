@@ -107,6 +107,9 @@
  "ojj" #'org-journal-new-entry
  "ojn" #'my/jlewallen-open-notes
  "oja" #'my/jlewallen-open-agenda
+
+ ;; org-babel
+ "obe" #'org-babel-execute-src-block
  )
 
 (general-define-key

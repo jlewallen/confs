@@ -243,7 +243,10 @@ current."
 
 (defun my/org-config ()
   (setq org-default-notes-file (concat org-directory "/capture.org"))
-
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((sql . t)))
+  (setq org-confirm-babel-evaluate nil)
   (setq org-directory "~/dropbox/notes")
   (setq org-agenda-files (list "~/dropbox/notes/journal"
 							   "~/dropbox/notes/cal"
