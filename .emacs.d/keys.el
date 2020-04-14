@@ -110,6 +110,7 @@
 
  ;; org-babel
  "obe" #'org-babel-execute-src-block
+ "oba" #'org-babel-execute-buffer
  )
 
 (general-define-key
