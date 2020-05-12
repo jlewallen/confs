@@ -313,7 +313,8 @@ current."
 (defun my/lsp-config ()
   (require 'lsp-clients)
 
-  ;; (setq lsp-clients-clangd-args '("-j=4" "-background-index" "-log=error"))
+  (setq lsp-clients-clangd-executable "/home/jlewallen/tools/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/clangd")
+  (setq lsp-clients-clangd-args '("-j=4" "-background-index" "-log=error"))
 
   ;; prefer using lsp-ui (flycheck) over flymake.
   (setq lsp-prefer-flymake nil)
@@ -330,7 +331,7 @@ current."
   )
 
 (defun my/ccls-config ()
-  (setq ccls-executable "ccls")
+  (setq ccls-executable "~/tools/ccls/Release/ccls")
 
   ;; (setq ccls-sem-highlight-method 'font-lock)
   ;; (setq ccls-sem-highlight-method 'overlay)
