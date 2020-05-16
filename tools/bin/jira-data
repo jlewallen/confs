@@ -1,0 +1,9 @@
+#!/bin/bash
+
+pushd ~/jlewallen/jira-ops
+
+make
+
+build/jira-status --upkeep
+
+popd
