@@ -84,6 +84,9 @@
  "mbr" #'lsp-workspace-restart
  "mbs" #'lsp-workspace-shutdown
 
+ ;; log buffer
+ "mlb" #'magit-log-buffer-file
+
  ;; refactor
  "mrr" #'lsp-rename
 

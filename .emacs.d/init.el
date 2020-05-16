@@ -276,7 +276,8 @@ current."
 ;; ---------------------------------------------------------------------------------------
 ;; magit
 
-(defun my/magit-config ())
+(defun my/magit-config ()
+  (setq magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 
 (use-package magit
   :config (my/magit-config))
