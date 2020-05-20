@@ -102,7 +102,7 @@
   (set-face-attribute 'default nil
 					  :family "Iosevka"
 					  :height (cond
-							   ((and (eq (display-pixel-width) 2560) (eq (display-pixel-height) 1440)) 110) ; thinkpad
+							   ((and (eq (display-pixel-width) 2560) (eq (display-pixel-height) 1440)) 115) ; thinkpad
 							   ((and (eq (display-pixel-width) 5760) (eq (display-pixel-height) 1600)) 110) ; desktops
 							   (t 100))))
 
