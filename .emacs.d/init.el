@@ -98,6 +98,14 @@
 							   ((and (eq (display-pixel-width) 5760) (eq (display-pixel-height) 1600)) 100) ; desktops
 							   (t 100))))
 
+(defun my/face-iosevka ()
+  (set-face-attribute 'default nil
+					  :family "Iosevka"
+					  :height (cond
+							   ((and (eq (display-pixel-width) 2560) (eq (display-pixel-height) 1440)) 110) ; thinkpad
+							   ((and (eq (display-pixel-width) 5760) (eq (display-pixel-height) 1600)) 110) ; desktops
+							   (t 100))))
+
 (defun my/setup-frame (&optional frame)
   "Configure look of FRAME.
 
@@ -106,7 +114,7 @@ current."
   (when frame (select-frame frame))
   (when (window-system)
 	(message "setting faces, resolution: %d %d" (display-pixel-width) (display-pixel-height))
-	(my/face-source-code-pro)))
+	(my/face-iosevka)))
 
 (define-key special-event-map [config-changed-event] 'ignore)
 
