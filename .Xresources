@@ -681,10 +681,9 @@ urxvt.urlButton: 1
 ! #include "tools/setup/Xresources-themes/xcolors-woodlands.Xresources"
 ! #include "tools/setup/Xresources-themes/xcolors-zenburn.Xresources"
 
-#include "tools/setup/Xresources-themes/xcolors-apple-dark.Xresources"
+! #include "tools/setup/Xresources-themes/xcolors-apple-dark.Xresources"
 ! #include "tools/setup/Xresources-themes/xcolors-gjm.Xresources"
-! #include "tools/setup/Xresources-themes/xcolors-sour-candy.Xresources"
-! #include "tools/setup/Xresources-themes/xcolors-tango.Xresources"
+#include "tools/setup/Xresources-themes/xcolors-tango.Xresources"
 ! #include "tools/setup/Xresources-themes/xcolors-mostly-awful.Xresources"
 ! #include "tools/setup/Xresources-themes/xcolors-tangoesque.Xresources"
 ! #include "tools/setup/Xresources-themes/one-dark.Xresources"
