@@ -118,8 +118,8 @@ bindsym $mod+Shift+x      exec i3lock -c 000000
 bindsym $mod+Shift+t      exec "~/tools/bin/i3-timer.sh"
 
 # finding common programs
-bindsym $mod+o            [title="Slack"] focus
 bindsym $mod+x            [title="Firefox$"] focus
+bindsym $mod+Shift+z      [title="Slack"] focus
 bindsym $mod+Shift+s      [class="Spotify"] focus
 bindsym $mod+Shift+d      [title="Discord"] focus
 
