@@ -114,6 +114,7 @@
  ;; org-babel
  "obe" #'org-babel-execute-src-block
  "oba" #'org-babel-execute-buffer
+ "obr" #'org-table-recalculate-buffer-tables
  )
 
 (general-define-key
