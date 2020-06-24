@@ -27,6 +27,7 @@ export PATH=$ANDROID_HOME/tools:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 
 export PATH=$HOME/tools/bin:$PATH
+export PATH=$HOME/tools/syncthing:$PATH
 export PATH=$HOME/tools/nanopb/generator:$PATH
 export PATH=$HOME/tools/cmake/bin:$PATH
 export PATH=$HOME/tools/node/bin:$PATH
