@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -xe
+
+GO111MODULE=on go get golang.org/x/tools/gopls@latest
+
+pip install python-language-server
+
+npm install -g javascript-typescript-langserver
+
+npm install -g typescript-language-server
+
+npm install -g vls
