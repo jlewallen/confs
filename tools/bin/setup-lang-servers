@@ -10,4 +10,4 @@ npm install -g javascript-typescript-langserver
 
 npm install -g typescript-language-server
 
-npm install -g vls
+npm install -g vls eslint-plugin-vue
