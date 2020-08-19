@@ -51,6 +51,8 @@ tools/*
 !/tools/setup/fonts/
 !/tools/setup/fonts/*
 
+tools/bin/jira-status
+
 !./.local/
 !./.local/share/
 !./.local/share/xfce4/
