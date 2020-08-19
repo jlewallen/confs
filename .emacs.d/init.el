@@ -11,6 +11,17 @@
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
+(if (and (fboundp 'native-comp-available-p)
+		 (native-comp-available-p))
+	(message "Native compilation is available")
+  (message "Native complation is *not* available"))
+
+(if (functionp 'json-serialize)
+	(message "Native JSON is available")
+  (message "Native JSON is *not* available"))
+
+(setq comp-deferred-compilation t)
+
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -320,10 +331,12 @@ current."
   :config (smartparens-global-mode))
 
 (defun my/lsp-config ()
-  (require 'lsp-clients)
+  ;(require 'lsp-clients)
 
   (setq lsp-clients-clangd-executable "/home/jlewallen/tools/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/clangd")
-  (setq lsp-clients-clangd-args '("-j=4" "-background-index" "-log=error"))
+  (setq lsp-clients-clangd-args '("--compile-commands-dir=build"
+								  "--pch-storage=memory"
+								  "-j=4" "--background-index" "--log=error"))
 
   ;; prefer using lsp-ui (flycheck) over flymake.
   (setq lsp-prefer-flymake nil)
@@ -332,11 +345,12 @@ current."
   (setq lsp-enable-file-watchers nil)
 
   (setq lsp-enable-snippet nil)
-
-  (setq lsp-log-io nil)
-  (setq lsp-trace nil)
   (setq lsp-print-performance t)
-  (setq lsp-response-timeout 20)
+
+  ; debugging
+  ; (setq lsp-log-io nil)
+  ; (setq lsp-trace nil)
+  ; (setq lsp-response-timeout 20)
   )
 
 (defun my/ccls-config ()
@@ -388,15 +402,15 @@ current."
 
   (global-set-key (kbd "C-<tab>") 'company-complete))
 
-(use-package company-lsp
-  :requires company
-  :config
-  (push 'company-lsp company-backends)
+;(use-package company-lsp
+;  :requires company
+;  :config
+;  (push 'company-lsp company-backends)
 
   ;; disable client-side cache because the lsp server does a better job.
-  (setq company-transformers nil
-		company-lsp-async t
-		company-lsp-cache-candidates nil))
+;  (setq company-transformers nil
+;		company-lsp-async t
+;		company-lsp-cache-candidates nil))
 
 (defun my/python-config ())
 
@@ -512,15 +526,14 @@ current."
  '(ansi-term-color-vector
    [unspecified "#1d2021" "#d72638" "#88b92d" "#f19d1a" "#1e8bac" "#be4264" "#1e8bac" "#d5d5d5"] t)
  '(beacon-color "#F8BBD0")
- '(compilation-message-face (quote default))
+ '(compilation-message-face 'default)
  '(cua-global-mark-cursor-color "#689d6a")
  '(cua-normal-cursor-color "#7c6f64")
  '(cua-overwrite-cursor-color "#b57614")
  '(cua-read-only-cursor-color "#98971a")
- '(cursor-type (quote bar))
+ '(cursor-type 'bar)
  '(ensime-sem-high-faces
-   (quote
-	((var :foreground "#9876aa" :underline
+   '((var :foreground "#9876aa" :underline
 		  (:style wave :color "yellow"))
 	 (val :foreground "#9876aa")
 	 (varField :slant italic)
@@ -536,46 +549,42 @@ current."
 	 (trait :foreground "#4e807d" :slant italic)
 	 (object :foreground "#6897bb" :slant italic)
 	 (package :foreground "#cc7832")
-	 (deprecated :strike-through "#a9b7c6"))))
- '(evil-emacs-state-cursor (quote ("#D50000" hbar)) t)
- '(evil-insert-state-cursor (quote ("#D50000" bar)) t)
- '(evil-normal-state-cursor (quote ("#F57F17" box)) t)
- '(evil-visual-state-cursor (quote ("#66BB6A" box)) t)
+	 (deprecated :strike-through "#a9b7c6")))
+ '(evil-emacs-state-cursor '("#D50000" hbar) t)
+ '(evil-insert-state-cursor '("#D50000" bar) t)
+ '(evil-normal-state-cursor '("#F57F17" box) t)
+ '(evil-visual-state-cursor '("#66BB6A" box) t)
  '(fci-rule-character-color "#452E2E")
  '(fci-rule-color "#f1c40f")
- '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
- '(frame-background-mode (quote dark))
- '(frame-brackground-mode (quote dark))
+ '(flycheck-color-mode-line-face-to-color 'mode-line-buffer-id)
+ '(frame-background-mode 'dark)
+ '(frame-brackground-mode 'dark)
  '(fringe-mode 6 nil (fringe))
- '(helm-completion-style (quote emacs))
- '(highlight-changes-colors (quote ("#d3869b" "#8f3f71")))
+ '(helm-completion-style 'emacs)
+ '(highlight-changes-colors '("#d3869b" "#8f3f71"))
  '(highlight-indent-guides-auto-enabled nil)
  '(highlight-symbol-colors
-   (quote
-	("#F57F17" "#66BB6A" "#0097A7" "#42A5F5" "#7E57C2" "#D84315")))
+   '("#F57F17" "#66BB6A" "#0097A7" "#42A5F5" "#7E57C2" "#D84315"))
  '(highlight-symbol-foreground-color "#546E7A")
- '(highlight-tail-colors (quote (("#F8BBD0" . 0) ("#FAFAFA" . 100))))
+ '(highlight-tail-colors '(("#F8BBD0" . 0) ("#FAFAFA" . 100)))
  '(hl-bg-colors
-   (quote
-	("#e29a3f" "#df6835" "#cf5130" "#f598a7" "#c2608f" "#5b919b" "#82cc73" "#c6c148")))
+   '("#e29a3f" "#df6835" "#cf5130" "#f598a7" "#c2608f" "#5b919b" "#82cc73" "#c6c148"))
  '(hl-fg-colors
-   (quote
-	("#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7")))
- '(hl-paren-background-colors (quote ("#2492db" "#95a5a6" nil)))
- '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
+   '("#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7" "#fbf1c7"))
+ '(hl-paren-background-colors '("#2492db" "#95a5a6" nil))
+ '(hl-paren-colors '("#ecf0f1" "#ecf0f1" "#c0392b"))
  '(jdee-db-active-breakpoint-face-colors (cons "#171F24" "#c792ea"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#171F24" "#c3e88d"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#171F24" "#37474F"))
  '(line-spacing 0.2)
- '(linum-format (quote dynamic))
+ '(linum-format 'dynamic)
  '(lsp-ui-doc-border "#665c54")
  '(magit-diff-use-overlays nil)
  '(main-line-color1 "#222232")
  '(main-line-color2 "#333343")
- '(main-line-separator-style (quote chamfer))
+ '(main-line-separator-style 'chamfer)
  '(nrepl-message-colors
-   (quote
-	("#9d0006" "#af3a03" "#b57614" "#747400" "#c6c148" "#004858" "#689d6a" "#d3869b" "#8f3f71")))
+   '("#9d0006" "#af3a03" "#b57614" "#747400" "#c6c148" "#004858" "#689d6a" "#d3869b" "#8f3f71"))
  '(objed-cursor-color "#ff5370")
  '(org-journal-date-format "%A, %d %B %Y")
  '(org-journal-date-prefix "#+FILETAGS: journal
@@ -584,8 +593,7 @@ current."
  '(org-journal-dir "~/dropbox/notes/journal/")
  '(org-journal-file-format "%Y%m%d.org")
  '(package-selected-packages
-   (quote
-	(org-babel-gnuplot python-black terraform-mode cmake-mode evil-org-mode evil-org poet-theme zerodark-theme warm-night-theme zenburn-theme zen-and-art-theme yaml-mode white-sand-theme which-key vue-mode use-package underwater-theme ujelly-theme typescript-mode twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smartparens seti-theme reverse-theme rebecca-theme railscasts-theme python-mode purple-haze-theme protobuf-mode professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme nimbus-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme magit madhat2r-theme lush-theme lsp-ui light-soap-theme ledger-mode kaolin-themes json-mode js2-mode jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme helm-xref helm-themes helm-projectile helm-lsp helm-company hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme golden-ratio go-guru general gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme evil-surround espresso-theme dracula-theme doom-themes django-theme darktooth-theme darkokai-theme darkmine-theme darkburn-theme darcula-theme dakrone-theme cyberpunk-theme company-lsp color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmake-ide clues-theme cherry-blossom-theme ccls busybee-theme bubbleberry-theme birds-of-paradise-plus-theme base16-theme badwolf-theme auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme)))
+   '(org-babel-gnuplot python-black terraform-mode cmake-mode evil-org-mode evil-org poet-theme zerodark-theme warm-night-theme zenburn-theme zen-and-art-theme yaml-mode white-sand-theme which-key vue-mode use-package underwater-theme ujelly-theme typescript-mode twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smartparens seti-theme reverse-theme rebecca-theme railscasts-theme python-mode purple-haze-theme protobuf-mode professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme nimbus-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme magit madhat2r-theme lush-theme lsp-ui light-soap-theme ledger-mode kaolin-themes json-mode js2-mode jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme helm-xref helm-themes helm-projectile helm-lsp helm-company hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme golden-ratio go-guru general gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme evil-surround espresso-theme dracula-theme doom-themes django-theme darktooth-theme darkokai-theme darkmine-theme darkburn-theme darcula-theme dakrone-theme cyberpunk-theme company-lsp color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmake-ide clues-theme cherry-blossom-theme ccls busybee-theme bubbleberry-theme birds-of-paradise-plus-theme base16-theme badwolf-theme auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme))
  '(pdf-view-midnight-colors (cons "#c5c8c6" "#1d1f21"))
  '(pos-tip-background-color "#ffffffffffff")
  '(pos-tip-foreground-color "#78909C")
@@ -604,8 +612,7 @@ current."
  '(vc-annotate-background "#ecf0f1")
  '(vc-annotate-background-mode nil)
  '(vc-annotate-color-map
-   (quote
-	((30 . "#e74c3c")
+   '((30 . "#e74c3c")
 	 (60 . "#c0392b")
 	 (90 . "#e67e22")
 	 (120 . "#d35400")
@@ -616,16 +623,14 @@ current."
 	 (270 . "#1abc9c")
 	 (300 . "#16a085")
 	 (330 . "#2492db")
-	 (360 . "#0a74b9"))))
+	 (360 . "#0a74b9")))
  '(vc-annotate-very-old-color "#0a74b9")
  '(weechat-color-list
-   (quote
-	(unspecified "#fbf1c7" "#ebdbb2" "#750000" "#9d0006" "#747400" "#98971a" "#8a5100" "#b57614" "#004858" "#076678" "#9f4d64" "#d3869b" "#2e7d33" "#689d6a" "#7c6f64" "#3c3836")))
+   '(unspecified "#fbf1c7" "#ebdbb2" "#750000" "#9d0006" "#747400" "#98971a" "#8a5100" "#b57614" "#004858" "#076678" "#9f4d64" "#d3869b" "#2e7d33" "#689d6a" "#7c6f64" "#3c3836"))
  '(when
 	  (or
 	   (not
-		(boundp
-		 (quote ansi-term-color-vector)))
+		(boundp 'ansi-term-color-vector))
 	   (not
 		(facep
 		 (aref ansi-term-color-vector 0)))))
