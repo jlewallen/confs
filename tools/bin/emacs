@@ -1,18 +1,18 @@
 #!/bin/sh
 
 OSX=/Applications/Emacs.app/Contents/MacOS/Emacs
-LOCAL=$HOME/tools/emacs-26.1-install/bin/emacs
+LOCAL=$HOME/tools/emacs/installed/bin/emacs
 PATH=$PATH:$HOME/tools/ccls/Release
-PATH=$PATH:$HOME/tools/clang+llvm-9.0.0-x86_64-linux-gnu-ubuntu-18.04/bin
+PATH=$PATH:$HOME/tools/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/clangd
 
 if [ -f $OSX ]; then
-  $OSX $@
+	$OSX $@
 else
-  if [ -f $LOCAL ]; then
-    $LOCAL $@
-  else
-    if [ -f /usr/bin/emacs ]; then
-      /usr/bin/emacs $@
-    fi
-  fi
+	if [ -f $LOCAL ]; then
+		$LOCAL $@
+	else
+		if [ -f /usr/bin/emacs ]; then
+			/usr/bin/emacs $@
+		fi
+	fi
 fi
