@@ -6,3 +6,5 @@ scratch.el
 *.cache
 .lsp-session-*
 tramp
+eln-cache
+session.*
