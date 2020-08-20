@@ -371,6 +371,7 @@ current."
   :hook ((vue-mode . lsp)
 		 (typescript-mode . lsp)
 		 (rust-mode . lsp)
+		 (go-mode . lsp)
 		 (js2-mode . lsp)
 		 (js-mode . lsp)
 		 (c++-mode . lsp)
