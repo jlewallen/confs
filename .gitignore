@@ -51,6 +51,7 @@ tools/*
 !/tools/setup/fonts/
 !/tools/setup/fonts/*
 
+tools/bin/wtfutil
 tools/bin/jira-status
 
 !./.local/
