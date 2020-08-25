@@ -15,6 +15,7 @@
 
 !.emacs.d/
 !.emacs.d/*
+.emacs.d/projectile-bookmarks.eld
 
 !.bash_profile
 !.tmux.conf
