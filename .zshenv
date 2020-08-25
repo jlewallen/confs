@@ -47,17 +47,15 @@ export CMAKE_MODULE_PATH=$HOME/conservify/cmake
 
 export PATH=$HOME/fieldkit/fkc/build:$PATH
 
-case $OSTYPE in
-    darwin*)
-        export EMACSCLIENT=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
-        alias emacsclient=$EMACSCLIENT
-        ;;
-    *)
-        export EMACSCLIENT=emacsclient
-        ;;
-esac
-
+export EMACSCLIENT=emacsclient
+if [ -f /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
+	export EMACSCLIENT=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
+fi
+if [ -f ~/tools/emacs/installed/bin/emacsclient ]; then
+	export EMACSCLIENT=~/tools/emacs/installed/bin/emacsclient
+fi
 alias ecc="$EMACSCLIENT -n -c"
+
 alias ec="i3-msg workspace number 1 ; $EMACSCLIENT -n"
 
 alias fix-home-workspaces="~/tools/bin/i3-setup-workspaces.sh --home"
