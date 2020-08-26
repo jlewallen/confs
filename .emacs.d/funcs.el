@@ -169,6 +169,10 @@ If the universal prefix argument is used then will the windows too."
   (interactive)
   (find-file-existing "~/dropbox/notes/notes.org"))
 
+(defun my/jlewallen-open-capture ()
+  (interactive)
+  (find-file-existing "~/dropbox/notes/capture.org"))
+
 (defun my/jlewallen-open-agenda ()
   (interactive)
   (find-file-existing "~/dropbox/notes/agenda.org"))

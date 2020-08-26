@@ -109,7 +109,9 @@
  ;; journal
  "ojj" #'org-journal-new-entry
  "ojn" #'my/jlewallen-open-notes
- "oja" #'my/jlewallen-open-agenda
+ "fec" #'my/jlewallen-open-capture
+ "ojc" #'org-capture
+ "oja" #'org-agenda
 
  ;; org-babel
  "obe" #'org-babel-execute-src-block
@@ -125,6 +127,8 @@
  "ojp" #'org-journal-open-previous-entry
  "oc"  #'org-toggle-checkbox
  "oa"  #'org-archive-subtree-default
+ "oo"  #'org-capture-finalize
+ "cc"  #'org-capture-kill
  )
 
 (general-define-key

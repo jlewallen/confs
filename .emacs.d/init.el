@@ -261,7 +261,6 @@ current."
 (use-package gnuplot
   :config (my/gnuplot-config))
 
-
 (defun my/evil-org-mode ()
   (add-to-list 'load-path "~/.emacs.d/evil-org-mode")
   (require 'evil-org)
@@ -276,16 +275,16 @@ current."
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 (defun my/org-config ()
+  (setq org-directory "~/dropbox/notes")
   (setq org-default-notes-file (concat org-directory "/capture.org"))
+  (setq org-confirm-babel-evaluate nil)
+  (setq org-agenda-files (list "~/dropbox/notes/journal"
+							   "~/dropbox/notes/cal"
+							   "~/dropbox/notes"))
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((sql . t)
 	 (gnuplot . t)))
-  (setq org-confirm-babel-evaluate nil)
-  (setq org-directory "~/dropbox/notes")
-  (setq org-agenda-files (list "~/dropbox/notes/journal"
-							   "~/dropbox/notes/cal"
-							   "~/dropbox/notes"))
   (my/evil-org-mode)
   (my/org-bullets))
 
