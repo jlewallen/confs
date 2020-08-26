@@ -278,9 +278,21 @@ current."
   (setq org-directory "~/dropbox/notes")
   (setq org-default-notes-file (concat org-directory "/capture.org"))
   (setq org-confirm-babel-evaluate nil)
+  (setq org-archive-location "~/dropbox/notes/archive/archive.org::datetree/* Archived")
+
   (setq org-agenda-files (list "~/dropbox/notes/journal"
-							   "~/dropbox/notes/cal"
 							   "~/dropbox/notes"))
+
+  (setq org-capture-templates
+		'(("t" "TODO" entry (file+headline org-default-notes-file "Tasks")
+		   "* TODO %?\n  %T\n  %i\n  %a")
+		  ("i" "Idea" entry (file+headline org-default-notes-file "Ideas")
+		   "* %? :IDEA: \n%T")
+		  ("m" "Meeting" entry (file+datetree org-default-notes-file)
+		   "* MEETING with %? :MEETING:\n%T" :clock-in t :clock-resume t)
+		  ("j" "Journal" entry (file+datetree "~/dropbox/notes/journal.org")
+		   "* %?\nEntered on %U\n  %i\n  %a")))
+
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((sql . t)

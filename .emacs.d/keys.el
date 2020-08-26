@@ -112,6 +112,7 @@
  "fec" #'my/jlewallen-open-capture
  "ojc" #'org-capture
  "oja" #'org-agenda
+ "oco" #'org-clock-out
 
  ;; org-babel
  "obe" #'org-babel-execute-src-block
@@ -126,6 +127,7 @@
  "ojn" #'org-journal-open-next-entry
  "ojp" #'org-journal-open-previous-entry
  "oc"  #'org-toggle-checkbox
+ "ot"  #'org-todo
  "oa"  #'org-archive-subtree-default
  "oo"  #'org-capture-finalize
  "cc"  #'org-capture-kill
