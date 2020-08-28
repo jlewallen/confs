@@ -1,0 +1,76 @@
+// vim:ts=4:sw=4:et
+{
+    // stacked split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "stacked",
+    "percent": 0.4,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 356,
+               "width": 660,
+               "x": 0,
+               "y": 0
+            },
+            "name": "tmux a",
+            "percent": 0.625,
+            "swallows": [
+               {
+               // "class": "^URxvt$",
+               // "instance": "^urxvt$",
+               // "title": "^tmux\\ a$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 356,
+               "width": 660,
+               "x": 0,
+               "y": 0
+            },
+            "name": "tmux a",
+            "percent": 0.375,
+            "swallows": [
+               {
+               // "class": "^URxvt$",
+               // "instance": "^urxvt$",
+               // "title": "^tmux\\ a$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 637,
+       "width": 672,
+       "x": 0,
+       "y": 0
+    },
+    "name": "emacs@JACOB-HOME",
+    "percent": 0.6,
+    "swallows": [
+       {
+       // "class": "^Emacs$",
+       // "instance": "^emacs$",
+       // "title": "^emacs\\@JACOB\\-HOME$"
+       }
+    ],
+    "type": "con"
+}
+

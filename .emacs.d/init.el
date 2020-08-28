@@ -288,6 +288,8 @@ current."
 		   "* TODO %?\n  %T\n  %i\n  %a")
 		  ("i" "Idea" entry (file+headline org-default-notes-file "Ideas")
 		   "* %? :IDEA: \n%T")
+		  ("s" "Scratch" entry (file+headline org-default-notes-file "Scratch")
+		   "* %? :IDEA: \n%T\n  %i\n  %a")
 		  ("m" "Meeting" entry (file+datetree org-default-notes-file)
 		   "* MEETING with %? :MEETING:\n%T" :clock-in t :clock-resume t)
 		  ("j" "Journal" entry (file+datetree "~/dropbox/notes/journal.org")
@@ -328,11 +330,11 @@ current."
 (use-package git-timemachine
   :after evil-magit)
 
-(use-package git-gutter-fringe+
-  :after evil-magit
-  :config
-  (global-git-gutter+-mode)
-  (git-gutter-fr+-minimal))
+; (use-package git-gutter-fringe+
+;   :after evil-magit
+;   :config
+;   (global-git-gutter+-mode)
+;   (git-gutter-fr+-minimal))
 
 ;; ---------------------------------------------------------------------------------------
 ;; programming modes
