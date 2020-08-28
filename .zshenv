@@ -17,10 +17,6 @@ fi
 
 export PATH=$HOME/.cargo/bin:$PATH
 
-if [ -x "$(command -v rustc)" ]; then
-    export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-fi
-
 export EDITOR=vim
 
 export PATH=$ANDROID_HOME/tools:$PATH
