@@ -25,11 +25,11 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="random"
 ZSH_THEME="pygmalion"
-#ZSH_THEME="risto"
-ZSH_THEME="maran"
+ZSH_THEME="risto"
+#ZSH_THEME="maran"
 #ZSH_THEME="macovsky"
 #ZSH_THEME="gianu"
-ZSH_THEME="superjarin"
+#ZSH_THEME="superjarin"
 #ZSH_THEME="lambda"
 #ZSH_THEME="robbyrussell"
 
@@ -56,7 +56,7 @@ CASE_SENSITIVE="true"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
