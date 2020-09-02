@@ -106,18 +106,11 @@
  "nk"  #'my/navigate-up
  "nl"  #'my/navigate-right
 
- ;; journal
- "ojj" #'org-journal-new-entry
- "ojn" #'my/jlewallen-open-notes
- "fec" #'my/jlewallen-open-capture
- "ojc" #'org-capture
- "oja" #'org-agenda
- "oco" #'org-clock-out
-
- ;; org-babel
- "obe" #'org-babel-execute-src-block
- "oba" #'org-babel-execute-buffer
- "obr" #'org-table-recalculate-buffer-tables
+ ;; global org-mode
+ "oc"  #'org-capture
+ "oa"  #'org-agenda
+ "ooc" #'my/jlewallen-open-capture
+ "oon" #'my/jlewallen-open-notes
  )
 
 (general-define-key
@@ -126,11 +119,16 @@
  :prefix "SPC"
  "ojn" #'org-journal-open-next-entry
  "ojp" #'org-journal-open-previous-entry
- "oc"  #'org-toggle-checkbox
- "ot"  #'org-todo
- "oa"  #'org-archive-subtree-default
- "oo"  #'org-capture-finalize
- "cc"  #'org-capture-kill
+ "obe" #'org-babel-execute-src-block
+ "oba" #'org-babel-execute-buffer
+ "obr" #'org-table-recalculate-buffer-tables
+ "ooa" #'org-archive-subtree-default
+ "ooc" #'org-toggle-checkbox
+ "oor" #'org-refile
+ "ooo" #'org-clock-out
+ "oot" #'org-todo
+ "oof" #'org-capture-finalize
+ "ook" #'org-capture-kill
  )
 
 (general-define-key

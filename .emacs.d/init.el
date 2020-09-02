@@ -287,13 +287,22 @@ current."
 		'(("t" "TODO" entry (file+headline org-default-notes-file "Tasks")
 		   "* TODO %?\n  %T\n  %i\n  %a")
 		  ("i" "Idea" entry (file+headline org-default-notes-file "Ideas")
-		   "* %? :IDEA: \n%T")
+		   "* %? :idea: \n%T")
 		  ("s" "Scratch" entry (file+headline org-default-notes-file "Scratch")
-		   "* %? :IDEA: \n%T\n  %i\n  %a")
+		   "* %? :scratch: \n%T\n  %i\n  %a")
 		  ("m" "Meeting" entry (file+datetree org-default-notes-file)
-		   "* MEETING with %? :MEETING:\n%T" :clock-in t :clock-resume t)
+		   "* MEETING with %? :meeting:\n%T" :clock-in t :clock-resume t)
 		  ("j" "Journal" entry (file+datetree "~/dropbox/notes/journal.org")
-		   "* %?\nEntered on %U\n  %i\n  %a")))
+		   "* %?\nEntered on %U\n  %i\n  %a")
+		  ("e" "Exercise" entry (file+headline org-default-notes-file "Exercise")
+		   "* Exercise :exercise:\n%T\n:pullups: 0%?\n:situps: 0\n")
+		  ))
+
+  (setq org-refile-targets (quote (("notes.org" :maxlevel . 2)
+								   ("work.org" :level . 2)
+								   ("exercise.org" :level . 2))))
+  (setq org-outline-path-complete-in-steps nil)
+  (setq org-refile-use-outline-path t)
 
   (org-babel-do-load-languages
    'org-babel-load-languages

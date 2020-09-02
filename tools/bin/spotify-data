@@ -3,15 +3,19 @@
 set -e
 
 pushd /home/jlewallen/jlewallen/playlist-generator
+
 if [ -f generator ]; then
 	./generator
+
 	echo "copying new playlists"
+	cp playlists.json .cache
 	rsync -vua .cache/*.json ~/dropbox/personal/jacoblewallen.com/content/music
 	rsync -vua .cache/*.json ~/dropbox/personal/jacoblewallen.com/public/music
 fi
+
 popd
 
-pushd ~/dropbox/personal
 echo "uploading site"
+pushd ~/dropbox/personal
 make upload
 popd
