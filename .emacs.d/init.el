@@ -299,8 +299,8 @@ current."
 		  ))
 
   (setq org-refile-targets (quote (("notes.org" :maxlevel . 2)
-								   ("work.org" :level . 2)
-								   ("exercise.org" :level . 2))))
+								   ("work.org" :maxlevel . 2)
+								   ("exercise.org" :maxlevel . 2))))
   (setq org-outline-path-complete-in-steps nil)
   (setq org-refile-use-outline-path t)
 

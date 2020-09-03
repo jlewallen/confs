@@ -123,3 +123,9 @@ source $ZSH/oh-my-zsh.sh
 unsetopt share_history
 
 source ~/.shell.d/*.sh
+
+###-tns-completion-start-###
+if [ -f /home/jlewallen/.tnsrc ]; then
+    source /home/jlewallen/.tnsrc
+fi
+###-tns-completion-end-###

@@ -121,4 +121,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 source ~/.shell.d/*.sh
 
+###-tns-completion-start-###
+if [ -f /home/jlewallen/.tnsrc ]; then
+    source /home/jlewallen/.tnsrc
+fi
+###-tns-completion-end-###
+
 # EOF
