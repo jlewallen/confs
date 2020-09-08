@@ -2,3 +2,5 @@ terraform
 flasher
 simple-deps
 mitm*
+__pycache__
+
