@@ -83,6 +83,3 @@ alias sdone="spd-say done"
 alias rword="shuf -n1 /usr/share/dict/american-english"
 alias sword='spd-say `shuf -n1 /usr/share/dict/american-english`'
 alias cgrep="grep --color=always"
-alias tml1="tmux select-layout 'decc,477x97,0,0{80x97,0,0[80x48,0,0,5,80x48,0,49,78],396x97,81,0[396x48,81,0,3,396x48,81,49{198x48,81,49,57,197x48,280,49,80}]}'"
-# 0: cloud- (6 panes) [477x97] [layout 6654,477x97,0,0{102x97,0,0[102x24,0,0,5,102x23,0,25,114,102x48,0,49,78],374x97,103,0[374x48,103,0,3,374x48,103,49{176x48,103,49,57,197x48,280,49,80}]}] @0
-# 1: fknapp* (5 panes) [477x97] [layout 04d3,477x97,0,0{102x97,0,0[102x48,0,0,107,102x48,0,49,108],374x97,103,0[374x48,103,0,109,374x48,103,49{176x48,103,49,110,197x48,280,49,111}]}] @59 (active)
