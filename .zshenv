@@ -73,6 +73,10 @@ if [ -x "$(command -v bat)" ]; then
     alias cat="bat"
 fi
 
+if [ -x "$(command -v batcat)" ]; then
+    alias cat="batcat"
+fi
+
 alias warn="notify-send -u critical"
 alias flag="notify-send -u critical DONE"
 alias sdone="spd-say done"
