@@ -482,7 +482,10 @@ current."
   (add-hook 'c++-mode-hook 'my/c++-mode-hook)
   (add-hook 'c-mode-hook 'my/c-mode-hook)
 
-  (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode)))
+  (setq auto-mode-alist
+		(append '(("\\.ino\\'" . c++-mode)
+				  ("\\.h\\'" . c++-mode))
+				auto-mode-alist)))
 
 (use-package cc-mode :config (my/cc-mode-config))
 (use-package cmake-ide :after cc-mode)
