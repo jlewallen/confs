@@ -292,10 +292,10 @@ current."
 		   "* %? :scratch: \n%T\n  %i\n  %a")
 		  ("m" "Meeting" entry (file+datetree org-default-notes-file)
 		   "* MEETING with %? :meeting:\n%T" :clock-in t :clock-resume t)
+		  ("e" "Exercise" entry (file+datetree org-default-notes-file)
+		   "* Exercise :exercise:\n%T\n:pullups: 0%?\n:situps: 0\n")
 		  ("j" "Journal" entry (file+datetree "~/dropbox/notes/journal.org")
 		   "* %?\nEntered on %U\n  %i\n  %a")
-		  ("e" "Exercise" entry (file+headline org-default-notes-file "Exercise")
-		   "* Exercise :exercise:\n%T\n:pullups: 0%?\n:situps: 0\n")
 		  ))
 
   (setq org-refile-targets (quote (("notes.org" :maxlevel . 2)
