@@ -1,5 +1,5 @@
 [Configuration]
-FontName=Terminus 11
+FontName=Source Code Pro 11
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBellUrgent=FALSE
@@ -30,4 +30,6 @@ ColorForeground=#b7b8b9
 ColorCursor=x
 ColorPalette=#0c0d0e;#e31a1c;#31a354;#dca060;#3182bd;#756bb1;#80b1d3;#b7b8b9;#737475;#e31a1c;#31a354;#dca060;#3182bd;#756bb1;#80b1d3;#fcfdfe
 ColorBackground=#0c0d0e
+MiscSearchDialogOpacity=100
+MiscShowUnsafePasteDialog=TRUE
 
