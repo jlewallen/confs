@@ -126,8 +126,10 @@ bindsym $mod+s            [class="Spotify"] focus
 # bindsym $mod+a          exec "~/tools/bin/i3-back.sh"
 
 # remove the border everywhere
-for_window [class="^.*"] border pixel 1
-new_window 1pixel
+# for_window [class="^.*"] border pixel 1
+# new_window 1pixel
+default_border pixel 0
+hide_edge_borders both
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
