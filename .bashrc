@@ -128,3 +128,9 @@ fi
 ###-tns-completion-end-###
 
 # EOF
+
+###-tns-completion-start-###
+if [ -f /home/jlewallen/.tnsrc ]; then
+    source /home/jlewallen/.tnsrc
+fi
+###-tns-completion-end-###
