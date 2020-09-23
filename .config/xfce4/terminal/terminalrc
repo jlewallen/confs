@@ -26,10 +26,10 @@ MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
-ColorForeground=#b7b8b9
+ColorForeground=#e0e0e0
 ColorCursor=x
-ColorPalette=#0c0d0e;#e31a1c;#31a354;#dca060;#3182bd;#756bb1;#80b1d3;#b7b8b9;#737475;#e31a1c;#31a354;#dca060;#3182bd;#756bb1;#80b1d3;#fcfdfe
-ColorBackground=#0c0d0e
+ColorPalette=#000000;#fb0120;#a1c659;#fda331;#6fb3d2;#d381c3;#76c7b7;#e0e0e0;#b0b0b0;#fb0120;#a1c659;#fda331;#6fb3d2;#d381c3;#76c7b7;#ffffff
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=TRUE
+TitleMode=TERMINAL_TITLE_REPLACE
 
