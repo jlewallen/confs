@@ -116,7 +116,7 @@ bindsym $mod+Shift+x      exec i3lock -c 000000
 
 # focusing common programs
 bindsym $mod+f            [title="Firefox$"] focus
-bindsym $mod+e            [title="emacs"] focus
+bindsym $mod+e            [class="Emacs"] focus
 bindsym $mod+w            [title="Slack"] focus
 bindsym $mod+d            [title="Discord"] focus
 bindsym $mod+s            [class="Spotify"] focus
