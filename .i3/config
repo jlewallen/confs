@@ -121,6 +121,9 @@ bindsym $mod+w            [title="Slack"] focus
 bindsym $mod+d            [title="Discord"] focus
 bindsym $mod+s            [class="Spotify"] focus
 
+# run previous
+bindsym --release $mod+i  exec "~/tools/bin/i3-rerun.sh"
+
 # timer thing (long story)
 # bindsym $mod+Shift+t    exec "~/tools/bin/i3-timer.sh"
 # no idea when i used this
