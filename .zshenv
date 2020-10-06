@@ -27,6 +27,7 @@ export PATH=$HOME/tools/syncthing:$PATH
 export PATH=$HOME/tools/nanopb/generator:$PATH
 export PATH=$HOME/tools/cmake/bin:$PATH
 export PATH=$HOME/tools/node/bin:$PATH
+export PATH=$HOME/tools/gitkraken:$PATH
 export PATH=$HOME/tools/node_modules/.bin:$PATH
 export PATH=$HOME/tools/wtf:$PATH
 export PATH=$HOME/tools/p4merge/bin:$PATH
