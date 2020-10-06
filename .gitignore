@@ -71,6 +71,7 @@ tools/bin/migrate
 !.config/
 .config/*
 !.config/broot/
+!.config/i3/
 
 !./.fonts/
 !./.fonts/*
