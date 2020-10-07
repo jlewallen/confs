@@ -36,9 +36,10 @@ if [ -z $valid ]; then
 fi
 
 i3-msg "workspace number 9, move workspace to output $MONITOR_SIDE"
-i3-msg "workspace number 5, move workspace to output $MONITOR_SIDE"
+i3-msg "workspace number 8, move workspace to output $MONITOR_SIDE"
+i3-msg "workspace number 7, move workspace to output $MONITOR_SIDE"
 
-for n in 2 3 4 5 6 7 8 1; do
+for n in 2 3 4 5 6 1; do
     i3-msg "workspace number $n, move workspace to output $MONITOR_MAIN"
 done
 
