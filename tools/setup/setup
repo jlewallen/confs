@@ -55,7 +55,7 @@ sudo apt install -y ledger hledger hledger-ui hledger-web python-ledger
 
 # Python
 
-sudo apt install -y python-pip python3-pip python-protobuf python-tk ghostscript
+sudo apt install -y python-pip python3-pip python-protobuf python-tk ghostscript python3-venv
 
 # END apt
 
