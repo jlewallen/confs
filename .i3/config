@@ -120,6 +120,7 @@ bindsym $mod+e            [class="Emacs"] focus
 bindsym $mod+w            [title="Slack"] focus
 bindsym $mod+d            [title="Discord"] focus
 bindsym $mod+s            [class="Spotify"] focus
+bindsym $mod+g            [class="Kraken"] focus
 
 # run previous
 bindsym --release $mod+i  exec "~/tools/bin/i3-rerun.sh"
