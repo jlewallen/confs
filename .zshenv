@@ -8,10 +8,8 @@ if [ -d ~/tools/go ]; then
 fi
 
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
-    export JAVA_HOME=`/usr/libexec/java_home`
     export ANDROID_HOME=$HOME/Library/Android/sdk
 else
-    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
     export ANDROID_HOME=$HOME/Android/Sdk
 fi
 
@@ -22,6 +20,7 @@ export EDITOR=vim
 export PATH=$ANDROID_HOME/tools:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 
+export PATH=$HOME/tools/apache-maven/bin:$PATH
 export PATH=$HOME/tools/bin:$PATH
 export PATH=$HOME/tools/syncthing:$PATH
 export PATH=$HOME/tools/nanopb/generator:$PATH
