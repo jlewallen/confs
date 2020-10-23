@@ -386,6 +386,7 @@ current."
 
 (defun my/ccls-config ()
   (setq ccls-executable "~/tools/ccls/Release/ccls")
+  (setq ccls-args '("--log-file=/tmp/ccls.log -v=1"))
 
   ;; (setq ccls-sem-highlight-method 'font-lock)
   ;; (setq ccls-sem-highlight-method 'overlay)
