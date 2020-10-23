@@ -25,11 +25,12 @@ MiscRewrapOnResize=TRUE
 MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
-ScrollingBar=TERMINAL_SCROLLBAR_NONE
-ColorForeground=#e0e0e0
-ColorCursor=x
-ColorPalette=#000000;#fb0120;#a1c659;#fda331;#6fb3d2;#d381c3;#76c7b7;#e0e0e0;#b0b0b0;#fb0120;#a1c659;#fda331;#6fb3d2;#d381c3;#76c7b7;#ffffff
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=TRUE
-TitleMode=TERMINAL_TITLE_REPLACE
+ScrollingBar=TERMINAL_SCROLLBAR_NONE
+ScrollingUnlimited=TRUE
+ColorPalette=#151515;#FF0086;#00C918;#ABA800;#3777E6;#AD00A1;#1FAAAA;#D0D0D0;#505050;#FF0086;#00C918;#ABA800;#3777E6;#AD00A1;#1FAAAA;#FFFFFF
+ColorForeground=#D0D0D0
+ColorBackground=#151515
+ColorCursor=x
 

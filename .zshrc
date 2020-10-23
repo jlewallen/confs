@@ -29,7 +29,7 @@ ZSH_THEME="risto"
 #ZSH_THEME="maran"
 #ZSH_THEME="macovsky"
 #ZSH_THEME="gianu"
-#ZSH_THEME="superjarin"
+ZSH_THEME="superjarin"
 #ZSH_THEME="lambda"
 #ZSH_THEME="robbyrussell"
 
