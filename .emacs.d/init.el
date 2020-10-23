@@ -471,14 +471,12 @@ current."
   (defun my/c++-mode-hook ()
 	(c-set-style "my-c-style")
 	(auto-fill-mode)
-	(c-set-offset 'inextern-lang 0)
-	(c-toggle-auto-hungry-state 1))
+	(c-set-offset 'inextern-lang 0))
 
   (defun my/c-mode-hook ()
 	(c-set-style "my-c-style")
 	(auto-fill-mode)
-	(c-set-offset 'inextern-lang 0)
-	(c-toggle-auto-hungry-state 1))
+	(c-set-offset 'inextern-lang 0))
 
   (add-hook 'c++-mode-hook 'my/c++-mode-hook)
   (add-hook 'c-mode-hook 'my/c-mode-hook)
