@@ -33,7 +33,7 @@ sudo apt install -y zsh
 
 # Dev
 
-sudo apt install -y gdb-multiarch gcc-arm-none-eabi qemu qemu-system git-gui pkg-config doxygen libssl-dev libncurses5-dev libncursesw5-dev ruby cmake
+sudo apt install -y gdb-multiarch gcc-arm-none-eabi qemu qemu-system git-gui pkg-config doxygen libssl-dev libncurses5-dev libncursesw5-dev ruby cmake build-essential libvterm-dev
 
 # Window Manager and Graphical
 

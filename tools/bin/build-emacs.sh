@@ -6,7 +6,7 @@ function setup() {
 	sudo add-apt-repository ppa:ubuntu-toolchain-r/ppa \
         && sudo apt-get update -y \
         && sudo apt-get install -y gcc-10 libgccjit0 libgccjit-10-dev
-	sudo apt-get install -y libjansson4 libjansson-dev git texinfo libgtk-3-dev libwebkit2gtk-4.0-dev libxpm-dev libjpeg-dev libtiff-dev gnutls-dev libgif-dev
+	sudo apt-get install -y libjansson4 libjansson-dev git texinfo libgtk-3-dev libwebkit2gtk-4.0-dev libxpm-dev libjpeg-dev libtiff-dev gnutls-dev libgif-dev libmagickwand-dev libvterm-dev
 	sudo sed -i 's/# deb-src/deb-src/' /etc/apt/sources.list
 	sudo apt-get update && sudo apt-get build-dep -y emacs
 }
