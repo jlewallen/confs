@@ -30,8 +30,6 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
-(use-package vterm)
-
 (require 'use-package)
 (setq use-package-always-ensure t)
 
@@ -254,6 +252,12 @@ current."
 (use-package which-key
   :after (evil)
   :config (my/which-key-config))
+
+;; ---------------------------------------------------------------------------------------
+;; vterm
+
+(use-package vterm
+    :ensure t)
 
 ;; ---------------------------------------------------------------------------------------
 ;; org
