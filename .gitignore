@@ -28,7 +28,7 @@
 !.gitconfig
 !.i3/
 !.i3/*
-!.i3/config
+.i3/config
 !.i3blocks.conf
 !.i3status.conf
 !.xinitrc
