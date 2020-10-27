@@ -28,11 +28,12 @@
 !.gitconfig
 !.i3/
 !.i3/*
+!.i3/config
 !.i3blocks.conf
 !.i3status.conf
 !.xinitrc
 !.Xdefaults
-!.Xresources
+!.Xresources.*
 !.Xmodmap
 
 !/.tmuxinator/
@@ -78,3 +79,5 @@ tools/bin/migrate
 
 tools/bin/hugo
 tools/bin/broot
+
+.*.swp

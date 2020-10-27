@@ -3,10 +3,10 @@ Xft.dpi: 96
 !! urxvt Appearance
 
 ! For some reason fonts are larger on one of my machine than on the other?
-urxvt.font: xft:Terminus:style=Regular:size=10
-urxvt.boldFont: xft:Terminus:style=Bold:size=10
-urxvt.italicFont: xft:Terminus:style=Italic:size=10
-urxvt.boldItalicFont: xft:Terminus:style=Bold Italic:size=10
+urxvt.font: xft:Terminus:style=Regular:size=16
+urxvt.boldFont: xft:Terminus:style=Bold:size=16
+urxvt.italicFont: xft:Terminus:style=Italic:size=16
+urxvt.boldItalicFont: xft:Terminus:style=Bold Italic:size=16
 urxvt.letterSpace: 0
 
 ! urxvt.font: xft:DejaVu Sans Mono:pixelsize=13
