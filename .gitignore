@@ -73,6 +73,9 @@ tools/bin/migrate
 .config/*
 !.config/broot/
 !.config/i3/
+!.config/systemd/
+!.config/systemd/user/
+!.config/systemd/user/*
 
 !./.fonts/
 !./.fonts/*
