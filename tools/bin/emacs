@@ -2,14 +2,24 @@
 
 OSX=/Applications/Emacs.app/Contents/MacOS/Emacs
 LOCAL=$HOME/tools/emacs/installed/bin/emacs
+
 PATH=$PATH:$HOME/tools/ccls/Release
 PATH=$PATH:$HOME/tools/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/clangd
+PATH=$PATH:$HOME/go/bin
+PATH=$PATH:$HOME/tools/node/bin
+PATH=$HOME/tools/bin:$PATH
 
-if [ -f $OSX ]; then
-	$OSX $@
+export PATH
+
+echo $PATH
+
+env
+
+if [ -f $LOCAL ]; then
+	$LOCAL $@
 else
-	if [ -f $LOCAL ]; then
-		$LOCAL $@
+	if [ -f $OSX ]; then
+		$OSX $@
 	else
 		if [ -f /usr/bin/emacs ]; then
 			/usr/bin/emacs $@

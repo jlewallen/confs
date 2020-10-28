@@ -4,11 +4,10 @@ Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
 
 [Service]
 Type=forking
-ExecStart=/home/jlewallen/tools/emacs/installed/bin/emacs --daemon
-ExecStop=/home/jlewallen/tools/emacs/installed/bin/emacsclient --eval "(kill-emacs)"
+ExecStart=/home/jlewallen/tools/bin/emacs --daemon
+ExecStop=/home/jlewallen/tools/bin/emacsclient --eval "(kill-emacs)"
 Environment=SSH_AUTH_SOCK=%t/keyring/ssh
 Restart=on-failure
 
 [Install]
 WantedBy=default.target
-
