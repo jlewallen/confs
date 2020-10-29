@@ -10,6 +10,7 @@ PATH=$PATH:$HOME/tools/node/bin
 PATH=$PATH:$HOME/go/bin
 PATH=$HOME/tools/bin:$PATH
 
+export NODE_OPTIONS="--max-old-space-size=8192"
 export PATH
 
 echo $PATH
