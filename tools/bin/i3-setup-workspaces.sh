@@ -35,6 +35,8 @@ if [ -z $valid ]; then
     exit 2
 fi
 
+setxkbmap -option caps:super
+
 i3-msg "workspace number 9, move workspace to output $MONITOR_SIDE"
 i3-msg "workspace number 8, move workspace to output $MONITOR_SIDE"
 i3-msg "workspace number 7, move workspace to output $MONITOR_SIDE"
