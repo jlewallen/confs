@@ -69,7 +69,7 @@ bindsym $mod+Shift+0      move container to workspace number 10
 
 # start a terminal
 # bindsym $mod+Return       exec "xrdb ~/.Xresources && urxvt"
-bindsym $mod+Return       exec "xrdb ~/.Xresources && xfce4-terminal"
+bindsym $mod+Return       exec "xfce4-terminal"
 
 # kill focused window
 bindsym $mod+Shift+q      kill
