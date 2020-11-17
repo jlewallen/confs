@@ -83,3 +83,4 @@ alias sdone="spd-say done"
 alias rword="shuf -n1 /usr/share/dict/american-english"
 alias sword='spd-say `shuf -n1 /usr/share/dict/american-english`'
 alias cgrep="grep --color=always"
+alias stripcolors="sed -r 's/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g'"
