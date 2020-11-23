@@ -1,0 +1,10 @@
+[Unit]
+Description=Check swap usage
+
+[Timer]
+OnBootSec=1s
+OnUnitInactiveSec=5s
+AccuracySec=1000ms
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Check swap usage
+Wants=swapcheck.timer
+
+[Service]
+Type=oneshot
+ExecStart=/home/jlewallen/tools/bin/swap-check.sh
+
+[Install]
+WantedBy=multi-user.target
