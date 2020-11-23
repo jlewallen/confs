@@ -14,7 +14,7 @@ set $mod Mod4
 # font pango:SourceCodePro-SemiBold 10
 # font pango:Terminus 14px
 # font pango:UbuntuMono-regular 10
-font pango:Source Code Pro 14
+font pango:Source Code Pro 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
