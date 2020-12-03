@@ -43,6 +43,8 @@ export MAKEFLAGS=--no-print-directory
 
 export CMAKE_MODULE_PATH=$HOME/conservify/cmake
 
+function ppgrep() { pgrep "$@" | xargs --no-run-if-empty ps fp; }
+
 export EMACSCLIENT=emacsclient
 if [ -f /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
 	export EMACSCLIENT=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
@@ -82,4 +84,3 @@ alias fix-work-workspaces="~/tools/bin/i3-setup-workspaces.sh --work"
 if [ -f ~/.zshenv.private.sh ]; then
     source ~/.zshenv.private.sh
 fi
-
