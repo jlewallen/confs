@@ -1,0 +1,9 @@
+[Unit]
+Description=Notify on jenkins builds
+
+[Service]
+ExecStart=/home/jlewallen/tools/bin/jenkins-notify.sh
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
