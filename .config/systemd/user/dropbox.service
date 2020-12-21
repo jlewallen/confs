@@ -1,6 +1,5 @@
 [Unit]
-Description=Syncthing - Open Source Continuous File Synchronization for %I
-Documentation=man:syncthing(1)
+Description=dropbox
 After=network.target
 
 [Service]
