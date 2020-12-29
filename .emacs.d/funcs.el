@@ -220,3 +220,10 @@ is nil, refile in the current file."
 		))
 	)
   )
+
+(defun my/time-stamp ()
+  (interactive)
+  (insert (format "- LOG: %s\n"
+				  (format-time-string (org-time-stamp-format 'long 'inactive)
+									  (org-current-effective-time))))
+  )

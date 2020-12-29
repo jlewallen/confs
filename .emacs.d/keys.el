@@ -129,6 +129,7 @@
  "oot" #'org-todo
  "oof" #'org-capture-finalize
  "ook" #'org-capture-kill
+ "on"  #'my/time-stamp
  )
 
 (general-define-key
