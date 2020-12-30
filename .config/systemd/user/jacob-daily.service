@@ -1,0 +1,9 @@
+[Unit]
+Description=Daily
+
+[Service]
+Type=simple
+ExecStart=/home/jlewallen/tools/bin/daily.sh
+
+[Install]
+WantedBy=multi-user.target

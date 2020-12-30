@@ -1,0 +1,9 @@
+[Unit]
+Description=Daily
+
+[Timer]
+OnCalendar=*-*-* 00:00:00
+Unit=jacob-daily.service
+
+[Install]
+WantedBy=multi-user.target
