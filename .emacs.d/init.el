@@ -286,6 +286,7 @@ current."
 
 (defun my/org-config ()
   (setq org-directory "~/dropbox/notes")
+  (setq org-cycle-separator-lines -1)
   (setq org-default-notes-file (concat org-directory "/capture.org"))
   (setq org-confirm-babel-evaluate nil)
   (setq org-archive-location "~/dropbox/notes/archive/archive.org::datetree/* Archived")
