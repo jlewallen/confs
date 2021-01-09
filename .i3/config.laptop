@@ -115,7 +115,7 @@ bindsym $mod+Shift+x      exec i3lock -c 000000
 # bindsym $mod+Shift+]    exec xfce4-session-logout
 
 # focusing common programs
-bindsym $mod+f            [title="Firefox$"] focus
+bindsym $mod+f            exec "~/tools/bin/i3-focus.py --title Firefox --workspace 9"
 bindsym $mod+e            [class="Emacs"] focus
 bindsym $mod+w            [title="Slack"] focus
 bindsym $mod+d            [title="Discord"] focus
