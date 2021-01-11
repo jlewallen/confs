@@ -4,15 +4,28 @@ import argparse
 import i3ipc
 import re
 
+
+CONTINUE = "Continue"
+SKIP = "Skip"
+STOP = "Stop"
+
+
 def walk(tree, fn):
-    if fn(tree):
+    v = fn(tree)
+    if v == CONTINUE:
         for node in tree.nodes:
-            walk(node, fn)
+            if walk(node, fn) == STOP:
+                break
+    elif v == STOP:
+        return STOP
+    return CONTINUE
+
 
 def main():
     parser = argparse.ArgumentParser(description="vr tool")
     parser.add_argument("--workspace", dest="workspace")
     parser.add_argument("--title", dest="title")
+    parser.add_argument("--test", action="store_true")
     args, nargs = parser.parse_known_args()
 
     if args.workspace and args.title:
@@ -22,14 +35,21 @@ def main():
             if node.type == "con":
                 if node.name:
                     if re.search(args.title, node.name):
-                        i3.command("[con_id=\"%s\"] focus" % (node.id,))
+                        if node.focused:
+                            return STOP
+                        if args.test:
+                            print(node.name, node.focused)
+                        else:
+                            i3.command('[con_id="%s"] focus' % (node.id,))
+
             if node.type == "workspace":
                 if node.name == args.workspace:
-                    return True
-                return False
-            return True
+                    return CONTINUE
+                return SKIP
+            return CONTINUE
 
         walk(i3.get_tree(), predicate)
+
 
 if __name__ == "__main__":
     main()
