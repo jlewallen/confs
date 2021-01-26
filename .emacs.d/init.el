@@ -444,6 +444,16 @@ current."
 
   (global-set-key (kbd "C-<tab>") 'company-complete))
 
+(defun my/php-config ())
+
+(use-package php-mode
+  :config (my/php-config))
+
+(defun my/graphql-config ())
+
+(use-package graphql-mode
+  :config (my/graphql-config))
+
 (defun my/python-config ())
 
 (use-package python-mode
@@ -583,8 +593,60 @@ current."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(compilation-message-face 'default)
+ '(cua-global-mark-cursor-color "#11948b")
+ '(cua-normal-cursor-color "#596e76")
+ '(cua-overwrite-cursor-color "#a67c00")
+ '(cua-read-only-cursor-color "#778c00")
+ '(highlight-changes-colors '("#FD5FF0" "#AE81FF"))
+ '(highlight-symbol-colors
+   '("#ed7ddb24b29e" "#cd82e29fd17c" "#fc9acadfb443" "#d974d4beddd6" "#df07dfc6b349" "#f76ccd6eaf2a" "#d132db91e15a"))
+ '(highlight-symbol-foreground-color "#5d737a")
+ '(highlight-tail-colors
+   '(("#3C3D37" . 0)
+	 ("#679A01" . 20)
+	 ("#4BBEAE" . 30)
+	 ("#1DB4D0" . 50)
+	 ("#9A8F21" . 60)
+	 ("#A75B00" . 70)
+	 ("#F309DF" . 85)
+	 ("#3C3D37" . 100)))
+ '(hl-bg-colors
+   '("#d6a549" "#ed6e3e" "#ff6243" "#f46495" "#837bdf" "#6fa5e7" "#66c1b3" "#a8b84b"))
+ '(hl-fg-colors
+   '("#fffce9" "#fffce9" "#fffce9" "#fffce9" "#fffce9" "#fffce9" "#fffce9" "#fffce9"))
+ '(hl-paren-background-colors '("#2492db" "#95a5a6" nil))
+ '(hl-paren-colors '("#11948b" "#a67c00" "#007ec4" "#5e65b6" "#778c00"))
+ '(linum-format " %3i ")
+ '(lsp-ui-doc-border "#5d737a")
+ '(magit-diff-use-overlays nil)
+ '(nrepl-message-colors
+   '("#cc1f24" "#bb3e06" "#a67c00" "#4f6600" "#a8b84b" "#005797" "#11948b" "#c42475" "#5e65b6"))
  '(package-selected-packages
-   '(zerodark-theme zenburn-theme zen-and-art-theme yaml-mode white-sand-theme which-key warm-night-theme vue-mode vterm use-package underwater-theme ujelly-theme typescript-mode twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme terraform-mode tao-theme tangotango-theme tango-plus-theme tango-2-theme swift-mode sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smartparens shackle seti-theme reverse-theme rebecca-theme railscasts-theme python-mode python-black purple-haze-theme protobuf-mode professional-theme prettier-js poet-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme org-journal omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme nimbus-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme modern-cpp-font-lock minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme lsp-ui light-soap-theme ledger-mode kaolin-themes json-mode js2-refactor jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme helm-xref helm-themes helm-projectile helm-lsp helm-company hc-zenburn-theme gruvbox-theme gruber-darker-theme groovy-mode grandshell-theme gotham-theme golden-ratio go-guru gnuplot git-timemachine general gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme evil-surround evil-magit espresso-theme dracula-theme doom-themes django-theme darktooth-theme darkokai-theme darkmine-theme darkburn-theme darcula-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmake-mode cmake-ide clues-theme cherry-blossom-theme ccls busybee-theme bubbleberry-theme birds-of-paradise-plus-theme base16-theme badwolf-theme auto-compile apropospriate-theme anti-zenburn-theme annalist ample-zen-theme ample-theme alect-themes afternoon-theme)))
+   '(php-mode graphql-mode zerodark-theme zenburn-theme zen-and-art-theme yaml-mode white-sand-theme which-key warm-night-theme vue-mode vterm use-package underwater-theme ujelly-theme typescript-mode twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme terraform-mode tao-theme tangotango-theme tango-plus-theme tango-2-theme swift-mode sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smartparens shackle seti-theme reverse-theme rebecca-theme railscasts-theme python-mode python-black purple-haze-theme protobuf-mode professional-theme prettier-js poet-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme org-journal omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme nimbus-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme modern-cpp-font-lock minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme lsp-ui light-soap-theme ledger-mode kaolin-themes json-mode js2-refactor jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme helm-xref helm-themes helm-projectile helm-lsp helm-company hc-zenburn-theme gruvbox-theme gruber-darker-theme groovy-mode grandshell-theme gotham-theme golden-ratio go-guru gnuplot git-timemachine general gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme evil-surround evil-magit espresso-theme dracula-theme doom-themes django-theme darktooth-theme darkokai-theme darkmine-theme darkburn-theme darcula-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmake-mode cmake-ide clues-theme cherry-blossom-theme ccls busybee-theme bubbleberry-theme birds-of-paradise-plus-theme base16-theme badwolf-theme auto-compile apropospriate-theme anti-zenburn-theme annalist ample-zen-theme ample-theme alect-themes afternoon-theme))
+ '(pos-tip-background-color "#191F26")
+ '(pos-tip-foreground-color "#d4d4d6")
+ '(smartrep-mode-line-active-bg (solarized-color-blend "#778c00" "#f4eedb" 0.2))
+ '(sml/active-background-color "#34495e")
+ '(sml/active-foreground-color "#ecf0f1")
+ '(sml/inactive-background-color "#dfe4ea")
+ '(sml/inactive-foreground-color "#34495e")
+ '(term-default-bg-color "#fffce9")
+ '(term-default-fg-color "#596e76")
+ '(vc-annotate-background-mode nil)
+ '(weechat-color-list
+   '(unspecified "#272822" "#3C3D37" "#F70057" "#F92672" "#86C30D" "#A6E22E" "#BEB244" "#E6DB74" "#40CAE4" "#66D9EF" "#FB35EA" "#FD5FF0" "#74DBCD" "#A1EFE4" "#F8F8F2" "#F8F8F0"))
+ '(when
+	  (or
+	   (not
+		(boundp 'ansi-term-color-vector))
+	   (not
+		(facep
+		 (aref ansi-term-color-vector 0)))))
+ '(xterm-color-names
+   ["#f4eedb" "#cc1f24" "#778c00" "#a67c00" "#007ec4" "#c42475" "#11948b" "#002b37"])
+ '(xterm-color-names-bright
+   ["#fffce9" "#bb3e06" "#98a6a6" "#88999b" "#596e76" "#5e65b6" "#5d737a" "#00212b"]))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
