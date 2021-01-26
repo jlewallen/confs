@@ -164,11 +164,11 @@ current."
   :init (my/evil-mode-initialize)
   :config (my/evil-mode-config))
 
-;(use-package evil-collection
-  ;:after evil
-  ;:ensure t
-  ;:config
-  ;(evil-collection-init))
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
 
 (use-package evil-surround
   :after (evil)
@@ -343,12 +343,8 @@ current."
 (use-package magit
   :config (my/magit-config))
 
-(use-package evil-magit
-  :after magit
-  :config (my/magit-config))
-
 (use-package git-timemachine
-  :after evil-magit)
+  :after magit)
 
 ; (use-package git-gutter-fringe+
 ;   :after evil-magit
@@ -622,8 +618,14 @@ current."
  '(magit-diff-use-overlays nil)
  '(nrepl-message-colors
    '("#cc1f24" "#bb3e06" "#a67c00" "#4f6600" "#a8b84b" "#005797" "#11948b" "#c42475" "#5e65b6"))
+ '(org-journal-date-format "%A, %d %B %Y" nil nil "Customized with use-package org-journal")
+ '(org-journal-date-prefix "#+FILETAGS: journal
+
+" nil nil "Customized with use-package org-journal")
+ '(org-journal-dir "~/dropbox/notes/journal/" nil nil "Customized with use-package org-journal")
+ '(org-journal-file-format "%Y%m%d.org" nil nil "Customized with use-package org-journal")
  '(package-selected-packages
-   '(php-mode graphql-mode zerodark-theme zenburn-theme zen-and-art-theme yaml-mode white-sand-theme which-key warm-night-theme vue-mode vterm use-package underwater-theme ujelly-theme typescript-mode twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme terraform-mode tao-theme tangotango-theme tango-plus-theme tango-2-theme swift-mode sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smartparens shackle seti-theme reverse-theme rebecca-theme railscasts-theme python-mode python-black purple-haze-theme protobuf-mode professional-theme prettier-js poet-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme org-journal omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme nimbus-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme modern-cpp-font-lock minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme lsp-ui light-soap-theme ledger-mode kaolin-themes json-mode js2-refactor jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme helm-xref helm-themes helm-projectile helm-lsp helm-company hc-zenburn-theme gruvbox-theme gruber-darker-theme groovy-mode grandshell-theme gotham-theme golden-ratio go-guru gnuplot git-timemachine general gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme evil-surround evil-magit espresso-theme dracula-theme doom-themes django-theme darktooth-theme darkokai-theme darkmine-theme darkburn-theme darcula-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmake-mode cmake-ide clues-theme cherry-blossom-theme ccls busybee-theme bubbleberry-theme birds-of-paradise-plus-theme base16-theme badwolf-theme auto-compile apropospriate-theme anti-zenburn-theme annalist ample-zen-theme ample-theme alect-themes afternoon-theme))
+   '(evil-collection php-mode graphql-mode zerodark-theme zenburn-theme zen-and-art-theme yaml-mode white-sand-theme which-key warm-night-theme vue-mode vterm use-package underwater-theme ujelly-theme typescript-mode twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme terraform-mode tao-theme tangotango-theme tango-plus-theme tango-2-theme swift-mode sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smartparens shackle seti-theme reverse-theme rebecca-theme railscasts-theme python-mode python-black purple-haze-theme protobuf-mode professional-theme prettier-js poet-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme org-journal omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme nimbus-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme modern-cpp-font-lock minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme lsp-ui light-soap-theme ledger-mode kaolin-themes json-mode js2-refactor jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme helm-xref helm-themes helm-projectile helm-lsp helm-company hc-zenburn-theme gruvbox-theme gruber-darker-theme groovy-mode grandshell-theme gotham-theme golden-ratio go-guru gnuplot git-timemachine general gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme evil-surround evil-magit espresso-theme dracula-theme doom-themes django-theme darktooth-theme darkokai-theme darkmine-theme darkburn-theme darcula-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmake-mode cmake-ide clues-theme cherry-blossom-theme ccls busybee-theme bubbleberry-theme birds-of-paradise-plus-theme base16-theme badwolf-theme auto-compile apropospriate-theme anti-zenburn-theme annalist ample-zen-theme ample-theme alect-themes afternoon-theme))
  '(pos-tip-background-color "#191F26")
  '(pos-tip-foreground-color "#d4d4d6")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#778c00" "#f4eedb" 0.2))
