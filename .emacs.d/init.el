@@ -147,7 +147,7 @@ current."
 ;; ---------------------------------------------------------------------------------------
 ;; evil-mode
 
-(add-to-list 'load-path (expand-file-name "evil-collection" user-emacs-directory))
+; (add-to-list 'load-path (expand-file-name "evil-collection" user-emacs-directory))
 
 (defun my/evil-mode-initialize ()
   (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
@@ -155,9 +155,7 @@ current."
   (setq evil-want-C-u-scroll t))
 
 (defun my/evil-mode-config ()
-  (evil-mode 1)
-  (when (require 'evil-collection nil t)
-	(evil-collection-init)))
+  (evil-mode 1))
 
 (use-package evil
   :ensure t
@@ -165,8 +163,8 @@ current."
   :config (my/evil-mode-config))
 
 (use-package evil-collection
-  :after evil
   :ensure t
+  :after evil
   :config
   (evil-collection-init))
 
@@ -594,6 +592,7 @@ current."
  '(cua-normal-cursor-color "#596e76")
  '(cua-overwrite-cursor-color "#a67c00")
  '(cua-read-only-cursor-color "#778c00")
+ '(helm-minibuffer-history-key "M-p")
  '(highlight-changes-colors '("#FD5FF0" "#AE81FF"))
  '(highlight-symbol-colors
    '("#ed7ddb24b29e" "#cd82e29fd17c" "#fc9acadfb443" "#d974d4beddd6" "#df07dfc6b349" "#f76ccd6eaf2a" "#d132db91e15a"))
