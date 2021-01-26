@@ -5,7 +5,7 @@ export GIT_EDITOR=vim
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
     export ANDROID_HOME=$HOME/Library/Android/sdk
 else
-    export ANDROID_HOME=$HOME/Android/Sdk
+    export ANDROID_HOME=$HOME/android-sdk
 fi
 
 export EDITOR=vim
@@ -35,6 +35,7 @@ export PATH=$HOME/tools/protoc/bin:$PATH
 export PATH=$HOME/tools/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin:$PATH
 
 export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/tools/bin:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 
 export PATH=node_modules/.bin:$PATH
