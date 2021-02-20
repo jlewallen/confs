@@ -38,6 +38,8 @@ pushd ~/tools/emacs/emacs
 	--with-nativecomp \
 	CFLAGS="-O3 -mtune=native -march=native -fomit-frame-pointer"
 
+make bootstrap -j6
+
 make -j6
 
 make install
