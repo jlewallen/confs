@@ -19,6 +19,7 @@
 .emacs.d/url
 .emacs.d/projectile-bookmarks.eld
 .emacs.d/bookmarks
+.emacs.d/.lsp-eslint-choices
 
 !.bash_profile
 !.tmux.conf
@@ -59,6 +60,7 @@ tools/*
 tools/bin/wtfutil
 tools/bin/jira-status
 tools/bin/migrate
+tools/bin/hpn
 
 !./.local/
 !./.local/share/
