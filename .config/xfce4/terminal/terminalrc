@@ -29,7 +29,8 @@ MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingUnlimited=TRUE
-ColorForeground=#b5b3aa
+ColorForeground=#d6d6d6
+ColorBackground=#151718
+ColorPalette=#151718;#Cd3f45;#9fca56;#e6cd69;#55b5db;#a074c4;#55dbbe;#d6d6d6;#41535B;#Cd3f45;#9fca56;#e6cd69;#55b5db;#a074c4;#55dbbe;#ffffff
 ColorCursor=x
-ColorPalette=#000000;#ff6c60;#a8ff60;#ffffb6;#96cbfe;#ff73fd;#c6c5fe;#b5b3aa;#6c6c66;#ff6c60;#a8ff60;#ffffb6;#96cbfe;#ff73fd;#c6c5fe;#fdfbee
 
