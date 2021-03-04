@@ -82,12 +82,12 @@ alias stripcolors="sed -r 's/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g'"
 alias fix-home-workspaces="~/tools/bin/i3-setup-workspaces.sh --home"
 alias fix-work-workspaces="~/tools/bin/i3-setup-workspaces.sh --work"
 
-function fff() {
-	find . -iname "*$1*"
+function ffd() {
+	find . -iname "*$1*" -type d
 }
 
-function ffe() {
-	find . -iname "*$1"
+function fff() {
+	find . -iname "*$1*" -type f
 }
 
 if [ -f ~/.zshenv.private.sh ]; then
