@@ -37,6 +37,7 @@
 !.Xdefaults
 !.Xresources.*
 !.Xmodmap
+!.clang-format
 
 !/.tmuxinator/
 !/.tmuxinator/*
