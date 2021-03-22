@@ -1,6 +1,6 @@
 #!/bin/bash
 
-library_path=~/dropbox/photos/library
+library_path=~/sync/photos/library
 extension=ARW
 dry=N
 
