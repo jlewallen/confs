@@ -82,6 +82,14 @@ alias stripcolors="sed -r 's/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g'"
 alias fix-home-workspaces="~/tools/bin/i3-setup-workspaces.sh --home"
 alias fix-work-workspaces="~/tools/bin/i3-setup-workspaces.sh --work"
 
+function ux() {
+	if [ -z "$1" ]; then
+		TZ="UTC" date "+%s"
+	else
+		TZ="UTC" date -d @$1
+	fi
+}
+
 function ffd() {
 	find . -iname "*$1*" -type d
 }
