@@ -32,4 +32,5 @@ ScrollingUnlimited=TRUE
 ColorForeground=#e0e0e0
 ColorPalette=#000000;#fb0120;#a1c659;#fda331;#6fb3d2;#d381c3;#76c7b7;#e0e0e0;#b0b0b0;#fb0120;#a1c659;#fda331;#6fb3d2;#d381c3;#76c7b7;#ffffff
 ColorCursor=x
+WordChars=-A-Za-z0-9,./?%&#_=+@~
 
