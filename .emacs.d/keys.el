@@ -111,6 +111,7 @@
  "oa"  #'org-agenda
  "ooc" #'my/jlewallen-open-capture
  "oon" #'my/jlewallen-open-notes
+ "ood" #'my/jlewallen-open-desk
  )
 
 (general-define-key
