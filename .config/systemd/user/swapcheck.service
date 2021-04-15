@@ -7,4 +7,4 @@ Type=oneshot
 ExecStart=/home/jlewallen/tools/bin/swap-check.sh
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

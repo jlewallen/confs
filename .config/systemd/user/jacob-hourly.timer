@@ -6,4 +6,4 @@ OnCalendar=*-*-* *:00:00
 Unit=jacob-hourly.service
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
