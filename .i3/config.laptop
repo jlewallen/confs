@@ -68,8 +68,7 @@ bindsym $mod+Shift+9      move container to workspace number 9
 bindsym $mod+Shift+0      move container to workspace number 10
 
 # start a terminal
-# bindsym $mod+Return       exec "xrdb ~/.Xresources && urxvt"
-bindsym $mod+Return       exec "xfce4-terminal"
+bindsym $mod+Return       exec "~/tools/bin/jacob-terminal.sh"
 
 # kill focused window
 bindsym $mod+Shift+q      kill

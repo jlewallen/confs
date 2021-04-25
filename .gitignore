@@ -80,6 +80,9 @@ tools/bin/hpn
 !.config/systemd/
 !.config/systemd/user/
 !.config/systemd/user/*
+!.config/kitty
+!.config/kitty/
+!.config/kitty/kitty.conf
 
 !./.fonts/
 !./.fonts/*
