@@ -29,6 +29,7 @@ export PATH=$HOME/tools/cmake/bin:$PATH
 export PATH=$HOME/tools/node/bin:$PATH
 export PATH=$HOME/tools/gitkraken:$PATH
 export PATH=$HOME/tools/wtf:$PATH
+export PATH=$HOME/tools/kitty/bin:$PATH
 export PATH=$HOME/tools/p4merge/bin:$PATH
 export PATH=$HOME/tools/jlink:$PATH
 export PATH=$HOME/tools/protoc/bin:$PATH
