@@ -84,7 +84,7 @@ alias fix-home-workspaces="~/tools/bin/i3-setup-workspaces.sh --home"
 alias fix-work-workspaces="~/tools/bin/i3-setup-workspaces.sh --work"
 alias icat="kitty +kitten icat --align=left"
 alias theme-reset="kitty @ --to unix:/tmp/kitty set-colors --reset"
-alias theme="cd ~/.config/kitty/themes && fzf --preview 'head -n 40 {} && kitty @ --to unix:/tmp/kitty set-colors -a -c {}'; cd -"
+alias theme="cd ~/.config/kitty/themes && fzf --preview 'head -n 40 {} && kitty @ set-colors -a -c {}'; cd -"
 
 function ux() {
 	if [ -z "$1" ]; then
