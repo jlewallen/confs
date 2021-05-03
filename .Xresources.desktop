@@ -9,6 +9,8 @@ urxvt.italicFont: xft:Terminus:style=Italic:size=16
 urxvt.boldItalicFont: xft:Terminus:style=Bold Italic:size=16
 urxvt.letterSpace: 0
 
+xterm*decTerminalID: vt340
+
 ! urxvt.font: xft:DejaVu Sans Mono:pixelsize=13
 ! urxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=13:weight=bold
 ! urxvt.letterSpace: -1
