@@ -20,4 +20,4 @@ windows:
       layout: even-horizontal
       panes:
         - jlink:
-            - JLinkGDBServer -if SWD -device ATSAMD51P20 -select usb=269402783 -Port 2000 -RTTTelnetPort 2001
+            - JLinkGDBServer -if SWD -device ATSAMD51P20 -select usb=269402795 -Port 2000 -RTTTelnetPort 2001
