@@ -62,6 +62,7 @@ tools/bin/wtfutil
 tools/bin/jira-status
 tools/bin/migrate
 tools/bin/hpn
+tools/bin/plc
 
 !./.local/
 !./.local/share/
