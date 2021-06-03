@@ -336,6 +336,7 @@ current."
 ;; magit
 
 (defun my/magit-config ()
+  (add-to-list 'magit-section-initial-visibility-alist '(stashes . hide))
   (setq magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 
 (use-package magit
