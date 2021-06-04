@@ -15,7 +15,7 @@ windows:
         - shell:
           - clear
         - logs:
-          - JLinkRTTClient -RTTTelnetPort 2001
+          - JLinkRTTClient -RTTTelnetPort 2001 | tee /tmp/station-2000.logs
   - jlink:
       layout: even-horizontal
       panes:
