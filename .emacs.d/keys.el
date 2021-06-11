@@ -130,6 +130,7 @@
  "oot" #'org-todo
  "oof" #'org-capture-finalize
  "ook" #'org-capture-kill
+ "oha" #'hide-sublevels
  "on"  #'my/time-stamp
  )
 
