@@ -8,6 +8,7 @@ PATH=$PATH:$HOME/tools/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/clang
 PATH=$PATH:$HOME/tools/go/bin
 PATH=$PATH:$HOME/tools/node/bin
 PATH=$PATH:$HOME/go/bin
+PATH=$PATH:$HOME/.local/bin
 PATH=$HOME/tools/bin:$PATH
 
 export NODE_OPTIONS="--max-old-space-size=8192"
