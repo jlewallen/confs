@@ -87,8 +87,11 @@ alias theme-reset="kitty @ --to unix:/tmp/kitty set-colors --reset"
 alias theme="cd ~/.config/kitty/themes && fzf --preview 'head -n 40 {} && kitty @ set-colors -a -c {}'; cd -"
 alias gitd="git checkout develop"
 alias gitrd="git rebase -i develop"
+alias gitrm="git rebase -i main"
 alias gitrod="git rebase -i origin/develop"
+alias gitrom="git rebase -i origin/main"
 alias gitm="git checkout main"
+alias gitd="git checkout develop"
 
 function ux() {
 	if [ -z "$1" ]; then
