@@ -63,6 +63,7 @@ tools/bin/jira-status
 tools/bin/migrate
 tools/bin/hpn
 tools/bin/plc
+tools/bin/sqlite3
 
 !./.local/
 !./.local/share/

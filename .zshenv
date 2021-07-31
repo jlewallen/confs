@@ -15,14 +15,10 @@ if [ -d ~/tools/go ]; then
     export PATH=$GOROOT/bin:$PATH
 fi
 
-export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/tools/bin:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
 
-export PATH=$HOME/tools/bin:$PATH
-export PATH=$HOME/sync/bin:$PATH
-export PATH=$HOME/go/bin:$PATH
-export PATH=$HOME/conservify/bin:$PATH
-export PATH=$HOME/fieldkit/fkc/build:$PATH
-export PATH=$HOME/tools/node_modules/.bin:$PATH
 export PATH=$HOME/tools/apache-maven/bin:$PATH
 export PATH=$HOME/tools/nanopb/generator:$PATH
 export PATH=$HOME/tools/cmake/bin:$PATH
@@ -34,10 +30,14 @@ export PATH=$HOME/tools/p4merge/bin:$PATH
 export PATH=$HOME/tools/jlink:$PATH
 export PATH=$HOME/tools/protoc/bin:$PATH
 export PATH=$HOME/tools/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin:$PATH
+export PATH=$HOME/tools/node_modules/.bin:$PATH
 
-export PATH=$ANDROID_HOME/tools:$PATH
-export PATH=$ANDROID_HOME/tools/bin:$PATH
-export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
+
+export PATH=$HOME/fieldkit/fkc/build:$PATH
+export PATH=$HOME/sync/bin:$PATH
+export PATH=$HOME/tools/bin:$PATH
 
 export PATH=node_modules/.bin:$PATH
 
