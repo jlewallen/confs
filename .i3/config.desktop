@@ -122,6 +122,7 @@ bindsym $mod+w            [title="Slack"] focus
 bindsym $mod+d            [title="Discord"] focus
 bindsym $mod+s            [class="Spotify"] focus
 bindsym $mod+g            [class="Kraken"] focus
+bindsym $mod+v            [class="Code"] focus
 bindsym $mod+t            exec "flameshot gui -p ~/dropbox/misc/screens"
 
 # run previous
