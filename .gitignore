@@ -82,6 +82,7 @@ tools/bin/sqlite3
 !.config/systemd/
 !.config/systemd/user/
 !.config/systemd/user/*
+!.config/dunst
 !.config/kitty
 !.config/kitty/
 !.config/kitty/kitty.conf
