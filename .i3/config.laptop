@@ -87,8 +87,10 @@ bindsym $mod+Shift+space  floating toggle
 bindsym $mod+space        focus mode_toggle
 
 # layout control
-# bindsym $mod+Tab          exec "~/tools/bin/i3-workspaces-toggle.sh"
-# bindsym $mod+Shift+Tab    exec "~/tools/bin/i3-toggle-two-up.sh"
+# bindsym $mod+Tab        exec "~/tools/bin/i3-workspaces-toggle.sh"
+# bindsym $mod+Shift+Tab  exec "~/tools/bin/i3-toggle-two-up.sh"
+
+bindsym $mod+n            exec "~/tools/bin/i3-workspaces-toggle.sh"
 
 # audio control
 bindsym $mod+u            exec "playerctl play-pause"
@@ -120,6 +122,7 @@ bindsym $mod+w            [title="Slack"] focus
 bindsym $mod+d            [title="Discord"] focus
 bindsym $mod+s            [class="Spotify"] focus
 bindsym $mod+g            [class="Kraken"] focus
+bindsym $mod+v            [class="Code"] focus
 bindsym $mod+t            exec "flameshot gui -p ~/dropbox/misc/screens"
 
 # run previous
