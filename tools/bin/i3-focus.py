@@ -2,6 +2,7 @@
 
 import argparse
 import i3ipc
+import os
 import re
 from dataclasses import dataclass
 from typing import List, Any
@@ -64,6 +65,7 @@ def main():
         focusing = matches.focus()
         if focusing:
             i3.command('[con_id="%s"] focus' % (focusing.id,))
+            os.system("xdotool mousemove 100 100")
 
     if args.workspace and args.title:
         i3 = i3ipc.Connection()
