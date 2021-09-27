@@ -2087,6 +2087,8 @@ class Breakpoints(Dashboard.Module):
             }
         }
 
+import subprocess
+
 class JacobRerun(gdb.Command):
     "My standard rerun procedure."
     def __init__ (self):
