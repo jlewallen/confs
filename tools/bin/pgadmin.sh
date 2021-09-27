@@ -6,7 +6,7 @@ sudo chown -R 5050:5050 ~/sync/pgadmin
 docker pull dpage/pgadmin4
 
 docker run -p 8070:80 --name pgadmin \
-    -v ~/sync/pgadmin:/var/lib/pgadmin \
+    -v ~/drive2/pgadmin:/var/lib/pgadmin \
     -e 'PGADMIN_DEFAULT_EMAIL=jacob@conservify.org' \
     -e 'PGADMIN_DEFAULT_PASSWORD=asdfasdfasdf' \
     -e 'PGADMIN_CONFIG_CONSOLE_LOG_LEVEL=10' \
