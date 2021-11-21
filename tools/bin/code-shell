@@ -4,4 +4,6 @@ SESSION=`basename $PWD`
 if [ -f ".session" ]; then
     SESSION=`head -n 1 .session`
 fi
-tmux attach-session -d -t $SESSION || tmux new-session -s $SESSION
+#tmux attach-session -d -t $SESSION || tmux new-session -s $SESSION
+
+bash
