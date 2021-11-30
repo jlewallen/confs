@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import capablerobot_usbhub
 
 print(capablerobot_usbhub)
