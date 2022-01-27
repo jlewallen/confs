@@ -64,8 +64,8 @@ def main():
         matches = windows.window_class(args.window_class)
         focusing = matches.focus()
         if focusing:
-            i3.command('[con_id="%s"] focus' % (focusing.id,))
             os.system("xdotool mousemove 100 100")
+            i3.command('[con_id="%s"] focus' % (focusing.id,))
 
     if args.workspace and args.title:
         i3 = i3ipc.Connection()
