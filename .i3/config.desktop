@@ -116,22 +116,20 @@ bindsym $mod+Shift+x      exec i3lock -c 000000
 # bindsym $mod+Shift+]    exec xfce4-session-logout
 
 # focusing common programs
+# bindsym $mod+t
+# bindsym $mod+q
+# bindsym $mod+a
+# bindsym $mod+e            [class="Emacs"] focus
 bindsym $mod+f            exec "~/tools/bin/i3-focus.py --title Firefox --workspace 9"
-bindsym $mod+e            [class="Emacs"] focus
 bindsym $mod+w            [title="Slack"] focus
 bindsym $mod+d            [title="Discord"] focus
 bindsym $mod+s            [class="Spotify"] focus
 bindsym $mod+g            [class="Kraken"] focus
 bindsym $mod+v            exec "~/tools/bin/i3-focus.py --class Code"
-bindsym $mod+t            exec "flameshot gui -p ~/dropbox/misc/screens"
+bindsym Print             exec "flameshot gui -p ~/dropbox/misc/screens"
 
 # run previous
 bindsym --release $mod+i  exec "~/tools/bin/i3-rerun.sh"
-
-# timer thing (long story)
-# bindsym $mod+Shift+t    exec "~/tools/bin/i3-timer.sh"
-# no idea when i used this
-# bindsym $mod+a          exec "~/tools/bin/i3-back.sh"
 
 # remove the border everywhere
 # for_window [class="^.*"] border pixel 1
