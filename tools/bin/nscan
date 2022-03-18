@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nmap -sn -T aggressive 192.168.0.0/24
