@@ -72,6 +72,8 @@ if [ -x "$(command -v batcat)" ]; then
     alias cat="batcat"
 fi
 
+alias c="clear"
+alias p="python3"
 alias mv="mv -n"
 alias tx="tmuxinator"
 alias cmm="cmake -H. -Bbuild"
