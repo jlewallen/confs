@@ -100,7 +100,7 @@ bindsym $mod+y            exec "playerctl next"
 bindsym $mod+Shift+s      layout stacking
 bindsym $mod+Shift+w      layout tabbed
 bindsym $mod+Shift+e      layout toggle split
-bindsym $mod+Shift+m      append_layout /home/jlewallen/workspace-side-by-side.json
+bindsym $mod+Shift+m      append_layout /home/jlewallen/.config/i3/workspace-side-by-side.json
 
 # focus parent
 bindsym $mod+Shift+p      focus parent
