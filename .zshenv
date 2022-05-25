@@ -97,6 +97,7 @@ alias gitrod="git rebase -i origin/develop"
 alias gitrom="git rebase -i origin/main"
 alias gitm="git checkout main"
 alias gitd="git checkout develop"
+alias ips="ip --brief addr"
 
 function ux() {
 	if [ -z "$1" ]; then
