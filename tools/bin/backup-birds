@@ -1,0 +1,3 @@
+#!/bin/bash
+
+scp 192.168.0.242:BirdNET-Pi/scripts/birds.db ~/dropbox
