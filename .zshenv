@@ -35,7 +35,6 @@ export PATH=$HOME/tools/node_modules/.bin:$PATH
 export PATH=$HOME/tools/vscode/bin:$PATH
 export PATH=$HOME/tools/syncthing:$PATH
 
-export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 
 export PATH=$HOME/fieldkit/fkc/build:$PATH
@@ -118,3 +117,5 @@ function fff() {
 if [ -f ~/.zshenv.private.sh ]; then
     source ~/.zshenv.private.sh
 fi
+
+. "$HOME/.cargo/env"
