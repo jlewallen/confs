@@ -98,6 +98,15 @@ alias gitm="git checkout main"
 alias gitd="git checkout develop"
 alias ips="ip --brief addr"
 
+TODO="$HOME/dropbox/notes/TODO"
+
+function td() {
+	case $PWD/ in
+	$TODO/*) popd  ;;
+	*) pushd $TODO ;;
+	esac
+}
+
 function ux() {
 	if [ -z "$1" ]; then
 		TZ="UTC" date "+%s"
