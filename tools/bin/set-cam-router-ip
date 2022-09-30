@@ -1,3 +1,4 @@
 #!/bin/bash
 
-sudo ip addr add 10.146.17.1/24 dev enp3s0
+sudo ip addr del 10.146.17.100/24 dev enp3s0
+sudo ip addr add 10.146.17.100/24 dev enp3s0
