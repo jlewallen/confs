@@ -1,9 +1,9 @@
 [Configuration]
-FontName=Source Code Pro 10
+FontName=Source Code Pro 11
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBellUrgent=FALSE
-MiscBordersDefault=FALSE
+MiscBordersDefault=TRUE
 MiscCursorBlinks=FALSE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
 MiscDefaultGeometry=80x24
@@ -29,8 +29,9 @@ MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingUnlimited=TRUE
-ColorForeground=#e0e0e0
-ColorPalette=#000000;#fb0120;#a1c659;#fda331;#6fb3d2;#d381c3;#76c7b7;#e0e0e0;#b0b0b0;#fb0120;#a1c659;#fda331;#6fb3d2;#d381c3;#76c7b7;#ffffff
+ColorForeground=#b7b8b9
+ColorPalette=#0c0d0e;#e31a1c;#31a354;#dca060;#3182bd;#756bb1;#80b1d3;#b7b8b9;#737475;#e31a1c;#31a354;#dca060;#3182bd;#756bb1;#80b1d3;#fcfdfe
 ColorCursor=x
 WordChars=-A-Za-z0-9,./?%&#_=+@~
+ColorBackground=#0c0d0e
 

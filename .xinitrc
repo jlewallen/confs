@@ -1,7 +1,5 @@
 export PATH=$HOME/tools/bin:$PATH
 
-setxkbmap -option caps:super
+# setxkbmap -option caps:super
 
-xrandr --dpi
-
-exec dbus-launch --autolaunch=$(cat /var/lib/dbus/machine-id) i3
+# exec dbus-launch --autolaunch=$(cat /var/lib/dbus/machine-id) i3

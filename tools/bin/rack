@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -xe
-
-pushd ~/tools/mod/Rack2Free
-./Rack
-

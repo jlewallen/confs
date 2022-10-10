@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -xe
-
-wget https://snapshots.mitmproxy.org/5.1.1/mitmproxy-5.1.1-linux.tar.gz
-
-tar xf mitmproxy-5.1.1-linux.tar.gz
-
-rm mitmproxy-5.1.1-linux.tar.gz
