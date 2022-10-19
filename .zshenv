@@ -155,7 +155,14 @@ fi
 
 # Random bits.
 
-# Must be done from ~/.oh-my-zsh/lib/directories.zsh
-unsetopt autopushd
+# For some reason these don't work very well when set inside here, so check the
+# oh-my-zsh files.
+#
+# ~/.oh-my-zsh/lib/directories.zsh
+# ~/.oh-my-zsh/lib/history.zsh
+#
+unsetopt auto_pushd
+setopt no_share_history
+unsetopt share_history
 
 # eof
