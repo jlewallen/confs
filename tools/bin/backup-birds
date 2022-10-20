@@ -1,4 +1,4 @@
 #!/bin/bash
 
-scp 192.168.0.164:BirdNET-Pi/scripts/birds.db ~/dropbox/birds
-rsync -vua 192.168.0.164:BirdSongs/Extracted ~/dropbox/birds
+scp 192.168.0.164:BirdNET-Pi/scripts/birds.db ~/sync/birds
+rsync -vua 192.168.0.164:BirdSongs/Extracted ~/sync/birds
