@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo mkdir -p ~/sync/pgadmin
-sudo chown -R 5050:5050 ~/sync/pgadmin
+sudo mkdir -p ~/drive2/pgadmin
+sudo chown -R 5050:5050 ~/drive2/pgadmin
 
 docker pull dpage/pgadmin4
 
