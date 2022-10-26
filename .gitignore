@@ -86,6 +86,8 @@ tools/bin/sqlite3
 !.config/kitty
 !.config/kitty/
 !.config/kitty/kitty.conf
+!.config/helix/
+!.config/helix/*.toml
 
 !./.fonts/
 !./.fonts/*
