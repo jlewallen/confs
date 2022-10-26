@@ -11,10 +11,10 @@ export PATH=$HOME/tools/node/bin:$PATH
 export PATH=$HOME/tools/gitkraken:$PATH
 export PATH=$HOME/tools/wtf:$PATH
 export PATH=$HOME/tools/kitty/bin:$PATH
+export PATH=$HOME/tools/flutter/bin:$PATH
 export PATH=$HOME/tools/p4merge/bin:$PATH
 export PATH=$HOME/tools/jlink:$PATH
 export PATH=$HOME/tools/protoc/bin:$PATH
-export PATH=$HOME/tools/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin:$PATH
 export PATH=$HOME/tools/node_modules/.bin:$PATH
 export PATH=$HOME/tools/vscode/bin:$PATH
 export PATH=$HOME/tools/syncthing:$PATH
@@ -42,7 +42,7 @@ fi
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
     export ANDROID_HOME=$HOME/Library/Android/sdk
 else
-    export ANDROID_HOME=$HOME/android-sdk
+    export ANDROID_HOME=$HOME/tools/android-sdk
 fi
 
 # Other miscellaneous things.
