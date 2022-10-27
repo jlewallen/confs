@@ -155,6 +155,9 @@ fi
 
 # Random bits.
 
+# Change default terminal emulator.
+# sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/tools/bin/alacritty 50
+
 # For some reason these don't work very well when set inside here, so check the
 # oh-my-zsh files.
 #
