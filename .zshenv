@@ -111,7 +111,7 @@ alias ips="ip --brief addr"
 
 # TODO Helpers
 
-TODO="$HOME/dropbox/notes/TODO"
+TODO="$HOME/sync/notes/TODO"
 
 function td() {
 	maybe_where=$1
