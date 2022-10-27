@@ -893,3 +893,38 @@ font:
 
   # Highlight window damage information.
   #highlight_damage: false
+
+import:
+# - ~/.config/alacritty/alacritty-theme/themes/breeze.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/afterglow.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/argonaut.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/challenger_deep.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/campbell.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/cyber_punk_neon.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/darcula.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/Cobalt2.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/flat_remix.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/gotham.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/gruvbox_dark.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/gruvbox_light.yaml
+  - ~/.config/alacritty/alacritty-theme/themes/falcon.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/horizon-dark.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/iterm.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/material_theme.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/material_theme_mod.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/monokai_pro.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/moonlight_ii_vscode.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/nord.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/omni.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/papercolor_dark.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/papercolor_light.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/pencil_dark.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/pencil_light.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/remedy_dark.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/snazzy.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/seashells.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/solarized_dark.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/solarized_light.yaml
+# - ~/.config/alacritty/alacritty-theme/themes/tomorrow_night.yaml
+
+# eof
