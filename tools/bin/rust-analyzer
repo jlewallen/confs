@@ -1,1 +1,5 @@
-/home/jlewallen/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer
+#!/bin/bash
+
+REAL=`rustup which --toolchain stable rust-analyzer`
+
+${REAL} "$@"
