@@ -1,5 +1,8 @@
 theme = "solarized_dark"
 
+[editor]
+true-color = true
+
 [keys.normal]
 # Quick iteration on config changes
 C-o = ":config-open"
