@@ -25,6 +25,8 @@ export PATH=$HOME/fieldkit/fkc/build:$PATH
 export PATH=$HOME/sync/bin:$PATH
 export PATH=$HOME/tools/bin:$PATH
 
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
 export PATH=node_modules/.bin:$PATH
 
 export EDITOR=vim
