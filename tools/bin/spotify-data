@@ -17,5 +17,5 @@ popd
 
 echo "uploading site"
 pushd ~/sync/personal
-make upload
+# make upload
 popd
