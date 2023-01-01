@@ -29,6 +29,10 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 export PATH=node_modules/.bin:$PATH
 
+if [ -d /Applications/CMake.app/Contents/bin ]; then
+    export PATH=/Applications/CMake.app/Contents/bin:$PATH
+fi
+
 export EDITOR=vim
 
 # Setup go environment.
@@ -42,7 +46,7 @@ fi
 
 # Android
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
-    export ANDROID_HOME=$HOME/Library/Android/sdk
+    export ANDROID_HOME=$HOME/tools/android-sdk
 else
     export ANDROID_HOME=$HOME/tools/android-sdk
 fi
