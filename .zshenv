@@ -53,43 +53,7 @@ fi
 # Other miscellaneous things.
 export MAKEFLAGS=--no-print-directory
 
-# Emacs, back in the day.
-export EMACSCLIENT=emacsclient
-if [ -f /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
-	export EMACSCLIENT=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
-fi
-if [ -f ~/tools/emacs/installed/bin/emacsclient ]; then
-	export EMACSCLIENT=~/tools/emacs/installed/bin/emacsclient
-fi
-alias ecc="$EMACSCLIENT -n -c"
-alias ec="i3-msg workspace number 1 ; $EMACSCLIENT -n"
-
-# Spotify resolution.
-if [ "$(hostname 2> /dev/null)" = "JACOB-LAPTOP" ]; then
-    alias spotify="/usr/bin/spotify --force-device-scale-factor=1.5"
-fi
-
-# Alias tools if we find them.
-if [ -x "$(command -v bat)" ]; then
-    alias cat="bat"
-fi
-
-if [ -x "$(command -v batcat)" ]; then
-    alias cat="batcat"
-fi
-
-# Aliases
-alias c="clear"
-alias p="python3"
-alias mv="mv -n"
-alias warn="notify-send -u critical"
-alias flag="notify-send -u critical DONE"
-alias sdone="spd-say done"
-alias cgrep="grep --color=always"
-alias stripcolors="sed -r 's/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g'"
-alias ips="ip --brief addr"
-
-# TODO Helpers
+# Helpers for simple todo notes.
 TODO="$HOME/sync/notes/TODO"
 
 function td() {
@@ -129,6 +93,11 @@ fi
 
 # Rust
 . "$HOME/.cargo/env"
+
+# Spotify resolution.
+if [ "$(hostname 2> /dev/null)" = "JACOB-LAPTOP" ]; then
+    alias spotify="/usr/bin/spotify --force-device-scale-factor=1.5"
+fi
 
 # Random bits.
 

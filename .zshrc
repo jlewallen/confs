@@ -88,17 +88,10 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 unsetopt auto_pushd
 setopt no_share_history
@@ -106,5 +99,29 @@ unsetopt share_history
 
 # Experimental
 eval "$(starship init zsh)"
+
+# Alias tools if we find them.
+if [ -x "$(command -v bat)" ]; then
+	alias cat="bat"
+fi
+
+if [ -x "$(command -v batcat)" ]; then
+	alias cat="batcat"
+fi
+
+if [ -x "$(command -v exa)" ]; then
+	alias ll="exa -l"
+fi
+
+# Basic aliases
+alias c="clear"
+alias p="python3"
+alias mv="mv -n"
+alias warn="notify-send -u critical"
+alias flag="notify-send -u critical DONE"
+alias sdone="spd-say done"
+alias cgrep="grep --color=always"
+alias stripcolors="sed -r 's/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g'"
+alias ips="ip --brief addr"
 
 # eof
