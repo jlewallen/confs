@@ -104,4 +104,7 @@ unsetopt auto_pushd
 setopt no_share_history
 unsetopt share_history
 
+# Experimental
+eval "$(starship init zsh)"
+
 # eof

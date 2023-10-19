@@ -2,6 +2,16 @@
 	email = jlewallen@gmail.com
 	name = Jacob Lewallen
 
+[core]
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	light = false
+
 [diff]
 	tool = p4merge
 
