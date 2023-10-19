@@ -1,3 +1,5 @@
 #!/bin/bash
 
+# Typically this file is in /usr/bin
+
 ~/.cargo/bin/alacritty "$@"

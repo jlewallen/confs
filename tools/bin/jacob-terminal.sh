@@ -1,3 +1,3 @@
 #!/bin/bash
 
-~/tools/kitty/bin/kitty
+~/.cargo/bin/alacritty
