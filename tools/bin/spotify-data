@@ -9,13 +9,13 @@ if [ -f generator ]; then
 
 	echo "copying new playlists"
 	cp playlists.json .cache
-	rsync -vua .cache/*.json ~/sync/personal/jacoblewallen.com/content/music
-	rsync -vua .cache/*.json ~/sync/personal/jacoblewallen.com/public/music
+	# rsync -vua .cache/*.json ~/shares/personal/jacoblewallen.com/content/music
+	# rsync -vua .cache/*.json ~/shares/personal/jacoblewallen.com/public/music
 fi
 
 popd
 
-echo "uploading site"
-pushd ~/sync/personal
+# echo "uploading site"
+# pushd ~/shares/personal
 # make upload
-popd
+# popd

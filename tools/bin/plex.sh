@@ -10,5 +10,8 @@ docker run -d \
 	-v /home/jlewallen/drive0/plex/config:/config \
 	-v /home/jlewallen/drive0:/drive0 \
 	-v /home/jlewallen/drive1:/drive1 \
+	-v /home/jlewallen/drive2:/drive2 \
+	-v /home/jlewallen/sync:/sync \
+	-v /home/jlewallen/photos:/photos \
 	--restart unless-stopped \
 	lscr.io/linuxserver/plex:latest

@@ -1,0 +1,13 @@
+[Unit]
+Description=RTLAMR Collect Meters
+
+[Service]
+
+ExecStart=/home/jlewallen/jlewallen/meters/run.sh
+WorkingDirectory=/home/jlewallen/jlewallen/meters
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+
+[Install]
+WantedBy=default.target

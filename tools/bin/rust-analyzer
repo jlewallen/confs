@@ -1,5 +1,0 @@
-#!/bin/bash
-
-REAL=`rustup which --toolchain stable rust-analyzer`
-
-${REAL} "$@"

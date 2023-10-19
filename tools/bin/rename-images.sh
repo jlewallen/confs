@@ -1,6 +1,6 @@
 #!/bin/bash
 
-library_path=~/sync/photos/library
+library_path=~/shares/photos/library
 extension=ARW
 dry=N
 

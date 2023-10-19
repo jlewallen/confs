@@ -1,0 +1,17 @@
+[[language]]
+name = "javascript"
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "python"
+formatter = { command = "black", args = ["--quiet", "--line-length=100", "-"] }
+auto-format = true
+
+[[language]]
+name = "rust"
+auto-format = true
+
+[language.config.checkOnSave]
+command = "clippy"
+
