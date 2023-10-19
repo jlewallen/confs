@@ -120,6 +120,13 @@ if [ -f ~/.zshenv.private.sh ]; then
     source ~/.zshenv.private.sh
 fi
 
+# Scache
+export SCCACHE_CACHE_SIZE=5G
+export SCCACHE_DIR=~/.sccache
+if [ -f ~/.cargo/bin/sccache ]; then
+    export RUSTC_WRAPPER=~/.cargo/bin/sccache
+fi
+
 # Rust
 . "$HOME/.cargo/env"
 
