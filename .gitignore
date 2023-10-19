@@ -90,6 +90,7 @@ tools/bin/sqlite3
 !.config/helix/*.toml
 !.config/alacritty/
 !.config/alacritty/*
+!.config/starship.toml
 
 !./.fonts/
 !./.fonts/*
