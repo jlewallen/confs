@@ -124,4 +124,7 @@ alias cgrep="grep --color=always"
 alias stripcolors="sed -r 's/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g'"
 alias ips="ip --brief addr"
 
+# Atuin
+eval "$(atuin init zsh --disable-up-arrow)"
+
 # eof
