@@ -69,6 +69,7 @@ function td() {
 }
 
 alias vtd="(cd $TODO && find . -not -path './.git*' -type f -printf '%T@ %p\n' | sort -n | cut -d' ' -f2-)"
+alias reset='tput reset' 
 
 # UNIX time helper.
 function ux() {

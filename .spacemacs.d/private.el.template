@@ -1,4 +1,0 @@
-(message "Loading private.el")
-
-(setq jlewallen-org-gcal-client-id "")
-(setq jlewallen-org-gcal-client-secret "")
