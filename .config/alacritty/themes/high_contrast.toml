@@ -1,27 +1,33 @@
-[colors.bright]
-black = "0x000000"
-blue = "0x0000ff"
-cyan = "0x00ffff"
-green = "0x00ff00"
-magenta = "0xff00ff"
-red = "0xff0000"
-white = "0xffffff"
-yellow = "0xffff00"
+# Colors (High Contrast)
 
-[colors.cursor]
-cursor = "0xffffff"
-text = "0xaaaaaa"
-
-[colors.normal]
-black = "0x000000"
-blue = "0x0000ff"
-cyan = "0x00ffff"
-green = "0x00ff00"
-magenta = "0xff00ff"
-red = "0xff0000"
-white = "0xffffff"
-yellow = "0xffff00"
-
+# Default colors
 [colors.primary]
-background = "0x444444"
-foreground = "0xdddddd"
+background = '#444444'
+foreground = '#dddddd'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '#aaaaaa'
+cursor = '#ffffff'
+
+# Normal colors
+[colors.normal]
+black   = '#000000'
+red     = '#ff0000'
+green   = '#00ff00'
+yellow  = '#ffff00'
+blue    = '#0000ff'
+magenta = '#ff00ff'
+cyan    = '#00ffff'
+white   = '#ffffff'
+
+# Bright colors
+[colors.bright]
+black   = '#000000'
+red     = '#ff0000'
+green   = '#00ff00'
+yellow  = '#ffff00'
+blue    = '#0000ff'
+magenta = '#ff00ff'
+cyan    = '#00ffff'
+white   = '#ffffff'

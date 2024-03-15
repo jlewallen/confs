@@ -1,23 +1,28 @@
-[colors.bright]
-black = "#D8DEE9"
-blue = "#D8DEE9"
-cyan = "#8FBCBB"
-green = "#a3be8c"
-magenta = "#B48EAD"
-red = "#bf616a"
-white = "#D8DEE9"
-yellow = "#D08770"
+# Colors (Nord light) theme based on https//github.com/nordtheme/alacritty/issues/28#issuecomment-1422225211
 
-[colors.normal]
-black = "#D8DEE9"
-blue = "#81A1C1"
-cyan = "#88C0D0"
-green = "#a3be8c"
-magenta = "#B48EAD"
-red = "#bf616a"
-white = "#4C566A"
-yellow = "#D08770"
-
+# Default colors
 [colors.primary]
-background = "#ECEFF4"
-foreground = "#81A1C1"
+background = '#ECEFF4'
+foreground = '#81A1C1'
+
+# Normal colors
+[colors.normal]
+black   = '#D8DEE9'
+red     = '#bf616a'
+green   = '#a3be8c'
+yellow  = '#D08770'
+blue    = '#81A1C1'
+magenta = '#B48EAD'
+cyan    = '#88C0D0'
+white   = '#4C566A'
+
+# Bright colors
+[colors.bright]
+black   = '#D8DEE9'
+red     = '#bf616a'
+green   = '#a3be8c'
+yellow  = '#D08770'
+blue    = '#D8DEE9'
+magenta = '#B48EAD'
+cyan    = '#8FBCBB'
+white   = '#D8DEE9'

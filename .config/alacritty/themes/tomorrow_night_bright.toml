@@ -1,23 +1,28 @@
-[colors.bright]
-black = "0x666666"
-blue = "0x7aa6da"
-cyan = "0x54ced6"
-green = "0x9ec400"
-magenta = "0xb77ee0"
-red = "0xff3334"
-white = "0x2a2a2a"
-yellow = "0xe7c547"
+# Colors (Tomorrow Night Bright)
 
-[colors.normal]
-black = "0x000000"
-blue = "0x7aa6da"
-cyan = "0x70c0ba"
-green = "0xb9ca4a"
-magenta = "0xc397d8"
-red = "0xd54e53"
-white = "0x424242"
-yellow = "0xe6c547"
-
+# Default colors
 [colors.primary]
-background = "0x000000"
-foreground = "0xeaeaea"
+background = '#000000'
+foreground = '#eaeaea'
+
+# Normal colors
+[colors.normal]
+black   = '#000000'
+red     = '#d54e53'
+green   = '#b9ca4a'
+yellow  = '#e6c547'
+blue    = '#7aa6da'
+magenta = '#c397d8'
+cyan    = '#70c0ba'
+white   = '#424242'
+
+# Bright colors
+[colors.bright]
+black   = '#666666'
+red     = '#ff3334'
+green   = '#9ec400'
+yellow  = '#e7c547'
+blue    = '#7aa6da'
+magenta = '#b77ee0'
+cyan    = '#54ced6'
+white   = '#2a2a2a'

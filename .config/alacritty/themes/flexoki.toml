@@ -1,41 +1,46 @@
-[colors.bright]
-black = "0x100F0F"
-blue = "0x4385BE"
-cyan = "0x3AA99F"
-green = "0x879A39"
-magenta = "0xCE5D97"
-red = "0xD14D41"
-white = "0xFFFCF0"
-yellow = "0xD0A215"
+# based on https//stephango.com/flexoki and https//github.com/kepano/flexoki/tree/main/alacritty
 
-[colors.cursor]
-cursor = "0xFFFCF0"
-text = "0xFFFCF0"
-
-[colors.dim]
-black = "0x100F0F"
-blue = "0x205EA6"
-cyan = "0x24837B"
-green = "0x66800B"
-magenta = "0xA02F6F"
-red = "0xAF3029"
-white = "0xFFFCF0"
-yellow = "0xAD8301"
-
-[colors.normal]
-black = "0x100F0F"
-blue = "0x205EA6"
-cyan = "0x24837B"
-green = "0x66800B"
-magenta = "0xA02F6F"
-red = "0xAF3029"
-white = "0xFFFCF0"
-yellow = "0xAD8301"
-
+# Default colors
 [colors.primary]
-background = "0x282726"
-bright_background = "0x1C1B1A"
-bright_foreground = "0xFFFCF0"
-dim_background = "0x1C1B1A"
-dim_foreground = "0xFFFCF0"
-foreground = "0xFFFCF0"
+background = '#282726'
+foreground = '#FFFCF0'
+dim_foreground = '#FFFCF0'
+bright_foreground = '#FFFCF0'
+
+# Cursor colors
+[colors.cursor]
+text = '#FFFCF0'
+cursor = '#FFFCF0'
+
+# Normal colors
+[colors.normal]
+black = '#100F0F'
+red = '#AF3029'
+green = '#66800B'
+yellow = '#AD8301'
+blue = '#205EA6'
+magenta = '#A02F6F'
+cyan = '#24837B'
+white = '#FFFCF0'
+
+# Bright colors
+[colors.bright]
+black = '#100F0F'
+red = '#D14D41'
+green = '#879A39'
+yellow = '#D0A215'
+blue = '#4385BE'
+magenta = '#CE5D97'
+cyan = '#3AA99F'
+white = '#FFFCF0'
+
+# Dim colors
+[colors.dim]
+black = '#100F0F'
+red = '#AF3029'
+green = '#66800B'
+yellow = '#AD8301'
+blue = '#205EA6'
+magenta = '#A02F6F'
+cyan = '#24837B'
+white = '#FFFCF0'

@@ -1,11 +1,9 @@
-# import = [ "/home/jlewallen/.config/alacritty/themes/thelovelace.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/baitong.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/everforest_dark.toml" ]
-# import = [ "/home/jlewallen/.config/alacritty/themes/wombat.toml" ]
-# import = [ "/home/jlewallen/.config/alacritty/themes/challenger_deep.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/alabaster_dark.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/argonaut.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/remedy_dark.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/atom_one_light.toml" ]
-# import = [ "/home/jlewallen/.config/alacritty/themes/cyber_punk_neon.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/palenight.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/hardhacker.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/marine_dark.toml" ]
@@ -18,43 +16,46 @@
 # import = [ "/home/jlewallen/.config/alacritty/themes/snazzy.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/smooooth.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/gruvbox_material_medium_light.toml" ]
-# import = [ "/home/jlewallen/.config/alacritty/themes/citylights.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/taerminal.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/github_dimmed.toml" ]
-
-import = [ "/home/jlewallen/.config/alacritty/themes/nightfox.toml" ]
-
+# import = [ "/home/jlewallen/.config/alacritty/themes/nightfox.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/papertheme.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/solarized_dark.toml" ]
-
-# import = [ "/home/jlewallen/.config/alacritty/themes/falcon.toml" ]
-
 # import = [ "/home/jlewallen/.config/alacritty/themes/papercolor_dark.toml" ]
-
 # import = [ "/home/jlewallen/.config/alacritty/themes/seashells.toml" ]
-
 # import = [ "/home/jlewallen/.config/alacritty/themes/dracula.toml" ]
-
-
 # import = [ "/home/jlewallen/.config/alacritty/themes/Cobalt2.toml" ]
-
 # import = [ "/home/jlewallen/.config/alacritty/themes/rainbow.toml" ]
-
 # import = [ "/home/jlewallen/.config/alacritty/themes/tokyo-night-storm.toml" ]
-
-# import = [ "/home/jlewallen/.config/alacritty/themes/horizon-dark.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/nord.toml" ]
-
 # import = [ "/home/jlewallen/.config/alacritty/themes/tokyo-night.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/monokai_pro.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/rose-pine-moon.toml" ]
-
 # import = [ "/home/jlewallen/.config/alacritty/themes/solarized_light.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/omni.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/kanagawa_wave.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/iterm.toml" ]
-# import = [ "/home/jlewallen/.config/alacritty/themes/ayu_dark.toml" ]
 # import = [ "/home/jlewallen/.config/alacritty/themes/rose-pine.toml" ]
+
+# import = [ "/home/jlewallen/.config/alacritty/themes/ashes_dark.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/ayu_dark.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/carbonfox.toml" ]
+import = [ "/home/jlewallen/.config/alacritty/themes/aura.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/citylights.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/challenger_deep.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/cyber_punk_neon.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/falcon.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/github_dark_colorblind.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/github_dark_tritanopia.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/horizon-dark.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/iterm.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/kanagawa_wave.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/nightfox.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/omni.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/solarized_osaka.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/thelovelace.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/tokyo-night-storm.toml" ]
+# import = [ "/home/jlewallen/.config/alacritty/themes/wombat.toml" ]
 
 [font]
 size = 11.0

@@ -1,27 +1,32 @@
-[colors.bright]
-black = "0x000000"
-blue = "0x0000bb"
-cyan = "0x00bbbb"
-green = "0x00bb00"
-magenta = "0xbb00bb"
-red = "0xbb0000"
-white = "0xbbbbbb"
-yellow = "0xbbbb00"
+# Colors (Dim)
+
+# Default colors
+[colors.primary]
+background = '#333333'
+foreground = '#dddddd'
 
 [colors.cursor]
-cursor = "0xffffff"
-text = "0xaaaaaa"
+text = '#aaaaaa'
+cursor = '#ffffff'
 
+# Normal colors
 [colors.normal]
-black = "0x000000"
-blue = "0x0000bb"
-cyan = "0x00bbbb"
-green = "0x00bb00"
-magenta = "0xbb00bb"
-red = "0xbb0000"
-white = "0xbbbbbb"
-yellow = "0xbbbb00"
+black   = '#000000'
+red     = '#bb0000'
+green   = '#00bb00'
+yellow  = '#bbbb00'
+blue    = '#0000bb'
+magenta = '#bb00bb'
+cyan    = '#00bbbb'
+white   = '#bbbbbb'
 
-[colors.primary]
-background = "0x333333"
-foreground = "0xdddddd"
+# Bright colors
+[colors.bright]
+black   = '#000000'
+red     = '#bb0000'
+green   = '#00bb00'
+yellow  = '#bbbb00'
+blue    = '#0000bb'
+magenta = '#bb00bb'
+cyan    = '#00bbbb'
+white   = '#bbbbbb'

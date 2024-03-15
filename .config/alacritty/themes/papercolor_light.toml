@@ -1,27 +1,32 @@
-[colors.bright]
-black = "0xbcbcbc"
-blue = "0xd75f00"
-cyan = "0x005faf"
-green = "0xd70087"
-magenta = "0xd75f00"
-red = "0xd70000"
-white = "0x005f87"
-yellow = "0x8700af"
+# Colors (PaperColor - Light)
+
+# Default colors
+[colors.primary]
+background = '#eeeeee'
+foreground = '#444444'
 
 [colors.cursor]
-cursor = "0x444444"
-text = "0xeeeeee"
+text = '#eeeeee'
+cursor = '#444444'
 
+# Normal colors
 [colors.normal]
-black = "0xeeeeee"
-blue = "0x0087af"
-cyan = "0x005f87"
-green = "0x008700"
-magenta = "0x878787"
-red = "0xaf0000"
-white = "0x444444"
-yellow = "0x5f8700"
+black   = '#eeeeee'
+red     = '#af0000'
+green   = '#008700'
+yellow  = '#5f8700'
+blue    = '#0087af'
+magenta = '#878787'
+cyan    = '#005f87'
+white   = '#444444'
 
-[colors.primary]
-background = "0xeeeeee"
-foreground = "0x444444"
+# Bright colors
+[colors.bright]
+black   = '#bcbcbc'
+red     = '#d70000'
+green   = '#d70087'
+yellow  = '#8700af'
+blue    = '#d75f00'
+magenta = '#d75f00'
+cyan    = '#005faf'
+white   = '#005f87'

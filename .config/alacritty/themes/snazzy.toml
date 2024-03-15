@@ -1,23 +1,28 @@
-[colors.bright]
-black = "0x686868"
-blue = "0x57c7ff"
-cyan = "0x9aedfe"
-green = "0x5af78e"
-magenta = "0xff6ac1"
-red = "0xff5c57"
-white = "0xf1f1f0"
-yellow = "0xf3f99d"
+# Colors (Snazzy)
 
-[colors.normal]
-black = "0x282a36"
-blue = "0x57c7ff"
-cyan = "0x9aedfe"
-green = "0x5af78e"
-magenta = "0xff6ac1"
-red = "0xff5c57"
-white = "0xf1f1f0"
-yellow = "0xf3f99d"
-
+# Default colors
 [colors.primary]
-background = "0x282a36"
-foreground = "0xeff0eb"
+background = '#282a36'
+foreground = '#eff0eb'
+
+# Normal colors
+[colors.normal]
+black   = '#282a36'
+red     = '#ff5c57'
+green   = '#5af78e'
+yellow  = '#f3f99d'
+blue    = '#57c7ff'
+magenta = '#ff6ac1'
+cyan    = '#9aedfe'
+white   = '#f1f1f0'
+
+# Bright colors
+[colors.bright]
+black   = '#686868'
+red     = '#ff5c57'
+green   = '#5af78e'
+yellow  = '#f3f99d'
+blue    = '#57c7ff'
+magenta = '#ff6ac1'
+cyan    = '#9aedfe'
+white   = '#f1f1f0'
