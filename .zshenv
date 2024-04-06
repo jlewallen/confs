@@ -86,10 +86,11 @@ if [ -f ~/.zshenv.private.sh ]; then
 fi
 
 # Scache
-export SCCACHE_CACHE_SIZE=5G
+export SCCACHE_CACHE_SIZE=10G
 export SCCACHE_DIR=~/.sccache
 if [ -f ~/.cargo/bin/sccache ]; then
     export RUSTC_WRAPPER=~/.cargo/bin/sccache
+    export CMAKE_CXX_COMPILER_LAUNCHER=~/.cargo/bin/sccache
 fi
 
 # Rust
