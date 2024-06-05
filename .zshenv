@@ -44,7 +44,14 @@ else
 	export ANDROID_HOME=$HOME/tools/android-sdk
 fi
 
+if [ -d ~/tools/android-studio/jre ]; then
+	export JAVA_HOME=~/tools/android-studio/jre
+else
+	export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64/
+fi
+
 if [ -d $ANDROID_HOME ]; then
+	export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 	export PATH=$PATH:$ANDROID_HOME/tools
 	export PATH=$PATH:$ANDROID_HOME/tools/bin
 	export PATH=$PATH:$ANDROID_HOME/platform-tools
