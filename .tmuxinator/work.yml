@@ -1,8 +1,0 @@
-# ~/.tmuxinator/work.yml
-
-name: work
-root: ~/
-
-windows:
-  - shell:
-  - shell:
