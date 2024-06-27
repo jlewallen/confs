@@ -24,18 +24,23 @@
 	trustExitCode = false
 	keepBackup = false
 
-[difftool "p4merge"]
-	cmd = ~/tools/p4merge/bin/p4merge "$LOCAL" "$REMOTE"
-	keepTemporaries = false
-	trustExitCode = false
-	keepBackup = false
-
 [push]
 	default = simple
+	autoSetupRemote = true
 
 [alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	di = diff
+	fp = fetch --prune
+	rb = rebase
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	hist = log --graph --abbrev-commit --decorate --date=short --branches --remotes --tags --format=format:'%C(bold cyan)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)%an%C(reset) %C(bold yellow)%d%C(reset)'
+
 [pager]
 	log = false
+
 [init]
 	defaultBranch = main
