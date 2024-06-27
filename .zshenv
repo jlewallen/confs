@@ -75,6 +75,7 @@ function td() {
 	esac
 }
 
+alias wezterm="$HOME/tools/app-images/WezTerm*"
 alias vtd="(cd $TODO && find . -not -path './.git*' -type f -printf '%T@ %p\n' | sort -n | cut -d' ' -f2-)"
 alias reset='tput reset' 
 
