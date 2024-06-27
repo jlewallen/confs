@@ -10,5 +10,5 @@ cd $path
 t=~/work/$path
 export t;
 
-rm ~/t;
+rm -f ~/t;
 ln -s $t ~/t;
