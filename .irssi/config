@@ -25,7 +25,7 @@ chatnets = {
 channels = (
   { name = "#rust"; chatnet = "mozilla"; autojoin = "yes"; },
   { name = "#rust-beginners"; chatnet = "mozilla"; autojoin = "yes"; },
-  { name = "#rust-embedded"; chatnet = "mozilla"; autojoin = "yes"; },
+  { name = "#rust-embedded"; chatnet = "mozilla"; autojoin = "yes"; }
 );
 
 aliases = {

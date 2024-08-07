@@ -4,6 +4,7 @@
 
 [core]
 	pager = delta
+	editor = vim
 
 [interactive]
 	diffFilter = delta --color-only
@@ -14,6 +15,21 @@
 
 [diff]
 	tool = p4merge
+	algorithm = histogram
+	colorMoved = default
+
+[merge]
+	conflictstyle = diff3  #zdiff3
+
+[rebase]
+	autosquash = true
+	autostash = false
+
+[commit]
+	verbose = true
+
+[rerere]
+	enabled = true
 
 [difftool]
 	prompt = false
