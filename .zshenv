@@ -129,3 +129,6 @@ setopt no_share_history
 unsetopt share_history
 
 # eof
+
+# Added by Radicle.
+export PATH="$PATH:/home/jlewallen/.radicle/bin"
