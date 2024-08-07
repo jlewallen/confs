@@ -55,6 +55,10 @@ if [ -d $ANDROID_HOME ]; then
 	export PATH=$PATH:$ANDROID_HOME/tools
 	export PATH=$PATH:$ANDROID_HOME/tools/bin
 	export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+	if [ -d $ANDROID_HOME/ndk/25* ]; then
+		export ANDROID_NDK_HOME=$(echo $ANDROID_HOME/ndk/25*)
+	fi
 fi
 
 # Other miscellaneous things.
